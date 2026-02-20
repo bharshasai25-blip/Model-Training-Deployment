@@ -226,8 +226,3 @@ Build full production-ready web application
 Conclusion
 
 This project successfully analyzed and forecasted crime trends using machine learning and time series models. LightGBM and XGBoost demonstrated strong performance in forecasting monthly crime counts, while SARIMAX provided reliable yearly forecasts. The deployment of the model using Streamlit enables real-time interactive crime prediction, making the solution practical and useful for crime analysis and decision-making.
-
-Author
-
-Your Name
-Data Science and Machine Learning Project

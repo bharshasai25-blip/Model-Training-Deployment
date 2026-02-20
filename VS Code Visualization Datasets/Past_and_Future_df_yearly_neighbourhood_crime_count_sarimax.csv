@@ -1,0 +1,376 @@
+NEIGHBOURHOOD,YEAR,Crime_Count
+Arbutus Ridge,1999,616.0
+Arbutus Ridge,2000,648.0
+Arbutus Ridge,2001,619.0
+Arbutus Ridge,2002,441.0
+Arbutus Ridge,2003,361.0
+Arbutus Ridge,2004,335.0
+Arbutus Ridge,2005,378.0
+Arbutus Ridge,2006,322.0
+Arbutus Ridge,2007,302.0
+Arbutus Ridge,2008,338.0
+Arbutus Ridge,2009,300.0
+Arbutus Ridge,2010,407.0
+Arbutus Ridge,2011,364.0
+Arbutus Ridge,2012,357.69804710230324
+Arbutus Ridge,2013,352.9771494517194
+Central Business District,1999,9815.0
+Central Business District,2000,8744.0
+Central Business District,2001,7668.0
+Central Business District,2002,8480.0
+Central Business District,2003,8251.0
+Central Business District,2004,8209.0
+Central Business District,2005,6893.0
+Central Business District,2006,5831.0
+Central Business District,2007,5722.0
+Central Business District,2008,5409.0
+Central Business District,2009,5938.0
+Central Business District,2010,7114.0
+Central Business District,2011,8097.0
+Central Business District,2012,8404.55260251019
+Central Business District,2013,8484.359598001509
+Dunbar-Southlands,1999,772.0
+Dunbar-Southlands,2000,949.0
+Dunbar-Southlands,2001,719.0
+Dunbar-Southlands,2002,544.0
+Dunbar-Southlands,2003,433.0
+Dunbar-Southlands,2004,367.0
+Dunbar-Southlands,2005,402.0
+Dunbar-Southlands,2006,416.0
+Dunbar-Southlands,2007,522.0
+Dunbar-Southlands,2008,554.0
+Dunbar-Southlands,2009,392.0
+Dunbar-Southlands,2010,476.0
+Dunbar-Southlands,2011,560.0
+Dunbar-Southlands,2012,582.5261350070084
+Dunbar-Southlands,2013,586.6612130691766
+Fairview,1999,3475.0
+Fairview,2000,3076.0
+Fairview,2001,3089.0
+Fairview,2002,2608.0
+Fairview,2003,2369.0
+Fairview,2004,2072.0
+Fairview,2005,2068.0
+Fairview,2006,1740.0
+Fairview,2007,1477.0
+Fairview,2008,1771.0
+Fairview,2009,1609.0
+Fairview,2010,2033.0
+Fairview,2011,1990.0
+Fairview,2012,1937.8027395706981
+Fairview,2013,1897.4374329165096
+Grandview-Woodland,1999,3139.0
+Grandview-Woodland,2000,2665.0
+Grandview-Woodland,2001,2269.0
+Grandview-Woodland,2002,2030.0
+Grandview-Woodland,2003,2060.0
+Grandview-Woodland,2004,1751.0
+Grandview-Woodland,2005,1481.0
+Grandview-Woodland,2006,1455.0
+Grandview-Woodland,2007,1322.0
+Grandview-Woodland,2008,1319.0
+Grandview-Woodland,2009,1598.0
+Grandview-Woodland,2010,1596.0
+Grandview-Woodland,2011,1648.0
+Grandview-Woodland,2012,1600.5657803880745
+Grandview-Woodland,2013,1567.7932806201065
+Hastings-Sunrise,1999,1878.0
+Hastings-Sunrise,2000,1929.0
+Hastings-Sunrise,2001,1514.0
+Hastings-Sunrise,2002,1503.0
+Hastings-Sunrise,2003,1263.0
+Hastings-Sunrise,2004,1203.0
+Hastings-Sunrise,2005,1115.0
+Hastings-Sunrise,2006,1005.0
+Hastings-Sunrise,2007,1032.0
+Hastings-Sunrise,2008,1047.0
+Hastings-Sunrise,2009,850.0
+Hastings-Sunrise,2010,937.0
+Hastings-Sunrise,2011,1102.0
+Hastings-Sunrise,2012,1076.4513396173643
+Hastings-Sunrise,2013,1056.6598366181393
+Kensington-Cedar Cottage,1999,2228.0
+Kensington-Cedar Cottage,2000,2559.0
+Kensington-Cedar Cottage,2001,2175.0
+Kensington-Cedar Cottage,2002,2094.0
+Kensington-Cedar Cottage,2003,1713.0
+Kensington-Cedar Cottage,2004,1610.0
+Kensington-Cedar Cottage,2005,1481.0
+Kensington-Cedar Cottage,2006,1498.0
+Kensington-Cedar Cottage,2007,1302.0
+Kensington-Cedar Cottage,2008,1284.0
+Kensington-Cedar Cottage,2009,1567.0
+Kensington-Cedar Cottage,2010,1663.0
+Kensington-Cedar Cottage,2011,1534.0
+Kensington-Cedar Cottage,2012,1505.0634530447005
+Kensington-Cedar Cottage,2013,1490.66172018302
+Kerrisdale,1999,626.0
+Kerrisdale,2000,834.0
+Kerrisdale,2001,825.0
+Kerrisdale,2002,655.0
+Kerrisdale,2003,474.0
+Kerrisdale,2004,349.0
+Kerrisdale,2005,407.0
+Kerrisdale,2006,379.0
+Kerrisdale,2007,429.0
+Kerrisdale,2008,547.0
+Kerrisdale,2009,356.0
+Kerrisdale,2010,407.0
+Kerrisdale,2011,478.0
+Kerrisdale,2012,489.9929210638748
+Kerrisdale,2013,490.9627779794548
+Killarney,1999,959.0
+Killarney,2000,1158.0
+Killarney,2001,1122.0
+Killarney,2002,967.0
+Killarney,2003,809.0
+Killarney,2004,574.0
+Killarney,2005,639.0
+Killarney,2006,584.0
+Killarney,2007,528.0
+Killarney,2008,643.0
+Killarney,2009,507.0
+Killarney,2010,593.0
+Killarney,2011,574.0
+Killarney,2012,565.994989917605
+Killarney,2013,559.0255124089706
+Kitsilano,1999,2948.0
+Kitsilano,2000,2720.0
+Kitsilano,2001,2543.0
+Kitsilano,2002,2365.0
+Kitsilano,2003,1798.0
+Kitsilano,2004,1602.0
+Kitsilano,2005,1625.0
+Kitsilano,2006,1418.0
+Kitsilano,2007,1315.0
+Kitsilano,2008,1424.0
+Kitsilano,2009,1371.0
+Kitsilano,2010,1356.0
+Kitsilano,2011,1633.0
+Kitsilano,2012,1576.6929292847653
+Kitsilano,2013,1532.201846423856
+Marpole,1999,1233.0
+Marpole,2000,1364.0
+Marpole,2001,1394.0
+Marpole,2002,1008.0
+Marpole,2003,966.0
+Marpole,2004,827.0
+Marpole,2005,760.0
+Marpole,2006,702.0
+Marpole,2007,617.0
+Marpole,2008,703.0
+Marpole,2009,665.0
+Marpole,2010,806.0
+Marpole,2011,791.0
+Marpole,2012,790.6767065023475
+Marpole,2013,790.6363766275371
+Mount Pleasant,1999,2401.0
+Mount Pleasant,2000,2682.0
+Mount Pleasant,2001,2485.0
+Mount Pleasant,2002,2142.0
+Mount Pleasant,2003,1932.0
+Mount Pleasant,2004,2014.0
+Mount Pleasant,2005,1688.0
+Mount Pleasant,2006,1567.0
+Mount Pleasant,2007,1725.0
+Mount Pleasant,2008,1702.0
+Mount Pleasant,2009,1801.0
+Mount Pleasant,2010,2386.0
+Mount Pleasant,2011,2354.0
+Mount Pleasant,2012,2222.8421205658537
+Mount Pleasant,2013,2255.175058262089
+Musqueam,1999,58.0
+Musqueam,2000,80.0
+Musqueam,2001,63.0
+Musqueam,2002,58.0
+Musqueam,2003,29.0
+Musqueam,2004,28.0
+Musqueam,2005,17.0
+Musqueam,2006,23.0
+Musqueam,2007,22.0
+Musqueam,2008,47.0
+Musqueam,2009,31.0
+Musqueam,2010,19.0
+Musqueam,2011,28.0
+Musqueam,2012,29.38366303081795
+Musqueam,2013,28.279382964064354
+OFFSET TO PROTECT PRIVACY,1999,4023.0
+OFFSET TO PROTECT PRIVACY,2000,4218.0
+OFFSET TO PROTECT PRIVACY,2001,4117.0
+OFFSET TO PROTECT PRIVACY,2002,4536.0
+OFFSET TO PROTECT PRIVACY,2003,4512.0
+OFFSET TO PROTECT PRIVACY,2004,4326.0
+OFFSET TO PROTECT PRIVACY,2005,3957.0
+OFFSET TO PROTECT PRIVACY,2006,3804.0
+OFFSET TO PROTECT PRIVACY,2007,3925.0
+OFFSET TO PROTECT PRIVACY,2008,3834.0
+OFFSET TO PROTECT PRIVACY,2009,3726.0
+OFFSET TO PROTECT PRIVACY,2010,3220.0
+OFFSET TO PROTECT PRIVACY,2011,3293.0
+OFFSET TO PROTECT PRIVACY,2012,3349.038394837276
+OFFSET TO PROTECT PRIVACY,2013,3317.6104510953455
+Oakridge,1999,657.0
+Oakridge,2000,727.0
+Oakridge,2001,700.0
+Oakridge,2002,618.0
+Oakridge,2003,441.0
+Oakridge,2004,433.0
+Oakridge,2005,484.0
+Oakridge,2006,551.0
+Oakridge,2007,527.0
+Oakridge,2008,553.0
+Oakridge,2009,469.0
+Oakridge,2010,516.0
+Oakridge,2011,545.0
+Oakridge,2012,539.2674060035773
+Oakridge,2013,535.3140434407562
+Renfrew-Collingwood,1999,2324.0
+Renfrew-Collingwood,2000,2671.0
+Renfrew-Collingwood,2001,2356.0
+Renfrew-Collingwood,2002,2394.0
+Renfrew-Collingwood,2003,1762.0
+Renfrew-Collingwood,2004,1706.0
+Renfrew-Collingwood,2005,1577.0
+Renfrew-Collingwood,2006,1669.0
+Renfrew-Collingwood,2007,1486.0
+Renfrew-Collingwood,2008,1505.0
+Renfrew-Collingwood,2009,1358.0
+Renfrew-Collingwood,2010,1654.0
+Renfrew-Collingwood,2011,1630.0
+Renfrew-Collingwood,2012,1673.8283676031322
+Renfrew-Collingwood,2013,1636.1882466451116
+Riley Park,1999,1136.0
+Riley Park,2000,1193.0
+Riley Park,2001,1142.0
+Riley Park,2002,980.0
+Riley Park,2003,734.0
+Riley Park,2004,771.0
+Riley Park,2005,711.0
+Riley Park,2006,685.0
+Riley Park,2007,679.0
+Riley Park,2008,718.0
+Riley Park,2009,791.0
+Riley Park,2010,790.0
+Riley Park,2011,834.0
+Riley Park,2012,844.154612656315
+Riley Park,2013,838.435173316205
+Shaughnessy,1999,518.0
+Shaughnessy,2000,545.0
+Shaughnessy,2001,555.0
+Shaughnessy,2002,336.0
+Shaughnessy,2003,334.0
+Shaughnessy,2004,270.0
+Shaughnessy,2005,239.0
+Shaughnessy,2006,256.0
+Shaughnessy,2007,350.0
+Shaughnessy,2008,349.0
+Shaughnessy,2009,275.0
+Shaughnessy,2010,376.0
+Shaughnessy,2011,370.0
+Shaughnessy,2012,345.5915306577573
+Shaughnessy,2013,362.15204710962996
+South Cambie,1999,527.0
+South Cambie,2000,468.0
+South Cambie,2001,452.0
+South Cambie,2002,348.0
+South Cambie,2003,285.0
+South Cambie,2004,266.0
+South Cambie,2005,324.0
+South Cambie,2006,294.0
+South Cambie,2007,274.0
+South Cambie,2008,299.0
+South Cambie,2009,272.0
+South Cambie,2010,435.0
+South Cambie,2011,414.0
+South Cambie,2012,423.0132241808783
+South Cambie,2013,417.5278687661836
+Stanley Park,1999,423.0
+Stanley Park,2000,381.0
+Stanley Park,2001,371.0
+Stanley Park,2002,333.0
+Stanley Park,2003,223.0
+Stanley Park,2004,282.0
+Stanley Park,2005,266.0
+Stanley Park,2006,191.0
+Stanley Park,2007,170.0
+Stanley Park,2008,196.0
+Stanley Park,2009,277.0
+Stanley Park,2010,206.0
+Stanley Park,2011,213.0
+Stanley Park,2012,217.70146484230548
+Stanley Park,2013,220.76383005157393
+Strathcona,1999,1797.0
+Strathcona,2000,1766.0
+Strathcona,2001,1670.0
+Strathcona,2002,1504.0
+Strathcona,2003,1459.0
+Strathcona,2004,1375.0
+Strathcona,2005,1201.0
+Strathcona,2006,1147.0
+Strathcona,2007,1101.0
+Strathcona,2008,1214.0
+Strathcona,2009,1107.0
+Strathcona,2010,1443.0
+Strathcona,2011,1497.0
+Strathcona,2012,1509.203721675714
+Strathcona,2013,1518.3390753108565
+Sunset,1999,1912.0
+Sunset,2000,1824.0
+Sunset,2001,1694.0
+Sunset,2002,1658.0
+Sunset,2003,1391.0
+Sunset,2004,1105.0
+Sunset,2005,1060.0
+Sunset,2006,1055.0
+Sunset,2007,812.0
+Sunset,2008,980.0
+Sunset,2009,860.0
+Sunset,2010,816.0
+Sunset,2011,824.0
+Sunset,2012,794.1086515583182
+Sunset,2013,768.2850296720346
+Victoria-Fraserview,1999,1098.0
+Victoria-Fraserview,2000,1262.0
+Victoria-Fraserview,2001,1146.0
+Victoria-Fraserview,2002,907.0
+Victoria-Fraserview,2003,671.0
+Victoria-Fraserview,2004,618.0
+Victoria-Fraserview,2005,622.0
+Victoria-Fraserview,2006,603.0
+Victoria-Fraserview,2007,657.0
+Victoria-Fraserview,2008,556.0
+Victoria-Fraserview,2009,548.0
+Victoria-Fraserview,2010,608.0
+Victoria-Fraserview,2011,587.0
+Victoria-Fraserview,2012,557.6732761181837
+Victoria-Fraserview,2013,544.5129178606559
+West End,1999,4772.0
+West End,2000,4121.0
+West End,2001,3306.0
+West End,2002,3319.0
+West End,2003,3012.0
+West End,2004,2996.0
+West End,2005,2381.0
+West End,2006,2142.0
+West End,2007,1934.0
+West End,2008,1893.0
+West End,2009,2087.0
+West End,2010,2415.0
+West End,2011,2576.0
+West End,2012,2631.0584930795617
+West End,2013,2658.098570913513
+West Point Grey,1999,551.0
+West Point Grey,2000,651.0
+West Point Grey,2001,616.0
+West Point Grey,2002,457.0
+West Point Grey,2003,367.0
+West Point Grey,2004,290.0
+West Point Grey,2005,364.0
+West Point Grey,2006,331.0
+West Point Grey,2007,317.0
+West Point Grey,2008,311.0
+West Point Grey,2009,279.0
+West Point Grey,2010,365.0
+West Point Grey,2011,363.0
+West Point Grey,2012,356.2634088293089
+West Point Grey,2013,350.84465774261093

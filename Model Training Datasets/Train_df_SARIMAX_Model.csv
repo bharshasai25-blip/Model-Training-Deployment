@@ -1,0 +1,326 @@
+NEIGHBOURHOOD,YEAR,Total_Yearly_Crime_Count_per_Neighbourhood
+Arbutus Ridge,1999,616
+Arbutus Ridge,2000,648
+Arbutus Ridge,2001,619
+Arbutus Ridge,2002,441
+Arbutus Ridge,2003,361
+Arbutus Ridge,2004,335
+Arbutus Ridge,2005,378
+Arbutus Ridge,2006,322
+Arbutus Ridge,2007,302
+Arbutus Ridge,2008,338
+Arbutus Ridge,2009,300
+Arbutus Ridge,2010,407
+Arbutus Ridge,2011,364
+Central Business District,1999,9815
+Central Business District,2000,8744
+Central Business District,2001,7668
+Central Business District,2002,8480
+Central Business District,2003,8251
+Central Business District,2004,8209
+Central Business District,2005,6893
+Central Business District,2006,5831
+Central Business District,2007,5722
+Central Business District,2008,5409
+Central Business District,2009,5938
+Central Business District,2010,7114
+Central Business District,2011,8097
+Dunbar-Southlands,1999,772
+Dunbar-Southlands,2000,949
+Dunbar-Southlands,2001,719
+Dunbar-Southlands,2002,544
+Dunbar-Southlands,2003,433
+Dunbar-Southlands,2004,367
+Dunbar-Southlands,2005,402
+Dunbar-Southlands,2006,416
+Dunbar-Southlands,2007,522
+Dunbar-Southlands,2008,554
+Dunbar-Southlands,2009,392
+Dunbar-Southlands,2010,476
+Dunbar-Southlands,2011,560
+Fairview,1999,3475
+Fairview,2000,3076
+Fairview,2001,3089
+Fairview,2002,2608
+Fairview,2003,2369
+Fairview,2004,2072
+Fairview,2005,2068
+Fairview,2006,1740
+Fairview,2007,1477
+Fairview,2008,1771
+Fairview,2009,1609
+Fairview,2010,2033
+Fairview,2011,1990
+Grandview-Woodland,1999,3139
+Grandview-Woodland,2000,2665
+Grandview-Woodland,2001,2269
+Grandview-Woodland,2002,2030
+Grandview-Woodland,2003,2060
+Grandview-Woodland,2004,1751
+Grandview-Woodland,2005,1481
+Grandview-Woodland,2006,1455
+Grandview-Woodland,2007,1322
+Grandview-Woodland,2008,1319
+Grandview-Woodland,2009,1598
+Grandview-Woodland,2010,1596
+Grandview-Woodland,2011,1648
+Hastings-Sunrise,1999,1878
+Hastings-Sunrise,2000,1929
+Hastings-Sunrise,2001,1514
+Hastings-Sunrise,2002,1503
+Hastings-Sunrise,2003,1263
+Hastings-Sunrise,2004,1203
+Hastings-Sunrise,2005,1115
+Hastings-Sunrise,2006,1005
+Hastings-Sunrise,2007,1032
+Hastings-Sunrise,2008,1047
+Hastings-Sunrise,2009,850
+Hastings-Sunrise,2010,937
+Hastings-Sunrise,2011,1102
+Kensington-Cedar Cottage,1999,2228
+Kensington-Cedar Cottage,2000,2559
+Kensington-Cedar Cottage,2001,2175
+Kensington-Cedar Cottage,2002,2094
+Kensington-Cedar Cottage,2003,1713
+Kensington-Cedar Cottage,2004,1610
+Kensington-Cedar Cottage,2005,1481
+Kensington-Cedar Cottage,2006,1498
+Kensington-Cedar Cottage,2007,1302
+Kensington-Cedar Cottage,2008,1284
+Kensington-Cedar Cottage,2009,1567
+Kensington-Cedar Cottage,2010,1663
+Kensington-Cedar Cottage,2011,1534
+Kerrisdale,1999,626
+Kerrisdale,2000,834
+Kerrisdale,2001,825
+Kerrisdale,2002,655
+Kerrisdale,2003,474
+Kerrisdale,2004,349
+Kerrisdale,2005,407
+Kerrisdale,2006,379
+Kerrisdale,2007,429
+Kerrisdale,2008,547
+Kerrisdale,2009,356
+Kerrisdale,2010,407
+Kerrisdale,2011,478
+Killarney,1999,959
+Killarney,2000,1158
+Killarney,2001,1122
+Killarney,2002,967
+Killarney,2003,809
+Killarney,2004,574
+Killarney,2005,639
+Killarney,2006,584
+Killarney,2007,528
+Killarney,2008,643
+Killarney,2009,507
+Killarney,2010,593
+Killarney,2011,574
+Kitsilano,1999,2948
+Kitsilano,2000,2720
+Kitsilano,2001,2543
+Kitsilano,2002,2365
+Kitsilano,2003,1798
+Kitsilano,2004,1602
+Kitsilano,2005,1625
+Kitsilano,2006,1418
+Kitsilano,2007,1315
+Kitsilano,2008,1424
+Kitsilano,2009,1371
+Kitsilano,2010,1356
+Kitsilano,2011,1633
+Marpole,1999,1233
+Marpole,2000,1364
+Marpole,2001,1394
+Marpole,2002,1008
+Marpole,2003,966
+Marpole,2004,827
+Marpole,2005,760
+Marpole,2006,702
+Marpole,2007,617
+Marpole,2008,703
+Marpole,2009,665
+Marpole,2010,806
+Marpole,2011,791
+Mount Pleasant,1999,2401
+Mount Pleasant,2000,2682
+Mount Pleasant,2001,2485
+Mount Pleasant,2002,2142
+Mount Pleasant,2003,1932
+Mount Pleasant,2004,2014
+Mount Pleasant,2005,1688
+Mount Pleasant,2006,1567
+Mount Pleasant,2007,1725
+Mount Pleasant,2008,1702
+Mount Pleasant,2009,1801
+Mount Pleasant,2010,2386
+Mount Pleasant,2011,2354
+Musqueam,1999,58
+Musqueam,2000,80
+Musqueam,2001,63
+Musqueam,2002,58
+Musqueam,2003,29
+Musqueam,2004,28
+Musqueam,2005,17
+Musqueam,2006,23
+Musqueam,2007,22
+Musqueam,2008,47
+Musqueam,2009,31
+Musqueam,2010,19
+Musqueam,2011,28
+OFFSET TO PROTECT PRIVACY,1999,4023
+OFFSET TO PROTECT PRIVACY,2000,4218
+OFFSET TO PROTECT PRIVACY,2001,4117
+OFFSET TO PROTECT PRIVACY,2002,4536
+OFFSET TO PROTECT PRIVACY,2003,4512
+OFFSET TO PROTECT PRIVACY,2004,4326
+OFFSET TO PROTECT PRIVACY,2005,3957
+OFFSET TO PROTECT PRIVACY,2006,3804
+OFFSET TO PROTECT PRIVACY,2007,3925
+OFFSET TO PROTECT PRIVACY,2008,3834
+OFFSET TO PROTECT PRIVACY,2009,3726
+OFFSET TO PROTECT PRIVACY,2010,3220
+OFFSET TO PROTECT PRIVACY,2011,3293
+Oakridge,1999,657
+Oakridge,2000,727
+Oakridge,2001,700
+Oakridge,2002,618
+Oakridge,2003,441
+Oakridge,2004,433
+Oakridge,2005,484
+Oakridge,2006,551
+Oakridge,2007,527
+Oakridge,2008,553
+Oakridge,2009,469
+Oakridge,2010,516
+Oakridge,2011,545
+Renfrew-Collingwood,1999,2324
+Renfrew-Collingwood,2000,2671
+Renfrew-Collingwood,2001,2356
+Renfrew-Collingwood,2002,2394
+Renfrew-Collingwood,2003,1762
+Renfrew-Collingwood,2004,1706
+Renfrew-Collingwood,2005,1577
+Renfrew-Collingwood,2006,1669
+Renfrew-Collingwood,2007,1486
+Renfrew-Collingwood,2008,1505
+Renfrew-Collingwood,2009,1358
+Renfrew-Collingwood,2010,1654
+Renfrew-Collingwood,2011,1630
+Riley Park,1999,1136
+Riley Park,2000,1193
+Riley Park,2001,1142
+Riley Park,2002,980
+Riley Park,2003,734
+Riley Park,2004,771
+Riley Park,2005,711
+Riley Park,2006,685
+Riley Park,2007,679
+Riley Park,2008,718
+Riley Park,2009,791
+Riley Park,2010,790
+Riley Park,2011,834
+Shaughnessy,1999,518
+Shaughnessy,2000,545
+Shaughnessy,2001,555
+Shaughnessy,2002,336
+Shaughnessy,2003,334
+Shaughnessy,2004,270
+Shaughnessy,2005,239
+Shaughnessy,2006,256
+Shaughnessy,2007,350
+Shaughnessy,2008,349
+Shaughnessy,2009,275
+Shaughnessy,2010,376
+Shaughnessy,2011,370
+South Cambie,1999,527
+South Cambie,2000,468
+South Cambie,2001,452
+South Cambie,2002,348
+South Cambie,2003,285
+South Cambie,2004,266
+South Cambie,2005,324
+South Cambie,2006,294
+South Cambie,2007,274
+South Cambie,2008,299
+South Cambie,2009,272
+South Cambie,2010,435
+South Cambie,2011,414
+Stanley Park,1999,423
+Stanley Park,2000,381
+Stanley Park,2001,371
+Stanley Park,2002,333
+Stanley Park,2003,223
+Stanley Park,2004,282
+Stanley Park,2005,266
+Stanley Park,2006,191
+Stanley Park,2007,170
+Stanley Park,2008,196
+Stanley Park,2009,277
+Stanley Park,2010,206
+Stanley Park,2011,213
+Strathcona,1999,1797
+Strathcona,2000,1766
+Strathcona,2001,1670
+Strathcona,2002,1504
+Strathcona,2003,1459
+Strathcona,2004,1375
+Strathcona,2005,1201
+Strathcona,2006,1147
+Strathcona,2007,1101
+Strathcona,2008,1214
+Strathcona,2009,1107
+Strathcona,2010,1443
+Strathcona,2011,1497
+Sunset,1999,1912
+Sunset,2000,1824
+Sunset,2001,1694
+Sunset,2002,1658
+Sunset,2003,1391
+Sunset,2004,1105
+Sunset,2005,1060
+Sunset,2006,1055
+Sunset,2007,812
+Sunset,2008,980
+Sunset,2009,860
+Sunset,2010,816
+Sunset,2011,824
+Victoria-Fraserview,1999,1098
+Victoria-Fraserview,2000,1262
+Victoria-Fraserview,2001,1146
+Victoria-Fraserview,2002,907
+Victoria-Fraserview,2003,671
+Victoria-Fraserview,2004,618
+Victoria-Fraserview,2005,622
+Victoria-Fraserview,2006,603
+Victoria-Fraserview,2007,657
+Victoria-Fraserview,2008,556
+Victoria-Fraserview,2009,548
+Victoria-Fraserview,2010,608
+Victoria-Fraserview,2011,587
+West End,1999,4772
+West End,2000,4121
+West End,2001,3306
+West End,2002,3319
+West End,2003,3012
+West End,2004,2996
+West End,2005,2381
+West End,2006,2142
+West End,2007,1934
+West End,2008,1893
+West End,2009,2087
+West End,2010,2415
+West End,2011,2576
+West Point Grey,1999,551
+West Point Grey,2000,651
+West Point Grey,2001,616
+West Point Grey,2002,457
+West Point Grey,2003,367
+West Point Grey,2004,290
+West Point Grey,2005,364
+West Point Grey,2006,331
+West Point Grey,2007,317
+West Point Grey,2008,311
+West Point Grey,2009,279
+West Point Grey,2010,365
+West Point Grey,2011,363

@@ -1,0 +1,1621 @@
+TYPE,YEAR,MONTH,Month_name,Crime_Count
+Break and Enter Commercial,1999,1,Jan,303.0
+Break and Enter Commercial,1999,2,Feb,254.0
+Break and Enter Commercial,1999,3,Mar,292.0
+Break and Enter Commercial,1999,4,Apr,266.0
+Break and Enter Commercial,1999,5,May,291.0
+Break and Enter Commercial,1999,6,Jun,306.0
+Break and Enter Commercial,1999,7,Jul,252.0
+Break and Enter Commercial,1999,8,Aug,241.0
+Break and Enter Commercial,1999,9,Sep,209.0
+Break and Enter Commercial,1999,10,Oct,306.0
+Break and Enter Commercial,1999,11,Nov,263.0
+Break and Enter Commercial,1999,12,Dec,214.0
+Break and Enter Commercial,2000,1,Jan,216.0
+Break and Enter Commercial,2000,2,Feb,256.0
+Break and Enter Commercial,2000,3,Mar,275.0
+Break and Enter Commercial,2000,4,Apr,289.0
+Break and Enter Commercial,2000,5,May,254.0
+Break and Enter Commercial,2000,6,Jun,258.0
+Break and Enter Commercial,2000,7,Jul,237.0
+Break and Enter Commercial,2000,8,Aug,266.0
+Break and Enter Commercial,2000,9,Sep,378.0
+Break and Enter Commercial,2000,10,Oct,318.0
+Break and Enter Commercial,2000,11,Nov,271.0
+Break and Enter Commercial,2000,12,Dec,265.0
+Break and Enter Commercial,2001,1,Jan,193.0
+Break and Enter Commercial,2001,2,Feb,211.0
+Break and Enter Commercial,2001,3,Mar,204.0
+Break and Enter Commercial,2001,4,Apr,154.0
+Break and Enter Commercial,2001,5,May,201.0
+Break and Enter Commercial,2001,6,Jun,227.0
+Break and Enter Commercial,2001,7,Jul,249.0
+Break and Enter Commercial,2001,8,Aug,221.0
+Break and Enter Commercial,2001,9,Sep,219.0
+Break and Enter Commercial,2001,10,Oct,249.0
+Break and Enter Commercial,2001,11,Nov,276.0
+Break and Enter Commercial,2001,12,Dec,235.0
+Break and Enter Commercial,2002,1,Jan,277.0
+Break and Enter Commercial,2002,2,Feb,209.0
+Break and Enter Commercial,2002,3,Mar,241.0
+Break and Enter Commercial,2002,4,Apr,241.0
+Break and Enter Commercial,2002,5,May,271.0
+Break and Enter Commercial,2002,6,Jun,224.0
+Break and Enter Commercial,2002,7,Jul,238.0
+Break and Enter Commercial,2002,8,Aug,223.0
+Break and Enter Commercial,2002,9,Sep,201.0
+Break and Enter Commercial,2002,10,Oct,233.0
+Break and Enter Commercial,2002,11,Nov,206.0
+Break and Enter Commercial,2002,12,Dec,280.0
+Break and Enter Commercial,2003,1,Jan,290.0
+Break and Enter Commercial,2003,2,Feb,174.0
+Break and Enter Commercial,2003,3,Mar,214.0
+Break and Enter Commercial,2003,4,Apr,192.0
+Break and Enter Commercial,2003,5,May,187.0
+Break and Enter Commercial,2003,6,Jun,210.0
+Break and Enter Commercial,2003,7,Jul,206.0
+Break and Enter Commercial,2003,8,Aug,246.0
+Break and Enter Commercial,2003,9,Sep,216.0
+Break and Enter Commercial,2003,10,Oct,172.0
+Break and Enter Commercial,2003,11,Nov,178.0
+Break and Enter Commercial,2003,12,Dec,151.0
+Break and Enter Commercial,2004,1,Jan,201.0
+Break and Enter Commercial,2004,2,Feb,192.0
+Break and Enter Commercial,2004,3,Mar,243.0
+Break and Enter Commercial,2004,4,Apr,186.0
+Break and Enter Commercial,2004,5,May,196.0
+Break and Enter Commercial,2004,6,Jun,173.0
+Break and Enter Commercial,2004,7,Jul,188.0
+Break and Enter Commercial,2004,8,Aug,201.0
+Break and Enter Commercial,2004,9,Sep,159.0
+Break and Enter Commercial,2004,10,Oct,179.0
+Break and Enter Commercial,2004,11,Nov,139.0
+Break and Enter Commercial,2004,12,Dec,167.0
+Break and Enter Commercial,2005,1,Jan,179.0
+Break and Enter Commercial,2005,2,Feb,152.0
+Break and Enter Commercial,2005,3,Mar,151.0
+Break and Enter Commercial,2005,4,Apr,136.0
+Break and Enter Commercial,2005,5,May,185.0
+Break and Enter Commercial,2005,6,Jun,154.0
+Break and Enter Commercial,2005,7,Jul,142.0
+Break and Enter Commercial,2005,8,Aug,157.0
+Break and Enter Commercial,2005,9,Sep,152.0
+Break and Enter Commercial,2005,10,Oct,167.0
+Break and Enter Commercial,2005,11,Nov,155.0
+Break and Enter Commercial,2005,12,Dec,128.0
+Break and Enter Commercial,2006,1,Jan,126.0
+Break and Enter Commercial,2006,2,Feb,109.0
+Break and Enter Commercial,2006,3,Mar,159.0
+Break and Enter Commercial,2006,4,Apr,143.0
+Break and Enter Commercial,2006,5,May,139.0
+Break and Enter Commercial,2006,6,Jun,132.0
+Break and Enter Commercial,2006,7,Jul,122.0
+Break and Enter Commercial,2006,8,Aug,174.0
+Break and Enter Commercial,2006,9,Sep,150.0
+Break and Enter Commercial,2006,10,Oct,150.0
+Break and Enter Commercial,2006,11,Nov,110.0
+Break and Enter Commercial,2006,12,Dec,142.0
+Break and Enter Commercial,2007,1,Jan,149.0
+Break and Enter Commercial,2007,2,Feb,143.0
+Break and Enter Commercial,2007,3,Mar,139.0
+Break and Enter Commercial,2007,4,Apr,118.0
+Break and Enter Commercial,2007,5,May,124.0
+Break and Enter Commercial,2007,6,Jun,303.0
+Break and Enter Commercial,2007,7,Jul,146.0
+Break and Enter Commercial,2007,8,Aug,150.0
+Break and Enter Commercial,2007,9,Sep,139.0
+Break and Enter Commercial,2007,10,Oct,122.0
+Break and Enter Commercial,2007,11,Nov,92.0
+Break and Enter Commercial,2007,12,Dec,124.0
+Break and Enter Commercial,2008,1,Jan,156.0
+Break and Enter Commercial,2008,2,Feb,118.0
+Break and Enter Commercial,2008,3,Mar,165.0
+Break and Enter Commercial,2008,4,Apr,155.0
+Break and Enter Commercial,2008,5,May,133.0
+Break and Enter Commercial,2008,6,Jun,136.0
+Break and Enter Commercial,2008,7,Jul,105.0
+Break and Enter Commercial,2008,8,Aug,114.0
+Break and Enter Commercial,2008,9,Sep,122.0
+Break and Enter Commercial,2008,10,Oct,145.0
+Break and Enter Commercial,2008,11,Nov,172.0
+Break and Enter Commercial,2008,12,Dec,166.0
+Break and Enter Commercial,2009,1,Jan,136.0
+Break and Enter Commercial,2009,2,Feb,155.0
+Break and Enter Commercial,2009,3,Mar,195.0
+Break and Enter Commercial,2009,4,Apr,177.0
+Break and Enter Commercial,2009,5,May,116.0
+Break and Enter Commercial,2009,6,Jun,153.0
+Break and Enter Commercial,2009,7,Jul,134.0
+Break and Enter Commercial,2009,8,Aug,122.0
+Break and Enter Commercial,2009,9,Sep,117.0
+Break and Enter Commercial,2009,10,Oct,137.0
+Break and Enter Commercial,2009,11,Nov,152.0
+Break and Enter Commercial,2009,12,Dec,180.0
+Break and Enter Commercial,2010,1,Jan,185.0
+Break and Enter Commercial,2010,2,Feb,163.0
+Break and Enter Commercial,2010,3,Mar,184.0
+Break and Enter Commercial,2010,4,Apr,199.0
+Break and Enter Commercial,2010,5,May,195.0
+Break and Enter Commercial,2010,6,Jun,168.0
+Break and Enter Commercial,2010,7,Jul,160.0
+Break and Enter Commercial,2010,8,Aug,170.0
+Break and Enter Commercial,2010,9,Sep,213.0
+Break and Enter Commercial,2010,10,Oct,200.0
+Break and Enter Commercial,2010,11,Nov,205.0
+Break and Enter Commercial,2010,12,Dec,202.0
+Break and Enter Commercial,2011,1,Jan,228.0
+Break and Enter Commercial,2011,2,Feb,187.0
+Break and Enter Commercial,2011,3,Mar,192.0
+Break and Enter Commercial,2011,4,Apr,179.0
+Break and Enter Commercial,2011,5,May,188.0
+Break and Enter Commercial,2011,6,Jun,212.0
+Break and Enter Commercial,2011,7,Jul,215.0
+Break and Enter Commercial,2011,8,Aug,200.0
+Break and Enter Commercial,2011,9,Sep,189.0
+Break and Enter Commercial,2011,10,Oct,234.0
+Break and Enter Commercial,2011,11,Nov,206.0
+Break and Enter Commercial,2011,12,Dec,227.0
+Break and Enter Residential/Other,1999,1,Jan,644.0
+Break and Enter Residential/Other,1999,2,Feb,507.0
+Break and Enter Residential/Other,1999,3,Mar,515.0
+Break and Enter Residential/Other,1999,4,Apr,608.0
+Break and Enter Residential/Other,1999,5,May,565.0
+Break and Enter Residential/Other,1999,6,Jun,531.0
+Break and Enter Residential/Other,1999,7,Jul,535.0
+Break and Enter Residential/Other,1999,8,Aug,502.0
+Break and Enter Residential/Other,1999,9,Sep,631.0
+Break and Enter Residential/Other,1999,10,Oct,642.0
+Break and Enter Residential/Other,1999,11,Nov,615.0
+Break and Enter Residential/Other,1999,12,Dec,588.0
+Break and Enter Residential/Other,2000,1,Jan,584.0
+Break and Enter Residential/Other,2000,2,Feb,524.0
+Break and Enter Residential/Other,2000,3,Mar,542.0
+Break and Enter Residential/Other,2000,4,Apr,553.0
+Break and Enter Residential/Other,2000,5,May,559.0
+Break and Enter Residential/Other,2000,6,Jun,516.0
+Break and Enter Residential/Other,2000,7,Jul,435.0
+Break and Enter Residential/Other,2000,8,Aug,517.0
+Break and Enter Residential/Other,2000,9,Sep,563.0
+Break and Enter Residential/Other,2000,10,Oct,612.0
+Break and Enter Residential/Other,2000,11,Nov,580.0
+Break and Enter Residential/Other,2000,12,Dec,553.0
+Break and Enter Residential/Other,2001,1,Jan,554.0
+Break and Enter Residential/Other,2001,2,Feb,430.0
+Break and Enter Residential/Other,2001,3,Mar,491.0
+Break and Enter Residential/Other,2001,4,Apr,469.0
+Break and Enter Residential/Other,2001,5,May,524.0
+Break and Enter Residential/Other,2001,6,Jun,483.0
+Break and Enter Residential/Other,2001,7,Jul,430.0
+Break and Enter Residential/Other,2001,8,Aug,429.0
+Break and Enter Residential/Other,2001,9,Sep,455.0
+Break and Enter Residential/Other,2001,10,Oct,476.0
+Break and Enter Residential/Other,2001,11,Nov,406.0
+Break and Enter Residential/Other,2001,12,Dec,395.0
+Break and Enter Residential/Other,2002,1,Jan,482.0
+Break and Enter Residential/Other,2002,2,Feb,400.0
+Break and Enter Residential/Other,2002,3,Mar,466.0
+Break and Enter Residential/Other,2002,4,Apr,391.0
+Break and Enter Residential/Other,2002,5,May,404.0
+Break and Enter Residential/Other,2002,6,Jun,462.0
+Break and Enter Residential/Other,2002,7,Jul,492.0
+Break and Enter Residential/Other,2002,8,Aug,436.0
+Break and Enter Residential/Other,2002,9,Sep,488.0
+Break and Enter Residential/Other,2002,10,Oct,600.0
+Break and Enter Residential/Other,2002,11,Nov,510.0
+Break and Enter Residential/Other,2002,12,Dec,543.0
+Break and Enter Residential/Other,2003,1,Jan,486.0
+Break and Enter Residential/Other,2003,2,Feb,381.0
+Break and Enter Residential/Other,2003,3,Mar,397.0
+Break and Enter Residential/Other,2003,4,Apr,408.0
+Break and Enter Residential/Other,2003,5,May,414.0
+Break and Enter Residential/Other,2003,6,Jun,456.0
+Break and Enter Residential/Other,2003,7,Jul,436.0
+Break and Enter Residential/Other,2003,8,Aug,455.0
+Break and Enter Residential/Other,2003,9,Sep,365.0
+Break and Enter Residential/Other,2003,10,Oct,386.0
+Break and Enter Residential/Other,2003,11,Nov,454.0
+Break and Enter Residential/Other,2003,12,Dec,358.0
+Break and Enter Residential/Other,2004,1,Jan,432.0
+Break and Enter Residential/Other,2004,2,Feb,404.0
+Break and Enter Residential/Other,2004,3,Mar,375.0
+Break and Enter Residential/Other,2004,4,Apr,337.0
+Break and Enter Residential/Other,2004,5,May,368.0
+Break and Enter Residential/Other,2004,6,Jun,378.0
+Break and Enter Residential/Other,2004,7,Jul,364.0
+Break and Enter Residential/Other,2004,8,Aug,353.0
+Break and Enter Residential/Other,2004,9,Sep,385.0
+Break and Enter Residential/Other,2004,10,Oct,376.0
+Break and Enter Residential/Other,2004,11,Nov,321.0
+Break and Enter Residential/Other,2004,12,Dec,339.0
+Break and Enter Residential/Other,2005,1,Jan,370.0
+Break and Enter Residential/Other,2005,2,Feb,317.0
+Break and Enter Residential/Other,2005,3,Mar,267.0
+Break and Enter Residential/Other,2005,4,Apr,256.0
+Break and Enter Residential/Other,2005,5,May,263.0
+Break and Enter Residential/Other,2005,6,Jun,224.0
+Break and Enter Residential/Other,2005,7,Jul,230.0
+Break and Enter Residential/Other,2005,8,Aug,285.0
+Break and Enter Residential/Other,2005,9,Sep,325.0
+Break and Enter Residential/Other,2005,10,Oct,338.0
+Break and Enter Residential/Other,2005,11,Nov,339.0
+Break and Enter Residential/Other,2005,12,Dec,283.0
+Break and Enter Residential/Other,2006,1,Jan,255.0
+Break and Enter Residential/Other,2006,2,Feb,246.0
+Break and Enter Residential/Other,2006,3,Mar,302.0
+Break and Enter Residential/Other,2006,4,Apr,316.0
+Break and Enter Residential/Other,2006,5,May,274.0
+Break and Enter Residential/Other,2006,6,Jun,276.0
+Break and Enter Residential/Other,2006,7,Jul,243.0
+Break and Enter Residential/Other,2006,8,Aug,275.0
+Break and Enter Residential/Other,2006,9,Sep,221.0
+Break and Enter Residential/Other,2006,10,Oct,282.0
+Break and Enter Residential/Other,2006,11,Nov,301.0
+Break and Enter Residential/Other,2006,12,Dec,279.0
+Break and Enter Residential/Other,2007,1,Jan,323.0
+Break and Enter Residential/Other,2007,2,Feb,215.0
+Break and Enter Residential/Other,2007,3,Mar,296.0
+Break and Enter Residential/Other,2007,4,Apr,263.0
+Break and Enter Residential/Other,2007,5,May,263.0
+Break and Enter Residential/Other,2007,6,Jun,249.0
+Break and Enter Residential/Other,2007,7,Jul,235.0
+Break and Enter Residential/Other,2007,8,Aug,221.0
+Break and Enter Residential/Other,2007,9,Sep,300.0
+Break and Enter Residential/Other,2007,10,Oct,253.0
+Break and Enter Residential/Other,2007,11,Nov,308.0
+Break and Enter Residential/Other,2007,12,Dec,305.0
+Break and Enter Residential/Other,2008,1,Jan,254.0
+Break and Enter Residential/Other,2008,2,Feb,233.0
+Break and Enter Residential/Other,2008,3,Mar,231.0
+Break and Enter Residential/Other,2008,4,Apr,242.0
+Break and Enter Residential/Other,2008,5,May,236.0
+Break and Enter Residential/Other,2008,6,Jun,240.0
+Break and Enter Residential/Other,2008,7,Jul,237.0
+Break and Enter Residential/Other,2008,8,Aug,324.0
+Break and Enter Residential/Other,2008,9,Sep,327.0
+Break and Enter Residential/Other,2008,10,Oct,310.0
+Break and Enter Residential/Other,2008,11,Nov,329.0
+Break and Enter Residential/Other,2008,12,Dec,348.0
+Break and Enter Residential/Other,2009,1,Jan,325.0
+Break and Enter Residential/Other,2009,2,Feb,215.0
+Break and Enter Residential/Other,2009,3,Mar,198.0
+Break and Enter Residential/Other,2009,4,Apr,251.0
+Break and Enter Residential/Other,2009,5,May,244.0
+Break and Enter Residential/Other,2009,6,Jun,237.0
+Break and Enter Residential/Other,2009,7,Jul,281.0
+Break and Enter Residential/Other,2009,8,Aug,266.0
+Break and Enter Residential/Other,2009,9,Sep,263.0
+Break and Enter Residential/Other,2009,10,Oct,227.0
+Break and Enter Residential/Other,2009,11,Nov,274.0
+Break and Enter Residential/Other,2009,12,Dec,244.0
+Break and Enter Residential/Other,2010,1,Jan,249.0
+Break and Enter Residential/Other,2010,2,Feb,211.0
+Break and Enter Residential/Other,2010,3,Mar,248.0
+Break and Enter Residential/Other,2010,4,Apr,233.0
+Break and Enter Residential/Other,2010,5,May,262.0
+Break and Enter Residential/Other,2010,6,Jun,254.0
+Break and Enter Residential/Other,2010,7,Jul,269.0
+Break and Enter Residential/Other,2010,8,Aug,265.0
+Break and Enter Residential/Other,2010,9,Sep,212.0
+Break and Enter Residential/Other,2010,10,Oct,286.0
+Break and Enter Residential/Other,2010,11,Nov,257.0
+Break and Enter Residential/Other,2010,12,Dec,298.0
+Break and Enter Residential/Other,2011,1,Jan,294.0
+Break and Enter Residential/Other,2011,2,Feb,210.0
+Break and Enter Residential/Other,2011,3,Mar,219.0
+Break and Enter Residential/Other,2011,4,Apr,187.0
+Break and Enter Residential/Other,2011,5,May,231.0
+Break and Enter Residential/Other,2011,6,Jun,237.0
+Break and Enter Residential/Other,2011,7,Jul,277.0
+Break and Enter Residential/Other,2011,8,Aug,240.0
+Break and Enter Residential/Other,2011,9,Sep,251.0
+Break and Enter Residential/Other,2011,10,Oct,291.0
+Break and Enter Residential/Other,2011,11,Nov,307.0
+Break and Enter Residential/Other,2011,12,Dec,377.0
+Mischief,1999,1,Jan,551.0
+Mischief,1999,2,Feb,484.0
+Mischief,1999,3,Mar,575.0
+Mischief,1999,4,Apr,621.0
+Mischief,1999,5,May,590.0
+Mischief,1999,6,Jun,570.0
+Mischief,1999,7,Jul,555.0
+Mischief,1999,8,Aug,508.0
+Mischief,1999,9,Sep,475.0
+Mischief,1999,10,Oct,570.0
+Mischief,1999,11,Nov,465.0
+Mischief,1999,12,Dec,427.0
+Mischief,2000,1,Jan,450.0
+Mischief,2000,2,Feb,401.0
+Mischief,2000,3,Mar,426.0
+Mischief,2000,4,Apr,462.0
+Mischief,2000,5,May,480.0
+Mischief,2000,6,Jun,491.0
+Mischief,2000,7,Jul,494.0
+Mischief,2000,8,Aug,490.0
+Mischief,2000,9,Sep,507.0
+Mischief,2000,10,Oct,492.0
+Mischief,2000,11,Nov,454.0
+Mischief,2000,12,Dec,454.0
+Mischief,2001,1,Jan,375.0
+Mischief,2001,2,Feb,360.0
+Mischief,2001,3,Mar,475.0
+Mischief,2001,4,Apr,444.0
+Mischief,2001,5,May,477.0
+Mischief,2001,6,Jun,425.0
+Mischief,2001,7,Jul,420.0
+Mischief,2001,8,Aug,416.0
+Mischief,2001,9,Sep,378.0
+Mischief,2001,10,Oct,456.0
+Mischief,2001,11,Nov,366.0
+Mischief,2001,12,Dec,470.0
+Mischief,2002,1,Jan,443.0
+Mischief,2002,2,Feb,386.0
+Mischief,2002,3,Mar,457.0
+Mischief,2002,4,Apr,423.0
+Mischief,2002,5,May,408.0
+Mischief,2002,6,Jun,424.0
+Mischief,2002,7,Jul,493.0
+Mischief,2002,8,Aug,459.0
+Mischief,2002,9,Sep,456.0
+Mischief,2002,10,Oct,477.0
+Mischief,2002,11,Nov,353.0
+Mischief,2002,12,Dec,405.0
+Mischief,2003,1,Jan,357.0
+Mischief,2003,2,Feb,343.0
+Mischief,2003,3,Mar,356.0
+Mischief,2003,4,Apr,400.0
+Mischief,2003,5,May,428.0
+Mischief,2003,6,Jun,448.0
+Mischief,2003,7,Jul,409.0
+Mischief,2003,8,Aug,466.0
+Mischief,2003,9,Sep,391.0
+Mischief,2003,10,Oct,425.0
+Mischief,2003,11,Nov,391.0
+Mischief,2003,12,Dec,396.0
+Mischief,2004,1,Jan,356.0
+Mischief,2004,2,Feb,456.0
+Mischief,2004,3,Mar,631.0
+Mischief,2004,4,Apr,512.0
+Mischief,2004,5,May,426.0
+Mischief,2004,6,Jun,413.0
+Mischief,2004,7,Jul,432.0
+Mischief,2004,8,Aug,443.0
+Mischief,2004,9,Sep,366.0
+Mischief,2004,10,Oct,469.0
+Mischief,2004,11,Nov,440.0
+Mischief,2004,12,Dec,332.0
+Mischief,2005,1,Jan,369.0
+Mischief,2005,2,Feb,314.0
+Mischief,2005,3,Mar,375.0
+Mischief,2005,4,Apr,362.0
+Mischief,2005,5,May,426.0
+Mischief,2005,6,Jun,388.0
+Mischief,2005,7,Jul,404.0
+Mischief,2005,8,Aug,378.0
+Mischief,2005,9,Sep,363.0
+Mischief,2005,10,Oct,370.0
+Mischief,2005,11,Nov,355.0
+Mischief,2005,12,Dec,326.0
+Mischief,2006,1,Jan,386.0
+Mischief,2006,2,Feb,357.0
+Mischief,2006,3,Mar,331.0
+Mischief,2006,4,Apr,357.0
+Mischief,2006,5,May,447.0
+Mischief,2006,6,Jun,391.0
+Mischief,2006,7,Jul,379.0
+Mischief,2006,8,Aug,397.0
+Mischief,2006,9,Sep,341.0
+Mischief,2006,10,Oct,442.0
+Mischief,2006,11,Nov,354.0
+Mischief,2006,12,Dec,324.0
+Mischief,2007,1,Jan,341.0
+Mischief,2007,2,Feb,319.0
+Mischief,2007,3,Mar,380.0
+Mischief,2007,4,Apr,378.0
+Mischief,2007,5,May,367.0
+Mischief,2007,6,Jun,809.0
+Mischief,2007,7,Jul,397.0
+Mischief,2007,8,Aug,381.0
+Mischief,2007,9,Sep,358.0
+Mischief,2007,10,Oct,381.0
+Mischief,2007,11,Nov,349.0
+Mischief,2007,12,Dec,368.0
+Mischief,2008,1,Jan,348.0
+Mischief,2008,2,Feb,326.0
+Mischief,2008,3,Mar,335.0
+Mischief,2008,4,Apr,306.0
+Mischief,2008,5,May,380.0
+Mischief,2008,6,Jun,381.0
+Mischief,2008,7,Jul,360.0
+Mischief,2008,8,Aug,372.0
+Mischief,2008,9,Sep,385.0
+Mischief,2008,10,Oct,359.0
+Mischief,2008,11,Nov,367.0
+Mischief,2008,12,Dec,324.0
+Mischief,2009,1,Jan,316.0
+Mischief,2009,2,Feb,291.0
+Mischief,2009,3,Mar,399.0
+Mischief,2009,4,Apr,352.0
+Mischief,2009,5,May,381.0
+Mischief,2009,6,Jun,323.0
+Mischief,2009,7,Jul,387.0
+Mischief,2009,8,Aug,346.0
+Mischief,2009,9,Sep,356.0
+Mischief,2009,10,Oct,382.0
+Mischief,2009,11,Nov,347.0
+Mischief,2009,12,Dec,311.0
+Mischief,2010,1,Jan,358.0
+Mischief,2010,2,Feb,351.0
+Mischief,2010,3,Mar,379.0
+Mischief,2010,4,Apr,418.0
+Mischief,2010,5,May,381.0
+Mischief,2010,6,Jun,359.0
+Mischief,2010,7,Jul,391.0
+Mischief,2010,8,Aug,414.0
+Mischief,2010,9,Sep,379.0
+Mischief,2010,10,Oct,423.0
+Mischief,2010,11,Nov,337.0
+Mischief,2010,12,Dec,328.0
+Mischief,2011,1,Jan,315.0
+Mischief,2011,2,Feb,324.0
+Mischief,2011,3,Mar,339.0
+Mischief,2011,4,Apr,348.0
+Mischief,2011,5,May,380.0
+Mischief,2011,6,Jun,327.0
+Mischief,2011,7,Jul,370.0
+Mischief,2011,8,Aug,339.0
+Mischief,2011,9,Sep,322.0
+Mischief,2011,10,Oct,398.0
+Mischief,2011,11,Nov,389.0
+Mischief,2011,12,Dec,342.0
+Offence Against a Person,1999,1,Jan,338.0
+Offence Against a Person,1999,2,Feb,280.0
+Offence Against a Person,1999,3,Mar,315.0
+Offence Against a Person,1999,4,Apr,240.0
+Offence Against a Person,1999,5,May,290.0
+Offence Against a Person,1999,6,Jun,311.0
+Offence Against a Person,1999,7,Jul,277.0
+Offence Against a Person,1999,8,Aug,299.0
+Offence Against a Person,1999,9,Sep,266.0
+Offence Against a Person,1999,10,Oct,315.0
+Offence Against a Person,1999,11,Nov,291.0
+Offence Against a Person,1999,12,Dec,285.0
+Offence Against a Person,2000,1,Jan,326.0
+Offence Against a Person,2000,2,Feb,282.0
+Offence Against a Person,2000,3,Mar,347.0
+Offence Against a Person,2000,4,Apr,310.0
+Offence Against a Person,2000,5,May,274.0
+Offence Against a Person,2000,6,Jun,311.0
+Offence Against a Person,2000,7,Jul,309.0
+Offence Against a Person,2000,8,Aug,368.0
+Offence Against a Person,2000,9,Sep,337.0
+Offence Against a Person,2000,10,Oct,301.0
+Offence Against a Person,2000,11,Nov,332.0
+Offence Against a Person,2000,12,Dec,307.0
+Offence Against a Person,2001,1,Jan,305.0
+Offence Against a Person,2001,2,Feb,272.0
+Offence Against a Person,2001,3,Mar,298.0
+Offence Against a Person,2001,4,Apr,280.0
+Offence Against a Person,2001,5,May,313.0
+Offence Against a Person,2001,6,Jun,292.0
+Offence Against a Person,2001,7,Jul,328.0
+Offence Against a Person,2001,8,Aug,356.0
+Offence Against a Person,2001,9,Sep,344.0
+Offence Against a Person,2001,10,Oct,321.0
+Offence Against a Person,2001,11,Nov,334.0
+Offence Against a Person,2001,12,Dec,328.0
+Offence Against a Person,2002,1,Jan,380.0
+Offence Against a Person,2002,2,Feb,332.0
+Offence Against a Person,2002,3,Mar,358.0
+Offence Against a Person,2002,4,Apr,350.0
+Offence Against a Person,2002,5,May,378.0
+Offence Against a Person,2002,6,Jun,359.0
+Offence Against a Person,2002,7,Jul,389.0
+Offence Against a Person,2002,8,Aug,416.0
+Offence Against a Person,2002,9,Sep,350.0
+Offence Against a Person,2002,10,Oct,369.0
+Offence Against a Person,2002,11,Nov,324.0
+Offence Against a Person,2002,12,Dec,345.0
+Offence Against a Person,2003,1,Jan,377.0
+Offence Against a Person,2003,2,Feb,291.0
+Offence Against a Person,2003,3,Mar,366.0
+Offence Against a Person,2003,4,Apr,358.0
+Offence Against a Person,2003,5,May,392.0
+Offence Against a Person,2003,6,Jun,355.0
+Offence Against a Person,2003,7,Jul,403.0
+Offence Against a Person,2003,8,Aug,423.0
+Offence Against a Person,2003,9,Sep,340.0
+Offence Against a Person,2003,10,Oct,400.0
+Offence Against a Person,2003,11,Nov,373.0
+Offence Against a Person,2003,12,Dec,334.0
+Offence Against a Person,2004,1,Jan,374.0
+Offence Against a Person,2004,2,Feb,337.0
+Offence Against a Person,2004,3,Mar,343.0
+Offence Against a Person,2004,4,Apr,315.0
+Offence Against a Person,2004,5,May,363.0
+Offence Against a Person,2004,6,Jun,334.0
+Offence Against a Person,2004,7,Jul,375.0
+Offence Against a Person,2004,8,Aug,396.0
+Offence Against a Person,2004,9,Sep,365.0
+Offence Against a Person,2004,10,Oct,373.0
+Offence Against a Person,2004,11,Nov,311.0
+Offence Against a Person,2004,12,Dec,340.0
+Offence Against a Person,2005,1,Jan,349.0
+Offence Against a Person,2005,2,Feb,289.0
+Offence Against a Person,2005,3,Mar,286.0
+Offence Against a Person,2005,4,Apr,337.0
+Offence Against a Person,2005,5,May,333.0
+Offence Against a Person,2005,6,Jun,312.0
+Offence Against a Person,2005,7,Jul,346.0
+Offence Against a Person,2005,8,Aug,365.0
+Offence Against a Person,2005,9,Sep,324.0
+Offence Against a Person,2005,10,Oct,334.0
+Offence Against a Person,2005,11,Nov,305.0
+Offence Against a Person,2005,12,Dec,305.0
+Offence Against a Person,2006,1,Jan,314.0
+Offence Against a Person,2006,2,Feb,322.0
+Offence Against a Person,2006,3,Mar,307.0
+Offence Against a Person,2006,4,Apr,279.0
+Offence Against a Person,2006,5,May,318.0
+Offence Against a Person,2006,6,Jun,330.0
+Offence Against a Person,2006,7,Jul,356.0
+Offence Against a Person,2006,8,Aug,315.0
+Offence Against a Person,2006,9,Sep,298.0
+Offence Against a Person,2006,10,Oct,320.0
+Offence Against a Person,2006,11,Nov,262.0
+Offence Against a Person,2006,12,Dec,310.0
+Offence Against a Person,2007,1,Jan,347.0
+Offence Against a Person,2007,2,Feb,265.0
+Offence Against a Person,2007,3,Mar,301.0
+Offence Against a Person,2007,4,Apr,300.0
+Offence Against a Person,2007,5,May,386.0
+Offence Against a Person,2007,6,Jun,314.0
+Offence Against a Person,2007,7,Jul,358.0
+Offence Against a Person,2007,8,Aug,330.0
+Offence Against a Person,2007,9,Sep,311.0
+Offence Against a Person,2007,10,Oct,337.0
+Offence Against a Person,2007,11,Nov,311.0
+Offence Against a Person,2007,12,Dec,310.0
+Offence Against a Person,2008,1,Jan,310.0
+Offence Against a Person,2008,2,Feb,287.0
+Offence Against a Person,2008,3,Mar,295.0
+Offence Against a Person,2008,4,Apr,298.0
+Offence Against a Person,2008,5,May,319.0
+Offence Against a Person,2008,6,Jun,354.0
+Offence Against a Person,2008,7,Jul,306.0
+Offence Against a Person,2008,8,Aug,379.0
+Offence Against a Person,2008,9,Sep,358.0
+Offence Against a Person,2008,10,Oct,306.0
+Offence Against a Person,2008,11,Nov,279.0
+Offence Against a Person,2008,12,Dec,295.0
+Offence Against a Person,2009,1,Jan,286.0
+Offence Against a Person,2009,2,Feb,243.0
+Offence Against a Person,2009,3,Mar,323.0
+Offence Against a Person,2009,4,Apr,286.0
+Offence Against a Person,2009,5,May,311.0
+Offence Against a Person,2009,6,Jun,289.0
+Offence Against a Person,2009,7,Jul,349.0
+Offence Against a Person,2009,8,Aug,355.0
+Offence Against a Person,2009,9,Sep,314.0
+Offence Against a Person,2009,10,Oct,334.0
+Offence Against a Person,2009,11,Nov,289.0
+Offence Against a Person,2009,12,Dec,284.0
+Offence Against a Person,2010,1,Jan,278.0
+Offence Against a Person,2010,2,Feb,236.0
+Offence Against a Person,2010,3,Mar,286.0
+Offence Against a Person,2010,4,Apr,257.0
+Offence Against a Person,2010,5,May,297.0
+Offence Against a Person,2010,6,Jun,303.0
+Offence Against a Person,2010,7,Jul,283.0
+Offence Against a Person,2010,8,Aug,258.0
+Offence Against a Person,2010,9,Sep,229.0
+Offence Against a Person,2010,10,Oct,249.0
+Offence Against a Person,2010,11,Nov,247.0
+Offence Against a Person,2010,12,Dec,235.0
+Offence Against a Person,2011,1,Jan,279.0
+Offence Against a Person,2011,2,Feb,210.0
+Offence Against a Person,2011,3,Mar,248.0
+Offence Against a Person,2011,4,Apr,223.0
+Offence Against a Person,2011,5,May,312.0
+Offence Against a Person,2011,6,Jun,298.0
+Offence Against a Person,2011,7,Jul,272.0
+Offence Against a Person,2011,8,Aug,268.0
+Offence Against a Person,2011,9,Sep,242.0
+Offence Against a Person,2011,10,Oct,273.0
+Offence Against a Person,2011,11,Nov,297.0
+Offence Against a Person,2011,12,Dec,280.0
+Other Theft,1999,1,Jan,247.0
+Other Theft,1999,2,Feb,219.0
+Other Theft,1999,3,Mar,208.0
+Other Theft,1999,4,Apr,235.0
+Other Theft,1999,5,May,223.0
+Other Theft,1999,6,Jun,211.0
+Other Theft,1999,7,Jul,207.0
+Other Theft,1999,8,Aug,226.0
+Other Theft,1999,9,Sep,163.0
+Other Theft,1999,10,Oct,220.0
+Other Theft,1999,11,Nov,202.0
+Other Theft,1999,12,Dec,221.0
+Other Theft,2000,1,Jan,238.0
+Other Theft,2000,2,Feb,283.0
+Other Theft,2000,3,Mar,282.0
+Other Theft,2000,4,Apr,269.0
+Other Theft,2000,5,May,215.0
+Other Theft,2000,6,Jun,207.0
+Other Theft,2000,7,Jul,172.0
+Other Theft,2000,8,Aug,208.0
+Other Theft,2000,9,Sep,169.0
+Other Theft,2000,10,Oct,180.0
+Other Theft,2000,11,Nov,187.0
+Other Theft,2000,12,Dec,195.0
+Other Theft,2001,1,Jan,235.0
+Other Theft,2001,2,Feb,235.0
+Other Theft,2001,3,Mar,241.0
+Other Theft,2001,4,Apr,212.0
+Other Theft,2001,5,May,185.0
+Other Theft,2001,6,Jun,175.0
+Other Theft,2001,7,Jul,195.0
+Other Theft,2001,8,Aug,203.0
+Other Theft,2001,9,Sep,243.0
+Other Theft,2001,10,Oct,231.0
+Other Theft,2001,11,Nov,217.0
+Other Theft,2001,12,Dec,239.0
+Other Theft,2002,1,Jan,259.0
+Other Theft,2002,2,Feb,292.0
+Other Theft,2002,3,Mar,310.0
+Other Theft,2002,4,Apr,224.0
+Other Theft,2002,5,May,261.0
+Other Theft,2002,6,Jun,277.0
+Other Theft,2002,7,Jul,231.0
+Other Theft,2002,8,Aug,228.0
+Other Theft,2002,9,Sep,247.0
+Other Theft,2002,10,Oct,202.0
+Other Theft,2002,11,Nov,214.0
+Other Theft,2002,12,Dec,221.0
+Other Theft,2003,1,Jan,254.0
+Other Theft,2003,2,Feb,242.0
+Other Theft,2003,3,Mar,266.0
+Other Theft,2003,4,Apr,269.0
+Other Theft,2003,5,May,252.0
+Other Theft,2003,6,Jun,227.0
+Other Theft,2003,7,Jul,250.0
+Other Theft,2003,8,Aug,296.0
+Other Theft,2003,9,Sep,269.0
+Other Theft,2003,10,Oct,229.0
+Other Theft,2003,11,Nov,222.0
+Other Theft,2003,12,Dec,248.0
+Other Theft,2004,1,Jan,272.0
+Other Theft,2004,2,Feb,241.0
+Other Theft,2004,3,Mar,276.0
+Other Theft,2004,4,Apr,267.0
+Other Theft,2004,5,May,316.0
+Other Theft,2004,6,Jun,260.0
+Other Theft,2004,7,Jul,234.0
+Other Theft,2004,8,Aug,243.0
+Other Theft,2004,9,Sep,269.0
+Other Theft,2004,10,Oct,242.0
+Other Theft,2004,11,Nov,283.0
+Other Theft,2004,12,Dec,239.0
+Other Theft,2005,1,Jan,288.0
+Other Theft,2005,2,Feb,337.0
+Other Theft,2005,3,Mar,324.0
+Other Theft,2005,4,Apr,323.0
+Other Theft,2005,5,May,329.0
+Other Theft,2005,6,Jun,320.0
+Other Theft,2005,7,Jul,299.0
+Other Theft,2005,8,Aug,275.0
+Other Theft,2005,9,Sep,290.0
+Other Theft,2005,10,Oct,276.0
+Other Theft,2005,11,Nov,295.0
+Other Theft,2005,12,Dec,306.0
+Other Theft,2006,1,Jan,323.0
+Other Theft,2006,2,Feb,291.0
+Other Theft,2006,3,Mar,314.0
+Other Theft,2006,4,Apr,287.0
+Other Theft,2006,5,May,306.0
+Other Theft,2006,6,Jun,279.0
+Other Theft,2006,7,Jul,283.0
+Other Theft,2006,8,Aug,293.0
+Other Theft,2006,9,Sep,287.0
+Other Theft,2006,10,Oct,267.0
+Other Theft,2006,11,Nov,250.0
+Other Theft,2006,12,Dec,252.0
+Other Theft,2007,1,Jan,295.0
+Other Theft,2007,2,Feb,279.0
+Other Theft,2007,3,Mar,342.0
+Other Theft,2007,4,Apr,327.0
+Other Theft,2007,5,May,281.0
+Other Theft,2007,6,Jun,301.0
+Other Theft,2007,7,Jul,319.0
+Other Theft,2007,8,Aug,296.0
+Other Theft,2007,9,Sep,276.0
+Other Theft,2007,10,Oct,261.0
+Other Theft,2007,11,Nov,312.0
+Other Theft,2007,12,Dec,273.0
+Other Theft,2008,1,Jan,313.0
+Other Theft,2008,2,Feb,309.0
+Other Theft,2008,3,Mar,309.0
+Other Theft,2008,4,Apr,293.0
+Other Theft,2008,5,May,299.0
+Other Theft,2008,6,Jun,324.0
+Other Theft,2008,7,Jul,280.0
+Other Theft,2008,8,Aug,308.0
+Other Theft,2008,9,Sep,311.0
+Other Theft,2008,10,Oct,287.0
+Other Theft,2008,11,Nov,301.0
+Other Theft,2008,12,Dec,296.0
+Other Theft,2009,1,Jan,299.0
+Other Theft,2009,2,Feb,246.0
+Other Theft,2009,3,Mar,313.0
+Other Theft,2009,4,Apr,261.0
+Other Theft,2009,5,May,305.0
+Other Theft,2009,6,Jun,320.0
+Other Theft,2009,7,Jul,298.0
+Other Theft,2009,8,Aug,276.0
+Other Theft,2009,9,Sep,283.0
+Other Theft,2009,10,Oct,283.0
+Other Theft,2009,11,Nov,283.0
+Other Theft,2009,12,Dec,321.0
+Other Theft,2010,1,Jan,333.0
+Other Theft,2010,2,Feb,318.0
+Other Theft,2010,3,Mar,362.0
+Other Theft,2010,4,Apr,348.0
+Other Theft,2010,5,May,351.0
+Other Theft,2010,6,Jun,308.0
+Other Theft,2010,7,Jul,374.0
+Other Theft,2010,8,Aug,402.0
+Other Theft,2010,9,Sep,333.0
+Other Theft,2010,10,Oct,352.0
+Other Theft,2010,11,Nov,389.0
+Other Theft,2010,12,Dec,340.0
+Other Theft,2011,1,Jan,390.0
+Other Theft,2011,2,Feb,385.0
+Other Theft,2011,3,Mar,387.0
+Other Theft,2011,4,Apr,391.0
+Other Theft,2011,5,May,407.0
+Other Theft,2011,6,Jun,387.0
+Other Theft,2011,7,Jul,418.0
+Other Theft,2011,8,Aug,363.0
+Other Theft,2011,9,Sep,395.0
+Other Theft,2011,10,Oct,403.0
+Other Theft,2011,11,Nov,373.0
+Other Theft,2011,12,Dec,380.0
+Theft from Vehicle,1999,1,Jan,1438.0
+Theft from Vehicle,1999,2,Feb,1102.0
+Theft from Vehicle,1999,3,Mar,1251.0
+Theft from Vehicle,1999,4,Apr,1528.0
+Theft from Vehicle,1999,5,May,1873.0
+Theft from Vehicle,1999,6,Jun,1695.0
+Theft from Vehicle,1999,7,Jul,1444.0
+Theft from Vehicle,1999,8,Aug,1634.0
+Theft from Vehicle,1999,9,Sep,1470.0
+Theft from Vehicle,1999,10,Oct,1554.0
+Theft from Vehicle,1999,11,Nov,1332.0
+Theft from Vehicle,1999,12,Dec,1423.0
+Theft from Vehicle,2000,1,Jan,1320.0
+Theft from Vehicle,2000,2,Feb,1276.0
+Theft from Vehicle,2000,3,Mar,1524.0
+Theft from Vehicle,2000,4,Apr,1559.0
+Theft from Vehicle,2000,5,May,1494.0
+Theft from Vehicle,2000,6,Jun,1335.0
+Theft from Vehicle,2000,7,Jul,1426.0
+Theft from Vehicle,2000,8,Aug,1678.0
+Theft from Vehicle,2000,9,Sep,1744.0
+Theft from Vehicle,2000,10,Oct,1648.0
+Theft from Vehicle,2000,11,Nov,1688.0
+Theft from Vehicle,2000,12,Dec,1512.0
+Theft from Vehicle,2001,1,Jan,1516.0
+Theft from Vehicle,2001,2,Feb,1305.0
+Theft from Vehicle,2001,3,Mar,1409.0
+Theft from Vehicle,2001,4,Apr,1564.0
+Theft from Vehicle,2001,5,May,1529.0
+Theft from Vehicle,2001,6,Jun,1426.0
+Theft from Vehicle,2001,7,Jul,1323.0
+Theft from Vehicle,2001,8,Aug,1362.0
+Theft from Vehicle,2001,9,Sep,1316.0
+Theft from Vehicle,2001,10,Oct,1261.0
+Theft from Vehicle,2001,11,Nov,1271.0
+Theft from Vehicle,2001,12,Dec,1272.0
+Theft from Vehicle,2002,1,Jan,1492.0
+Theft from Vehicle,2002,2,Feb,1125.0
+Theft from Vehicle,2002,3,Mar,1326.0
+Theft from Vehicle,2002,4,Apr,1007.0
+Theft from Vehicle,2002,5,May,1198.0
+Theft from Vehicle,2002,6,Jun,1240.0
+Theft from Vehicle,2002,7,Jul,1207.0
+Theft from Vehicle,2002,8,Aug,1227.0
+Theft from Vehicle,2002,9,Sep,1177.0
+Theft from Vehicle,2002,10,Oct,1116.0
+Theft from Vehicle,2002,11,Nov,1313.0
+Theft from Vehicle,2002,12,Dec,1306.0
+Theft from Vehicle,2003,1,Jan,1307.0
+Theft from Vehicle,2003,2,Feb,966.0
+Theft from Vehicle,2003,3,Mar,1048.0
+Theft from Vehicle,2003,4,Apr,1048.0
+Theft from Vehicle,2003,5,May,1037.0
+Theft from Vehicle,2003,6,Jun,950.0
+Theft from Vehicle,2003,7,Jul,933.0
+Theft from Vehicle,2003,8,Aug,1106.0
+Theft from Vehicle,2003,9,Sep,1078.0
+Theft from Vehicle,2003,10,Oct,1025.0
+Theft from Vehicle,2003,11,Nov,911.0
+Theft from Vehicle,2003,12,Dec,817.0
+Theft from Vehicle,2004,1,Jan,782.0
+Theft from Vehicle,2004,2,Feb,867.0
+Theft from Vehicle,2004,3,Mar,1061.0
+Theft from Vehicle,2004,4,Apr,889.0
+Theft from Vehicle,2004,5,May,919.0
+Theft from Vehicle,2004,6,Jun,1017.0
+Theft from Vehicle,2004,7,Jul,875.0
+Theft from Vehicle,2004,8,Aug,943.0
+Theft from Vehicle,2004,9,Sep,1000.0
+Theft from Vehicle,2004,10,Oct,1016.0
+Theft from Vehicle,2004,11,Nov,972.0
+Theft from Vehicle,2004,12,Dec,957.0
+Theft from Vehicle,2005,1,Jan,897.0
+Theft from Vehicle,2005,2,Feb,971.0
+Theft from Vehicle,2005,3,Mar,842.0
+Theft from Vehicle,2005,4,Apr,747.0
+Theft from Vehicle,2005,5,May,817.0
+Theft from Vehicle,2005,6,Jun,803.0
+Theft from Vehicle,2005,7,Jul,799.0
+Theft from Vehicle,2005,8,Aug,871.0
+Theft from Vehicle,2005,9,Sep,927.0
+Theft from Vehicle,2005,10,Oct,806.0
+Theft from Vehicle,2005,11,Nov,831.0
+Theft from Vehicle,2005,12,Dec,696.0
+Theft from Vehicle,2006,1,Jan,710.0
+Theft from Vehicle,2006,2,Feb,627.0
+Theft from Vehicle,2006,3,Mar,713.0
+Theft from Vehicle,2006,4,Apr,599.0
+Theft from Vehicle,2006,5,May,676.0
+Theft from Vehicle,2006,6,Jun,675.0
+Theft from Vehicle,2006,7,Jul,685.0
+Theft from Vehicle,2006,8,Aug,793.0
+Theft from Vehicle,2006,9,Sep,833.0
+Theft from Vehicle,2006,10,Oct,915.0
+Theft from Vehicle,2006,11,Nov,725.0
+Theft from Vehicle,2006,12,Dec,661.0
+Theft from Vehicle,2007,1,Jan,628.0
+Theft from Vehicle,2007,2,Feb,680.0
+Theft from Vehicle,2007,3,Mar,605.0
+Theft from Vehicle,2007,4,Apr,510.0
+Theft from Vehicle,2007,5,May,608.0
+Theft from Vehicle,2007,6,Jun,521.0
+Theft from Vehicle,2007,7,Jul,749.0
+Theft from Vehicle,2007,8,Aug,679.0
+Theft from Vehicle,2007,9,Sep,671.0
+Theft from Vehicle,2007,10,Oct,589.0
+Theft from Vehicle,2007,11,Nov,568.0
+Theft from Vehicle,2007,12,Dec,627.0
+Theft from Vehicle,2008,1,Jan,666.0
+Theft from Vehicle,2008,2,Feb,661.0
+Theft from Vehicle,2008,3,Mar,733.0
+Theft from Vehicle,2008,4,Apr,758.0
+Theft from Vehicle,2008,5,May,597.0
+Theft from Vehicle,2008,6,Jun,627.0
+Theft from Vehicle,2008,7,Jul,599.0
+Theft from Vehicle,2008,8,Aug,736.0
+Theft from Vehicle,2008,9,Sep,638.0
+Theft from Vehicle,2008,10,Oct,639.0
+Theft from Vehicle,2008,11,Nov,802.0
+Theft from Vehicle,2008,12,Dec,641.0
+Theft from Vehicle,2009,1,Jan,515.0
+Theft from Vehicle,2009,2,Feb,497.0
+Theft from Vehicle,2009,3,Mar,642.0
+Theft from Vehicle,2009,4,Apr,721.0
+Theft from Vehicle,2009,5,May,755.0
+Theft from Vehicle,2009,6,Jun,668.0
+Theft from Vehicle,2009,7,Jul,677.0
+Theft from Vehicle,2009,8,Aug,683.0
+Theft from Vehicle,2009,9,Sep,669.0
+Theft from Vehicle,2009,10,Oct,814.0
+Theft from Vehicle,2009,11,Nov,892.0
+Theft from Vehicle,2009,12,Dec,807.0
+Theft from Vehicle,2010,1,Jan,718.0
+Theft from Vehicle,2010,2,Feb,602.0
+Theft from Vehicle,2010,3,Mar,682.0
+Theft from Vehicle,2010,4,Apr,663.0
+Theft from Vehicle,2010,5,May,858.0
+Theft from Vehicle,2010,6,Jun,846.0
+Theft from Vehicle,2010,7,Jul,1016.0
+Theft from Vehicle,2010,8,Aug,1102.0
+Theft from Vehicle,2010,9,Sep,1042.0
+Theft from Vehicle,2010,10,Oct,964.0
+Theft from Vehicle,2010,11,Nov,822.0
+Theft from Vehicle,2010,12,Dec,822.0
+Theft from Vehicle,2011,1,Jan,860.0
+Theft from Vehicle,2011,2,Feb,722.0
+Theft from Vehicle,2011,3,Mar,705.0
+Theft from Vehicle,2011,4,Apr,780.0
+Theft from Vehicle,2011,5,May,772.0
+Theft from Vehicle,2011,6,Jun,719.0
+Theft from Vehicle,2011,7,Jul,912.0
+Theft from Vehicle,2011,8,Aug,822.0
+Theft from Vehicle,2011,9,Sep,853.0
+Theft from Vehicle,2011,10,Oct,1033.0
+Theft from Vehicle,2011,11,Nov,1215.0
+Theft from Vehicle,2011,12,Dec,1151.0
+Theft of Bicycle,1999,1,Jan,96.0
+Theft of Bicycle,1999,2,Feb,71.0
+Theft of Bicycle,1999,3,Mar,76.0
+Theft of Bicycle,1999,4,Apr,97.0
+Theft of Bicycle,1999,5,May,114.0
+Theft of Bicycle,1999,6,Jun,154.0
+Theft of Bicycle,1999,7,Jul,191.0
+Theft of Bicycle,1999,8,Aug,192.0
+Theft of Bicycle,1999,9,Sep,158.0
+Theft of Bicycle,1999,10,Oct,144.0
+Theft of Bicycle,1999,11,Nov,74.0
+Theft of Bicycle,1999,12,Dec,51.0
+Theft of Bicycle,2000,1,Jan,42.0
+Theft of Bicycle,2000,2,Feb,57.0
+Theft of Bicycle,2000,3,Mar,100.0
+Theft of Bicycle,2000,4,Apr,93.0
+Theft of Bicycle,2000,5,May,109.0
+Theft of Bicycle,2000,6,Jun,124.0
+Theft of Bicycle,2000,7,Jul,198.0
+Theft of Bicycle,2000,8,Aug,155.0
+Theft of Bicycle,2000,9,Sep,130.0
+Theft of Bicycle,2000,10,Oct,107.0
+Theft of Bicycle,2000,11,Nov,71.0
+Theft of Bicycle,2000,12,Dec,44.0
+Theft of Bicycle,2001,1,Jan,51.0
+Theft of Bicycle,2001,2,Feb,53.0
+Theft of Bicycle,2001,3,Mar,83.0
+Theft of Bicycle,2001,4,Apr,75.0
+Theft of Bicycle,2001,5,May,133.0
+Theft of Bicycle,2001,6,Jun,153.0
+Theft of Bicycle,2001,7,Jul,162.0
+Theft of Bicycle,2001,8,Aug,197.0
+Theft of Bicycle,2001,9,Sep,180.0
+Theft of Bicycle,2001,10,Oct,159.0
+Theft of Bicycle,2001,11,Nov,106.0
+Theft of Bicycle,2001,12,Dec,64.0
+Theft of Bicycle,2002,1,Jan,66.0
+Theft of Bicycle,2002,2,Feb,82.0
+Theft of Bicycle,2002,3,Mar,93.0
+Theft of Bicycle,2002,4,Apr,79.0
+Theft of Bicycle,2002,5,May,103.0
+Theft of Bicycle,2002,6,Jun,197.0
+Theft of Bicycle,2002,7,Jul,242.0
+Theft of Bicycle,2002,8,Aug,222.0
+Theft of Bicycle,2002,9,Sep,134.0
+Theft of Bicycle,2002,10,Oct,128.0
+Theft of Bicycle,2002,11,Nov,67.0
+Theft of Bicycle,2002,12,Dec,54.0
+Theft of Bicycle,2003,1,Jan,57.0
+Theft of Bicycle,2003,2,Feb,56.0
+Theft of Bicycle,2003,3,Mar,71.0
+Theft of Bicycle,2003,4,Apr,82.0
+Theft of Bicycle,2003,5,May,108.0
+Theft of Bicycle,2003,6,Jun,137.0
+Theft of Bicycle,2003,7,Jul,169.0
+Theft of Bicycle,2003,8,Aug,197.0
+Theft of Bicycle,2003,9,Sep,130.0
+Theft of Bicycle,2003,10,Oct,105.0
+Theft of Bicycle,2003,11,Nov,46.0
+Theft of Bicycle,2003,12,Dec,45.0
+Theft of Bicycle,2004,1,Jan,44.0
+Theft of Bicycle,2004,2,Feb,46.0
+Theft of Bicycle,2004,3,Mar,61.0
+Theft of Bicycle,2004,4,Apr,79.0
+Theft of Bicycle,2004,5,May,134.0
+Theft of Bicycle,2004,6,Jun,119.0
+Theft of Bicycle,2004,7,Jul,178.0
+Theft of Bicycle,2004,8,Aug,155.0
+Theft of Bicycle,2004,9,Sep,159.0
+Theft of Bicycle,2004,10,Oct,119.0
+Theft of Bicycle,2004,11,Nov,56.0
+Theft of Bicycle,2004,12,Dec,26.0
+Theft of Bicycle,2005,1,Jan,29.0
+Theft of Bicycle,2005,2,Feb,52.0
+Theft of Bicycle,2005,3,Mar,43.0
+Theft of Bicycle,2005,4,Apr,127.0
+Theft of Bicycle,2005,5,May,186.0
+Theft of Bicycle,2005,6,Jun,167.0
+Theft of Bicycle,2005,7,Jul,285.0
+Theft of Bicycle,2005,8,Aug,310.0
+Theft of Bicycle,2005,9,Sep,183.0
+Theft of Bicycle,2005,10,Oct,110.0
+Theft of Bicycle,2005,11,Nov,88.0
+Theft of Bicycle,2005,12,Dec,61.0
+Theft of Bicycle,2006,1,Jan,52.0
+Theft of Bicycle,2006,2,Feb,68.0
+Theft of Bicycle,2006,3,Mar,89.0
+Theft of Bicycle,2006,4,Apr,127.0
+Theft of Bicycle,2006,5,May,143.0
+Theft of Bicycle,2006,6,Jun,139.0
+Theft of Bicycle,2006,7,Jul,231.0
+Theft of Bicycle,2006,8,Aug,304.0
+Theft of Bicycle,2006,9,Sep,221.0
+Theft of Bicycle,2006,10,Oct,169.0
+Theft of Bicycle,2006,11,Nov,77.0
+Theft of Bicycle,2006,12,Dec,47.0
+Theft of Bicycle,2007,1,Jan,39.0
+Theft of Bicycle,2007,2,Feb,47.0
+Theft of Bicycle,2007,3,Mar,58.0
+Theft of Bicycle,2007,4,Apr,84.0
+Theft of Bicycle,2007,5,May,99.0
+Theft of Bicycle,2007,6,Jun,175.0
+Theft of Bicycle,2007,7,Jul,297.0
+Theft of Bicycle,2007,8,Aug,249.0
+Theft of Bicycle,2007,9,Sep,171.0
+Theft of Bicycle,2007,10,Oct,142.0
+Theft of Bicycle,2007,11,Nov,93.0
+Theft of Bicycle,2007,12,Dec,63.0
+Theft of Bicycle,2008,1,Jan,76.0
+Theft of Bicycle,2008,2,Feb,93.0
+Theft of Bicycle,2008,3,Mar,91.0
+Theft of Bicycle,2008,4,Apr,111.0
+Theft of Bicycle,2008,5,May,174.0
+Theft of Bicycle,2008,6,Jun,170.0
+Theft of Bicycle,2008,7,Jul,251.0
+Theft of Bicycle,2008,8,Aug,290.0
+Theft of Bicycle,2008,9,Sep,237.0
+Theft of Bicycle,2008,10,Oct,181.0
+Theft of Bicycle,2008,11,Nov,79.0
+Theft of Bicycle,2008,12,Dec,64.0
+Theft of Bicycle,2009,1,Jan,69.0
+Theft of Bicycle,2009,2,Feb,70.0
+Theft of Bicycle,2009,3,Mar,135.0
+Theft of Bicycle,2009,4,Apr,153.0
+Theft of Bicycle,2009,5,May,183.0
+Theft of Bicycle,2009,6,Jun,256.0
+Theft of Bicycle,2009,7,Jul,271.0
+Theft of Bicycle,2009,8,Aug,338.0
+Theft of Bicycle,2009,9,Sep,197.0
+Theft of Bicycle,2009,10,Oct,162.0
+Theft of Bicycle,2009,11,Nov,121.0
+Theft of Bicycle,2009,12,Dec,79.0
+Theft of Bicycle,2010,1,Jan,116.0
+Theft of Bicycle,2010,2,Feb,72.0
+Theft of Bicycle,2010,3,Mar,89.0
+Theft of Bicycle,2010,4,Apr,169.0
+Theft of Bicycle,2010,5,May,218.0
+Theft of Bicycle,2010,6,Jun,296.0
+Theft of Bicycle,2010,7,Jul,415.0
+Theft of Bicycle,2010,8,Aug,347.0
+Theft of Bicycle,2010,9,Sep,309.0
+Theft of Bicycle,2010,10,Oct,226.0
+Theft of Bicycle,2010,11,Nov,124.0
+Theft of Bicycle,2010,12,Dec,80.0
+Theft of Bicycle,2011,1,Jan,87.0
+Theft of Bicycle,2011,2,Feb,90.0
+Theft of Bicycle,2011,3,Mar,126.0
+Theft of Bicycle,2011,4,Apr,187.0
+Theft of Bicycle,2011,5,May,281.0
+Theft of Bicycle,2011,6,Jun,411.0
+Theft of Bicycle,2011,7,Jul,521.0
+Theft of Bicycle,2011,8,Aug,437.0
+Theft of Bicycle,2011,9,Sep,340.0
+Theft of Bicycle,2011,10,Oct,306.0
+Theft of Bicycle,2011,11,Nov,156.0
+Theft of Bicycle,2011,12,Dec,121.0
+Theft of Vehicle,1999,1,Jan,640.0
+Theft of Vehicle,1999,2,Feb,528.0
+Theft of Vehicle,1999,3,Mar,569.0
+Theft of Vehicle,1999,4,Apr,476.0
+Theft of Vehicle,1999,5,May,541.0
+Theft of Vehicle,1999,6,Jun,564.0
+Theft of Vehicle,1999,7,Jul,487.0
+Theft of Vehicle,1999,8,Aug,505.0
+Theft of Vehicle,1999,9,Sep,441.0
+Theft of Vehicle,1999,10,Oct,541.0
+Theft of Vehicle,1999,11,Nov,512.0
+Theft of Vehicle,1999,12,Dec,557.0
+Theft of Vehicle,2000,1,Jan,458.0
+Theft of Vehicle,2000,2,Feb,493.0
+Theft of Vehicle,2000,3,Mar,604.0
+Theft of Vehicle,2000,4,Apr,464.0
+Theft of Vehicle,2000,5,May,488.0
+Theft of Vehicle,2000,6,Jun,471.0
+Theft of Vehicle,2000,7,Jul,516.0
+Theft of Vehicle,2000,8,Aug,514.0
+Theft of Vehicle,2000,9,Sep,549.0
+Theft of Vehicle,2000,10,Oct,617.0
+Theft of Vehicle,2000,11,Nov,455.0
+Theft of Vehicle,2000,12,Dec,473.0
+Theft of Vehicle,2001,1,Jan,510.0
+Theft of Vehicle,2001,2,Feb,420.0
+Theft of Vehicle,2001,3,Mar,470.0
+Theft of Vehicle,2001,4,Apr,459.0
+Theft of Vehicle,2001,5,May,402.0
+Theft of Vehicle,2001,6,Jun,402.0
+Theft of Vehicle,2001,7,Jul,415.0
+Theft of Vehicle,2001,8,Aug,483.0
+Theft of Vehicle,2001,9,Sep,377.0
+Theft of Vehicle,2001,10,Oct,354.0
+Theft of Vehicle,2001,11,Nov,392.0
+Theft of Vehicle,2001,12,Dec,347.0
+Theft of Vehicle,2002,1,Jan,364.0
+Theft of Vehicle,2002,2,Feb,334.0
+Theft of Vehicle,2002,3,Mar,319.0
+Theft of Vehicle,2002,4,Apr,312.0
+Theft of Vehicle,2002,5,May,274.0
+Theft of Vehicle,2002,6,Jun,286.0
+Theft of Vehicle,2002,7,Jul,248.0
+Theft of Vehicle,2002,8,Aug,320.0
+Theft of Vehicle,2002,9,Sep,359.0
+Theft of Vehicle,2002,10,Oct,340.0
+Theft of Vehicle,2002,11,Nov,274.0
+Theft of Vehicle,2002,12,Dec,252.0
+Theft of Vehicle,2003,1,Jan,304.0
+Theft of Vehicle,2003,2,Feb,236.0
+Theft of Vehicle,2003,3,Mar,232.0
+Theft of Vehicle,2003,4,Apr,228.0
+Theft of Vehicle,2003,5,May,257.0
+Theft of Vehicle,2003,6,Jun,299.0
+Theft of Vehicle,2003,7,Jul,326.0
+Theft of Vehicle,2003,8,Aug,329.0
+Theft of Vehicle,2003,9,Sep,289.0
+Theft of Vehicle,2003,10,Oct,321.0
+Theft of Vehicle,2003,11,Nov,285.0
+Theft of Vehicle,2003,12,Dec,199.0
+Theft of Vehicle,2004,1,Jan,216.0
+Theft of Vehicle,2004,2,Feb,202.0
+Theft of Vehicle,2004,3,Mar,219.0
+Theft of Vehicle,2004,4,Apr,228.0
+Theft of Vehicle,2004,5,May,240.0
+Theft of Vehicle,2004,6,Jun,207.0
+Theft of Vehicle,2004,7,Jul,197.0
+Theft of Vehicle,2004,8,Aug,213.0
+Theft of Vehicle,2004,9,Sep,185.0
+Theft of Vehicle,2004,10,Oct,178.0
+Theft of Vehicle,2004,11,Nov,185.0
+Theft of Vehicle,2004,12,Dec,150.0
+Theft of Vehicle,2005,1,Jan,176.0
+Theft of Vehicle,2005,2,Feb,164.0
+Theft of Vehicle,2005,3,Mar,154.0
+Theft of Vehicle,2005,4,Apr,148.0
+Theft of Vehicle,2005,5,May,154.0
+Theft of Vehicle,2005,6,Jun,151.0
+Theft of Vehicle,2005,7,Jul,152.0
+Theft of Vehicle,2005,8,Aug,162.0
+Theft of Vehicle,2005,9,Sep,135.0
+Theft of Vehicle,2005,10,Oct,166.0
+Theft of Vehicle,2005,11,Nov,154.0
+Theft of Vehicle,2005,12,Dec,166.0
+Theft of Vehicle,2006,1,Jan,162.0
+Theft of Vehicle,2006,2,Feb,103.0
+Theft of Vehicle,2006,3,Mar,106.0
+Theft of Vehicle,2006,4,Apr,122.0
+Theft of Vehicle,2006,5,May,104.0
+Theft of Vehicle,2006,6,Jun,114.0
+Theft of Vehicle,2006,7,Jul,97.0
+Theft of Vehicle,2006,8,Aug,158.0
+Theft of Vehicle,2006,9,Sep,132.0
+Theft of Vehicle,2006,10,Oct,106.0
+Theft of Vehicle,2006,11,Nov,109.0
+Theft of Vehicle,2006,12,Dec,154.0
+Theft of Vehicle,2007,1,Jan,115.0
+Theft of Vehicle,2007,2,Feb,77.0
+Theft of Vehicle,2007,3,Mar,85.0
+Theft of Vehicle,2007,4,Apr,79.0
+Theft of Vehicle,2007,5,May,74.0
+Theft of Vehicle,2007,6,Jun,123.0
+Theft of Vehicle,2007,7,Jul,106.0
+Theft of Vehicle,2007,8,Aug,82.0
+Theft of Vehicle,2007,9,Sep,98.0
+Theft of Vehicle,2007,10,Oct,102.0
+Theft of Vehicle,2007,11,Nov,79.0
+Theft of Vehicle,2007,12,Dec,73.0
+Theft of Vehicle,2008,1,Jan,76.0
+Theft of Vehicle,2008,2,Feb,56.0
+Theft of Vehicle,2008,3,Mar,121.0
+Theft of Vehicle,2008,4,Apr,93.0
+Theft of Vehicle,2008,5,May,88.0
+Theft of Vehicle,2008,6,Jun,114.0
+Theft of Vehicle,2008,7,Jul,107.0
+Theft of Vehicle,2008,8,Aug,112.0
+Theft of Vehicle,2008,9,Sep,110.0
+Theft of Vehicle,2008,10,Oct,106.0
+Theft of Vehicle,2008,11,Nov,96.0
+Theft of Vehicle,2008,12,Dec,72.0
+Theft of Vehicle,2009,1,Jan,74.0
+Theft of Vehicle,2009,2,Feb,95.0
+Theft of Vehicle,2009,3,Mar,120.0
+Theft of Vehicle,2009,4,Apr,103.0
+Theft of Vehicle,2009,5,May,89.0
+Theft of Vehicle,2009,6,Jun,84.0
+Theft of Vehicle,2009,7,Jul,85.0
+Theft of Vehicle,2009,8,Aug,64.0
+Theft of Vehicle,2009,9,Sep,90.0
+Theft of Vehicle,2009,10,Oct,77.0
+Theft of Vehicle,2009,11,Nov,83.0
+Theft of Vehicle,2009,12,Dec,70.0
+Theft of Vehicle,2010,1,Jan,97.0
+Theft of Vehicle,2010,2,Feb,90.0
+Theft of Vehicle,2010,3,Mar,110.0
+Theft of Vehicle,2010,4,Apr,89.0
+Theft of Vehicle,2010,5,May,107.0
+Theft of Vehicle,2010,6,Jun,115.0
+Theft of Vehicle,2010,7,Jul,114.0
+Theft of Vehicle,2010,8,Aug,103.0
+Theft of Vehicle,2010,9,Sep,107.0
+Theft of Vehicle,2010,10,Oct,153.0
+Theft of Vehicle,2010,11,Nov,111.0
+Theft of Vehicle,2010,12,Dec,94.0
+Theft of Vehicle,2011,1,Jan,103.0
+Theft of Vehicle,2011,2,Feb,76.0
+Theft of Vehicle,2011,3,Mar,89.0
+Theft of Vehicle,2011,4,Apr,84.0
+Theft of Vehicle,2011,5,May,124.0
+Theft of Vehicle,2011,6,Jun,105.0
+Theft of Vehicle,2011,7,Jul,86.0
+Theft of Vehicle,2011,8,Aug,115.0
+Theft of Vehicle,2011,9,Sep,139.0
+Theft of Vehicle,2011,10,Oct,143.0
+Theft of Vehicle,2011,11,Nov,164.0
+Theft of Vehicle,2011,12,Dec,143.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,1,Jan,139.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,2,Feb,103.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,3,Mar,127.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,4,Apr,141.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,5,May,158.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,6,Jun,146.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,7,Jul,148.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,8,Aug,169.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,9,Sep,156.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,10,Oct,198.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,11,Nov,160.0
+Vehicle Collision or Pedestrian Struck (with Injury),1999,12,Dec,158.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,1,Jan,131.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,2,Feb,121.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,3,Mar,151.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,4,Apr,114.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,5,May,160.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,6,Jun,147.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,7,Jul,155.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,8,Aug,173.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,9,Sep,162.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,10,Oct,202.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,11,Nov,178.0
+Vehicle Collision or Pedestrian Struck (with Injury),2000,12,Dec,174.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,1,Jan,108.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,2,Feb,135.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,3,Mar,163.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,4,Apr,142.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,5,May,181.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,6,Jun,161.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,7,Jul,160.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,8,Aug,187.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,9,Sep,175.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,10,Oct,182.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,11,Nov,179.0
+Vehicle Collision or Pedestrian Struck (with Injury),2001,12,Dec,211.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,1,Jan,147.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,2,Feb,100.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,3,Mar,114.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,4,Apr,107.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,5,May,120.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,6,Jun,120.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,7,Jul,107.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,8,Aug,125.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,9,Sep,111.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,10,Oct,117.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,11,Nov,101.0
+Vehicle Collision or Pedestrian Struck (with Injury),2002,12,Dec,115.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,1,Jan,115.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,2,Feb,93.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,3,Mar,100.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,4,Apr,91.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,5,May,80.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,6,Jun,114.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,7,Jul,106.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,8,Aug,110.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,9,Sep,104.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,10,Oct,107.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,11,Nov,98.0
+Vehicle Collision or Pedestrian Struck (with Injury),2003,12,Dec,119.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,1,Jan,76.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,2,Feb,80.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,3,Mar,95.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,4,Apr,94.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,5,May,109.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,6,Jun,86.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,7,Jul,113.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,8,Aug,117.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,9,Sep,98.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,10,Oct,124.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,11,Nov,115.0
+Vehicle Collision or Pedestrian Struck (with Injury),2004,12,Dec,78.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,1,Jan,82.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,2,Feb,88.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,3,Mar,100.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,4,Apr,92.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,5,May,95.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,6,Jun,120.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,7,Jul,134.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,8,Aug,102.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,9,Sep,114.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,10,Oct,124.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,11,Nov,141.0
+Vehicle Collision or Pedestrian Struck (with Injury),2005,12,Dec,86.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,1,Jan,120.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,2,Feb,122.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,3,Mar,108.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,4,Apr,106.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,5,May,78.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,6,Jun,106.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,7,Jul,101.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,8,Aug,128.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,9,Sep,130.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,10,Oct,98.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,11,Nov,104.0
+Vehicle Collision or Pedestrian Struck (with Injury),2006,12,Dec,126.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,1,Jan,120.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,2,Feb,98.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,3,Mar,105.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,4,Apr,87.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,5,May,91.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,6,Jun,100.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,7,Jul,83.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,8,Aug,101.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,9,Sep,114.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,10,Oct,111.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,11,Nov,141.0
+Vehicle Collision or Pedestrian Struck (with Injury),2007,12,Dec,111.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,1,Jan,125.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,2,Feb,98.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,3,Mar,121.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,4,Apr,113.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,5,May,123.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,6,Jun,135.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,7,Jul,118.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,8,Aug,147.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,9,Sep,126.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,10,Oct,111.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,11,Nov,123.0
+Vehicle Collision or Pedestrian Struck (with Injury),2008,12,Dec,134.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,1,Jan,107.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,2,Feb,111.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,3,Mar,109.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,4,Apr,124.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,5,May,140.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,6,Jun,132.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,7,Jul,128.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,8,Aug,131.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,9,Sep,128.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,10,Oct,154.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,11,Nov,110.0
+Vehicle Collision or Pedestrian Struck (with Injury),2009,12,Dec,111.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,1,Jan,126.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,2,Feb,97.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,3,Mar,105.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,4,Apr,117.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,5,May,132.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,6,Jun,119.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,7,Jul,151.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,8,Aug,130.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,9,Sep,160.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,10,Oct,141.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,11,Nov,140.0
+Vehicle Collision or Pedestrian Struck (with Injury),2010,12,Dec,157.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,1,Jan,118.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,2,Feb,122.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,3,Mar,130.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,4,Apr,134.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,5,May,144.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,6,Jun,163.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,7,Jul,149.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,8,Aug,148.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,9,Sep,142.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,10,Oct,134.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,11,Nov,158.0
+Vehicle Collision or Pedestrian Struck (with Injury),2011,12,Dec,127.0
+Break and Enter Commercial,2012,1,Jan,223.27569580078125
+Break and Enter Commercial,2012,2,Feb,184.4687042236328
+Break and Enter Commercial,2012,3,Mar,198.9912109375
+Break and Enter Commercial,2012,4,Apr,178.4049072265625
+Break and Enter Commercial,2012,5,May,192.41664123535156
+Break and Enter Commercial,2012,6,Jun,192.82369995117188
+Break and Enter Commercial,2012,7,Jul,188.7428436279297
+Break and Enter Commercial,2012,8,Aug,234.28050231933594
+Break and Enter Commercial,2012,9,Sep,201.5973358154297
+Break and Enter Commercial,2012,10,Oct,203.8162078857422
+Break and Enter Commercial,2012,11,Nov,215.14630126953125
+Break and Enter Commercial,2012,12,Dec,217.87869262695312
+Break and Enter Commercial,2013,1,Jan,204.22061157226562
+Break and Enter Commercial,2013,2,Feb,195.30162048339844
+Break and Enter Commercial,2013,3,Mar,208.56964111328125
+Break and Enter Commercial,2013,4,Apr,202.62049865722656
+Break and Enter Commercial,2013,5,May,213.55743408203125
+Break and Enter Commercial,2013,6,Jun,210.64950561523438
+Break and Enter Commercial,2013,7,Jul,209.0657196044922
+Break and Enter Commercial,2013,8,Aug,213.00213623046875
+Break and Enter Commercial,2013,9,Sep,215.48033142089844
+Break and Enter Commercial,2013,10,Oct,211.98336791992188
+Break and Enter Commercial,2013,11,Nov,216.33993530273438
+Break and Enter Commercial,2013,12,Dec,195.31417846679688
+Break and Enter Residential/Other,2012,1,Jan,309.6814270019531
+Break and Enter Residential/Other,2012,2,Feb,232.0395050048828
+Break and Enter Residential/Other,2012,3,Mar,230.0157470703125
+Break and Enter Residential/Other,2012,4,Apr,222.66029357910156
+Break and Enter Residential/Other,2012,5,May,225.5670166015625
+Break and Enter Residential/Other,2012,6,Jun,212.13316345214844
+Break and Enter Residential/Other,2012,7,Jul,242.0130157470703
+Break and Enter Residential/Other,2012,8,Aug,252.0763397216797
+Break and Enter Residential/Other,2012,9,Sep,211.55421447753906
+Break and Enter Residential/Other,2012,10,Oct,235.01377868652344
+Break and Enter Residential/Other,2012,11,Nov,246.29562377929688
+Break and Enter Residential/Other,2012,12,Dec,245.9993133544922
+Break and Enter Residential/Other,2013,1,Jan,267.92913818359375
+Break and Enter Residential/Other,2013,2,Feb,221.60382080078125
+Break and Enter Residential/Other,2013,3,Mar,222.17825317382812
+Break and Enter Residential/Other,2013,4,Apr,174.67788696289062
+Break and Enter Residential/Other,2013,5,May,190.63723754882812
+Break and Enter Residential/Other,2013,6,Jun,187.9842071533203
+Break and Enter Residential/Other,2013,7,Jul,222.89370727539062
+Break and Enter Residential/Other,2013,8,Aug,222.17440795898438
+Break and Enter Residential/Other,2013,9,Sep,264.23529052734375
+Break and Enter Residential/Other,2013,10,Oct,312.4327697753906
+Break and Enter Residential/Other,2013,11,Nov,326.5125427246094
+Break and Enter Residential/Other,2013,12,Dec,369.8209228515625
+Mischief,2012,1,Jan,355.3943786621094
+Mischief,2012,2,Feb,356.27813720703125
+Mischief,2012,3,Mar,371.17755126953125
+Mischief,2012,4,Apr,370.7274169921875
+Mischief,2012,5,May,394.9516906738281
+Mischief,2012,6,Jun,368.2530212402344
+Mischief,2012,7,Jul,385.2682800292969
+Mischief,2012,8,Aug,387.98663330078125
+Mischief,2012,9,Sep,373.1882019042969
+Mischief,2012,10,Oct,412.1712951660156
+Mischief,2012,11,Nov,403.3841552734375
+Mischief,2012,12,Dec,418.9377136230469
+Mischief,2013,1,Jan,416.585205078125
+Mischief,2013,2,Feb,382.4251708984375
+Mischief,2013,3,Mar,421.1156005859375
+Mischief,2013,4,Apr,424.6798095703125
+Mischief,2013,5,May,442.7480163574219
+Mischief,2013,6,Jun,437.5028381347656
+Mischief,2013,7,Jul,444.4817810058594
+Mischief,2013,8,Aug,461.07965087890625
+Mischief,2013,9,Sep,442.6524963378906
+Mischief,2013,10,Oct,443.0350646972656
+Mischief,2013,11,Nov,441.53948974609375
+Mischief,2013,12,Dec,421.031005859375
+Offence Against a Person,2012,1,Jan,307.500244140625
+Offence Against a Person,2012,2,Feb,254.900146484375
+Offence Against a Person,2012,3,Mar,273.292236328125
+Offence Against a Person,2012,4,Apr,294.2134704589844
+Offence Against a Person,2012,5,May,296.5108947753906
+Offence Against a Person,2012,6,Jun,313.7417907714844
+Offence Against a Person,2012,7,Jul,298.012939453125
+Offence Against a Person,2012,8,Aug,325.60333251953125
+Offence Against a Person,2012,9,Sep,327.9449462890625
+Offence Against a Person,2012,10,Oct,299.2602233886719
+Offence Against a Person,2012,11,Nov,308.2037048339844
+Offence Against a Person,2012,12,Dec,302.1949462890625
+Offence Against a Person,2013,1,Jan,321.3289489746094
+Offence Against a Person,2013,2,Feb,269.79010009765625
+Offence Against a Person,2013,3,Mar,332.65948486328125
+Offence Against a Person,2013,4,Apr,296.20343017578125
+Offence Against a Person,2013,5,May,328.2993469238281
+Offence Against a Person,2013,6,Jun,331.73101806640625
+Offence Against a Person,2013,7,Jul,335.59722900390625
+Offence Against a Person,2013,8,Aug,338.5982360839844
+Offence Against a Person,2013,9,Sep,318.3067626953125
+Offence Against a Person,2013,10,Oct,331.5950012207031
+Offence Against a Person,2013,11,Nov,319.69073486328125
+Offence Against a Person,2013,12,Dec,314.9603271484375
+Other Theft,2012,1,Jan,362.4307861328125
+Other Theft,2012,2,Feb,370.2660217285156
+Other Theft,2012,3,Mar,376.3791198730469
+Other Theft,2012,4,Apr,395.0257873535156
+Other Theft,2012,5,May,399.8677978515625
+Other Theft,2012,6,Jun,397.0250244140625
+Other Theft,2012,7,Jul,407.3551330566406
+Other Theft,2012,8,Aug,391.74359130859375
+Other Theft,2012,9,Sep,399.5591125488281
+Other Theft,2012,10,Oct,391.6480407714844
+Other Theft,2012,11,Nov,390.934326171875
+Other Theft,2012,12,Dec,372.0411682128906
+Other Theft,2013,1,Jan,378.55889892578125
+Other Theft,2013,2,Feb,390.14166259765625
+Other Theft,2013,3,Mar,401.83551025390625
+Other Theft,2013,4,Apr,411.2056884765625
+Other Theft,2013,5,May,419.8033142089844
+Other Theft,2013,6,Jun,399.7305603027344
+Other Theft,2013,7,Jul,417.6232604980469
+Other Theft,2013,8,Aug,418.1710205078125
+Other Theft,2013,9,Sep,432.8354187011719
+Other Theft,2013,10,Oct,402.816650390625
+Other Theft,2013,11,Nov,406.2811279296875
+Other Theft,2013,12,Dec,406.3605651855469
+Theft from Vehicle,2012,1,Jan,1055.82958984375
+Theft from Vehicle,2012,2,Feb,962.3577880859375
+Theft from Vehicle,2012,3,Mar,977.0350341796875
+Theft from Vehicle,2012,4,Apr,908.9912109375
+Theft from Vehicle,2012,5,May,930.623291015625
+Theft from Vehicle,2012,6,Jun,877.1222534179688
+Theft from Vehicle,2012,7,Jul,958.9125366210938
+Theft from Vehicle,2012,8,Aug,920.1962890625
+Theft from Vehicle,2012,9,Sep,902.3900756835938
+Theft from Vehicle,2012,10,Oct,909.7401733398438
+Theft from Vehicle,2012,11,Nov,909.297119140625
+Theft from Vehicle,2012,12,Dec,946.977783203125
+Theft from Vehicle,2013,1,Jan,947.5474243164062
+Theft from Vehicle,2013,2,Feb,975.3955688476562
+Theft from Vehicle,2013,3,Mar,975.0941772460938
+Theft from Vehicle,2013,4,Apr,958.8634033203125
+Theft from Vehicle,2013,5,May,920.0654907226562
+Theft from Vehicle,2013,6,Jun,928.6702270507812
+Theft from Vehicle,2013,7,Jul,993.6394653320312
+Theft from Vehicle,2013,8,Aug,1017.8841552734375
+Theft from Vehicle,2013,9,Sep,1018.4878540039062
+Theft from Vehicle,2013,10,Oct,1049.5970458984375
+Theft from Vehicle,2013,11,Nov,1078.07177734375
+Theft from Vehicle,2013,12,Dec,1010.422119140625
+Theft of Bicycle,2012,1,Jan,157.02688598632812
+Theft of Bicycle,2012,2,Feb,97.71174621582031
+Theft of Bicycle,2012,3,Mar,138.3084259033203
+Theft of Bicycle,2012,4,Apr,200.23992919921875
+Theft of Bicycle,2012,5,May,243.37969970703125
+Theft of Bicycle,2012,6,Jun,302.9880065917969
+Theft of Bicycle,2012,7,Jul,378.1793212890625
+Theft of Bicycle,2012,8,Aug,405.4435119628906
+Theft of Bicycle,2012,9,Sep,303.3792419433594
+Theft of Bicycle,2012,10,Oct,281.45709228515625
+Theft of Bicycle,2012,11,Nov,208.6676483154297
+Theft of Bicycle,2012,12,Dec,178.78753662109375
+Theft of Bicycle,2013,1,Jan,120.48933410644531
+Theft of Bicycle,2013,2,Feb,98.98809814453125
+Theft of Bicycle,2013,3,Mar,136.33921813964844
+Theft of Bicycle,2013,4,Apr,222.78839111328125
+Theft of Bicycle,2013,5,May,270.2760009765625
+Theft of Bicycle,2013,6,Jun,322.0552978515625
+Theft of Bicycle,2013,7,Jul,447.5618896484375
+Theft of Bicycle,2013,8,Aug,435.7328186035156
+Theft of Bicycle,2013,9,Sep,348.41119384765625
+Theft of Bicycle,2013,10,Oct,315.7366943359375
+Theft of Bicycle,2013,11,Nov,246.12826538085938
+Theft of Bicycle,2013,12,Dec,147.60934448242188
+Theft of Vehicle,2012,1,Jan,123.88179016113281
+Theft of Vehicle,2012,2,Feb,95.03909301757812
+Theft of Vehicle,2012,3,Mar,112.66021728515625
+Theft of Vehicle,2012,4,Apr,102.06133270263672
+Theft of Vehicle,2012,5,May,102.34709167480469
+Theft of Vehicle,2012,6,Jun,106.5805892944336
+Theft of Vehicle,2012,7,Jul,110.90438842773438
+Theft of Vehicle,2012,8,Aug,113.23973083496094
+Theft of Vehicle,2012,9,Sep,105.918212890625
+Theft of Vehicle,2012,10,Oct,104.64390563964844
+Theft of Vehicle,2012,11,Nov,103.779541015625
+Theft of Vehicle,2012,12,Dec,107.72441101074219
+Theft of Vehicle,2013,1,Jan,97.36567687988281
+Theft of Vehicle,2013,2,Feb,58.69003677368164
+Theft of Vehicle,2013,3,Mar,84.18498992919922
+Theft of Vehicle,2013,4,Apr,76.71153259277344
+Theft of Vehicle,2013,5,May,90.79094696044922
+Theft of Vehicle,2013,6,Jun,89.56536865234375
+Theft of Vehicle,2013,7,Jul,79.06010437011719
+Theft of Vehicle,2013,8,Aug,87.50676727294922
+Theft of Vehicle,2013,9,Sep,99.97688293457031
+Theft of Vehicle,2013,10,Oct,95.0584716796875
+Theft of Vehicle,2013,11,Nov,76.69975280761719
+Theft of Vehicle,2013,12,Dec,60.067283630371094
+Vehicle Collision or Pedestrian Struck (with Injury),2012,1,Jan,137.71194458007812
+Vehicle Collision or Pedestrian Struck (with Injury),2012,2,Feb,120.44974517822266
+Vehicle Collision or Pedestrian Struck (with Injury),2012,3,Mar,138.1052703857422
+Vehicle Collision or Pedestrian Struck (with Injury),2012,4,Apr,133.64706420898438
+Vehicle Collision or Pedestrian Struck (with Injury),2012,5,May,147.6007080078125
+Vehicle Collision or Pedestrian Struck (with Injury),2012,6,Jun,143.88331604003906
+Vehicle Collision or Pedestrian Struck (with Injury),2012,7,Jul,155.35714721679688
+Vehicle Collision or Pedestrian Struck (with Injury),2012,8,Aug,158.70285034179688
+Vehicle Collision or Pedestrian Struck (with Injury),2012,9,Sep,158.4496612548828
+Vehicle Collision or Pedestrian Struck (with Injury),2012,10,Oct,145.5875244140625
+Vehicle Collision or Pedestrian Struck (with Injury),2012,11,Nov,133.8518829345703
+Vehicle Collision or Pedestrian Struck (with Injury),2012,12,Dec,133.1418914794922
+Vehicle Collision or Pedestrian Struck (with Injury),2013,1,Jan,137.30941772460938
+Vehicle Collision or Pedestrian Struck (with Injury),2013,2,Feb,118.2183609008789
+Vehicle Collision or Pedestrian Struck (with Injury),2013,3,Mar,122.29235076904297
+Vehicle Collision or Pedestrian Struck (with Injury),2013,4,Apr,130.56893920898438
+Vehicle Collision or Pedestrian Struck (with Injury),2013,5,May,126.65011596679688
+Vehicle Collision or Pedestrian Struck (with Injury),2013,6,Jun,135.29644775390625
+Vehicle Collision or Pedestrian Struck (with Injury),2013,7,Jul,139.29058837890625
+Vehicle Collision or Pedestrian Struck (with Injury),2013,8,Aug,155.48403930664062
+Vehicle Collision or Pedestrian Struck (with Injury),2013,9,Sep,167.89862060546875
+Vehicle Collision or Pedestrian Struck (with Injury),2013,10,Oct,155.27407836914062
+Vehicle Collision or Pedestrian Struck (with Injury),2013,11,Nov,130.742919921875
+Vehicle Collision or Pedestrian Struck (with Injury),2013,12,Dec,142.0969696044922

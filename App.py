@@ -18,7 +18,7 @@ dataset_selection = st.sidebar.selectbox("Select Dataset", options=["FBI Crime D
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
 if dataset_selection == "FBI Crime Data":
 
-    data_path1 = r"D:\Module 6 Project\VS Code Visualization Datasets\FBI_Crime_df.csv"
+    data_path1 = r"VS Code Visualization Datasets/FBI_Crime_df.csv"
     df = pd.read_csv(data_path1)
     df['YEAR'] = df['YEAR'].astype(int)
     df['MONTH'] = df['MONTH'].astype(int)
@@ -359,7 +359,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
 #load the historical data on which the LightGBM model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv(r"D:\Module 6 Project\Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv")
+        df = pd.read_csv(r"Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv")
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
@@ -533,7 +533,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
     st.subheader("Comparison of Yearly Crime Trends of Each Crime Type Based on Past and Future Data")   
 
 # Load the dataset containing the past and future crime counts predicted by the LightGBM model        
-    data_path2 = r"D:\Module 6 Project\VS Code Visualization Datasets\Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
+    data_path2 = r"VS Code Visualization Datasets\Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
     df1 = pd.read_csv(data_path2)
     df1['YEAR'] = df1['YEAR'].astype(int)
     df1['MONTH'] = df1['MONTH'].astype(int)
@@ -562,7 +562,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
 #load the historical data on which the XGBoost model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv(r"D:\Module 6 Project\Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv")
+        df = pd.read_csv(r"Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv")
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
@@ -721,7 +721,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
 
     st.subheader("Comparison of Yearly Crime Trends of Each Crime Type Based on Past and Future Data")
 # Load the dataset containing the past and future crime counts predicted by the XGBoost model            
-    data_path3 = r"D:\Module 6 Project\VS Code Visualization Datasets\Past_and_Future_df_type_wise_crime_count_XGBoost.csv"
+    data_path3 = r"VS Code Visualization Datasets\Past_and_Future_df_type_wise_crime_count_XGBoost.csv"
     df2 = pd.read_csv(data_path3)
     df2['YEAR'] = df2['YEAR'].astype(int)
     df2['MONTH'] = df2['MONTH'].astype(int)
@@ -749,7 +749,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 # Load the dataset in which the SARIMAX model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv(r"D:\Module 6 Project\Model Training Datasets\Train_df_SARIMAX_Model.csv")
+        df = pd.read_csv(r"Model Training Datasets/Train_df_SARIMAX_Model.csv")
         df['YEAR'] = df['YEAR'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-01-01')
         return df
@@ -921,7 +921,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
 # Load the dataset containing the past and future crime counts predicted by the SARIMAX model
     st.subheader("Comparison of Yearly Crime Trends of Each Neighbourhood Based on Past and Future Data")        
-    data_path4 = r"D:\Module 6 Project\VS Code Visualization Datasets\Past_and_Future_df_yearly_neighbourhood_crime_count_sarimax.csv"
+    data_path4 = r"VS Code Visualization Datasets\Past_and_Future_df_yearly_neighbourhood_crime_count_sarimax.csv"
     df3 = pd.read_csv(data_path4)
     df3['YEAR'] = df3['YEAR'].astype(int)
     st.write("Crime Count per Neighbourhood Forecast using SARIMAX Model:")

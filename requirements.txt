@@ -21,7 +21,6 @@ pmdarima==2.0.4
 mlforecast==0.11.0
 statsforecast==1.7.3
 
-
 # Deployment
 streamlit==1.32.2
 

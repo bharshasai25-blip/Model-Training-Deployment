@@ -356,6 +356,8 @@ if dataset_selection == "FBI Crime Data":
 
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
 elif dataset_selection == "LightGBM Crime Forecast":
+    st.write("Current working directory:", os.getcwd())
+    st.write("Files in root directory:", os.listdir())  
 #load the historical data on which the LightGBM model was trained
     @st.cache_data
     def load_data():
@@ -378,6 +380,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
         st.error("Trained LightGBM model file not found. Please ensure the model file is in the correct path.")
         st.stop()
     
+    st.success("Trained LightGBM model loaded successfully.")
+
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
     crime_type_df['MONTH'] = crime_type_df['MONTH'].astype(int)
@@ -567,6 +571,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
     st.plotly_chart(fig)
 
 elif dataset_selection == "XGBoost Crime Forecast":
+    st.write("Current working directory:", os.getcwd())
+    st.write("Files in root directory:", os.listdir()) 
 #load the historical data on which the XGBoost model was trained
     @st.cache_data
     def load_data():
@@ -586,6 +592,8 @@ elif dataset_selection == "XGBoost Crime Forecast":
     else:
         st.error("Trained XGBoost model file not found. Please ensure the model file is in the correct path.")
         st.stop()
+    st.success("Trained XGBoost model loaded successfully.")
+        
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
     crime_type_df['MONTH'] = crime_type_df['MONTH'].astype(int)
@@ -760,6 +768,8 @@ elif dataset_selection == "XGBoost Crime Forecast":
                   title='Yearly Crime Trend of Each Crime Type Based on Past and Future Data')
     st.plotly_chart(fig)
 elif dataset_selection == "SARIMAX Crime Forecast":
+    st.write("Current working directory:", os.getcwd())
+    st.write("Files in root directory:", os.listdir()) 
 # Load the dataset in which the SARIMAX model was trained
     @st.cache_data
     def load_data():
@@ -779,6 +789,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     else:
         st.error("Trained SARIMAX model file not found. Please ensure the model file is in the correct path.")
         st.stop()
+    st.write("Trained SARIMAX model loaded successfully.")
+
     crime_neighbourhood_df = load_data().copy()
     crime_neighbourhood_df['YEAR'] = crime_neighbourhood_df['YEAR'].astype(int)
     crime_neighbourhood_df.rename(columns={'NEIGHBOURHOOD': 'unique_id', 'Total_Yearly_Crime_Count_per_Neighbourhood': 'y'}, inplace=True)

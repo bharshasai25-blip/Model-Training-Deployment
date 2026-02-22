@@ -366,7 +366,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
     @st.cache_data
     def load_data():
         DATA_DIC = BASE_DIR / "Model Training Datasets"
-        data_path = pd.read_csv(DATA_DIC / "Train_df_XGBoost_LightGBM_Models.csv")
+        data_path = DATA_DIC / "Train_df_XGBoost_LightGBM_Models.csv"
 
         if not data_path.exists():
             st.error("Historical data file 'Train_df_XGBoost_LightGBM_Models.csv' not found. Please ensure the dataset file is in the correct path.")
@@ -558,7 +558,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
       DATA_DIC = BASE_DIR / "VS Code Visualization Datasets"
       data_path2 = DATA_DIC / "Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
       return pd.read_csv(data_path2)
-    df1 = load_past_future_data()
+    df1 = load_past_future_data().copy()
     df1['YEAR'] = df1['YEAR'].astype(int)
     df1['MONTH'] = df1['MONTH'].astype(int)
     st.write("Data Preview:")

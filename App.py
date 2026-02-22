@@ -283,7 +283,7 @@ if dataset_selection == "FBI Crime Data":
        st.subheader("Crime Location Map")
        st_folium = st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
 
-       selected_neighbourhood = st.selectbox(
+       selected_neighbourhood = st.sidebar.selectbox(
          "Select Neighbourhood",
          df["NEIGHBOURHOOD"].unique())
        

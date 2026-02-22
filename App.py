@@ -107,15 +107,15 @@ if dataset_selection == "FBI Crime Data":
        st.plotly_chart(fig)
 
     # Crime Location Map
-       neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD', 'HUNDRED_BLOCK'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
-       latitude_longitude_df = df.groupby(['NEIGHBOURHOOD', 'HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index()
-       crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD', 'HUNDRED_BLOCK'], how='inner')
+       neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
+       latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
+       crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
        crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=12)
        for _, row in crime_location_df.iterrows():
         folium.CircleMarker(
             location=[row['Latitude'], row['Longitude']],
             radius=row['Crime_Count'] * 0.001,
-            popup=f"{row['NEIGHBOURHOOD']} - {row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
+            popup=f"{row['NEIGHBOURHOOD']}: {row['Crime_Count']} crimes",
             color='blue',
             fill=True,
             fill_color='blue'
@@ -141,7 +141,7 @@ if dataset_selection == "FBI Crime Data":
     # Increase the figure size for better visibility
        fig.update_layout(width=1000, height=800)
     # Render with fixed width (not auto-fill) so the explicit size is used
-       st.plotly_chart(fig, use_container_width=False)
+       st.plotly_chart(fig, width='content')
 
     # Neighbourhoods Crime Count Yearly Bar Plot
        neighbourhood_crime_count_yearly = df.groupby(['NEIGHBOURHOOD', 'YEAR']).size().reset_index().rename(columns={0: 'Crime_Count'})
@@ -310,8 +310,10 @@ if dataset_selection == "FBI Crime Data":
        fig = px.density_heatmap(neighbourhood_crime_type, x='TYPE', y='NEIGHBOURHOOD', z='Crime_Count',
                     labels={'x': 'Crime Type', 'y': 'Neighbourhood', 'color': 'Number of Crimes'},
                     title='Neighbourhoods Vs Crime Type Heatmap')
+       fig.update_layout(height=800, width=1000)
+       st.plotly_chart(fig, width='content')
 
-    elif visual_selection == "Neighbourhoods Crime Count Yearly":
+    elif visual_selection == "Neighbourhoods Crime Counts Yearly":
        st.write("Neighbourhoods Crime Count Yearly Bar Plot is displayed below:")
        neighbourhood_crime_count_yearly = df.groupby(['YEAR', 'NEIGHBOURHOOD']).size().reset_index().rename(columns={0: 'Crime_Count'})
        st.subheader("Yearly Neighbourhoods Crime Count")
@@ -339,7 +341,7 @@ if dataset_selection == "FBI Crime Data":
                  hover_data= {'TYPE': True, 'YEAR': True, 'Crime_Count': True},
                  labels={'Crime_Count': 'Number of Crimes', 'NEIGHBOURHOOD': 'Neighbourhood'},
                  title='Neighbourhoods Crime Type Counts Yearly')
-       fig.update_layout(height=800, width=1200)
+       fig.update_layout(height=1200, width=1200)
        st.plotly_chart(fig)
 
     elif visual_selection == "Neighbourhoods Crime Types Yearly Trend":
@@ -370,6 +372,7 @@ if dataset_selection == "FBI Crime Data":
                  hover_data= {'MONTH': True, 'YEAR': True, 'Crime_Count': True},
                  labels={'Crime_Count': 'Number of Crimes', 'MONTH': 'Month'},
                  title='Neighbourhoods Crime Count Monthly Trend')
+       fig.update_layout(height=800, width=1200)
        st.plotly_chart(fig)
 
     elif visual_selection == "Neighbourhoods Crime Type Counts Monthly":
@@ -380,6 +383,7 @@ if dataset_selection == "FBI Crime Data":
                  hover_data= {'TYPE': True, 'MONTH': True, 'YEAR': True, 'Crime_Count': True},
                  labels={'Crime_Count': 'Number of Crimes', 'NEIGHBOURHOOD': 'Neighbourhood'},
                  title='Neighbourhoods Crime Type Counts Monthly')
+       fig.update_layout(height=800, width=1200)
        st.plotly_chart(fig)
 
     elif visual_selection == "Neighbourhoods Crime Type Counts Monthly Trend":
@@ -390,6 +394,7 @@ if dataset_selection == "FBI Crime Data":
                  hover_data= {'TYPE': True, 'MONTH': True, 'YEAR': True, 'Crime_Count': True},
                  labels={'Crime_Count': 'Number of Crimes', 'MONTH': 'Month'},
                  title='Neighbourhoods Crime Type Counts Monthly Trend')
+       fig.update_layout(height=800, width=1200)
        st.plotly_chart(fig)
 
     else:

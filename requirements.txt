@@ -1,33 +1,34 @@
 # Core libraries
 numpy==1.26.4
-pandas==2.2.2
-scipy==1.10.1
+pandas==2.3.3
+scipy==1.15.3
 
 # Visualization
-matplotlib==3.8.4
+matplotlib==3.10.8
 seaborn==0.13.2
-plotly==5.20.0
-folium==0.16.0
-streamlit-folium==0.18.0
+plotly==6.5.0
+folium==0.20.0
+streamlit-folium==0.26.1
 
 # Machine Learning
-scikit-learn==1.4.2
-lightgbm==4.3.0
-xgboost==2.0.3
+scikit-learn==1.8.0
+lightgbm==4.6.0
+xgboost==3.2.0
 
 # Time Series
-statsmodels==0.14.1
-pmdarima==2.0.4
-mlforecast==0.11.0
-statsforecast==1.7.3
+statsmodels==0.14.6
+pmdarima==2.1.1
+mlforecast==1.0.2
+statsforecast==2.0.3
+utilsforecast==0.2.15
 
 # Deployment
-streamlit==1.32.2
+streamlit==1.52.2
 
 # Model saving
-joblib==1.3.2
+joblib==1.5.3
 
 # Utilities
-tqdm==4.66.1
-python-dateutil==2.8.2
-pytz==2023.3
+tqdm==4.67.3
+python-dateutil==2.9.0.post0
+pytz==2025.2

@@ -9,7 +9,7 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error
 
 # 1. DATA PREPARATION
 # Assuming your columns are: 'Crime Type', 'Year', 'Month', 'Crime Count'
-df = pd.read_csv('D:\Module 6 Project\Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv')
+df = pd.read_csv('Model Training Datasets/Train_df_XGBoost_LightGBM_Models.csv')
 df.sort_values(["TYPE", "YEAR"], inplace=True)
 df.reset_index(drop=True, inplace=True)
 
@@ -167,7 +167,7 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error
 
 # 1. DATA PREPARATION
 # Assuming your columns are: 'Crime Type', 'Year', 'Month', 'Crime Count'
-df = pd.read_csv('D:\Module 6 Project\Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv')
+df = pd.read_csv('Model Training Datasets/Train_df_XGBoost_LightGBM_Models.csv')
 df.sort_values(["TYPE", "YEAR"], inplace=True)
 df.reset_index(drop=True, inplace=True)
 
@@ -330,7 +330,7 @@ warnings.filterwarnings("ignore")
 # 2️⃣ LOAD & PREPARE DATA
 # ==========================================================
 
-df = pd.read_csv('D:\Module 6 Project\Model Training Datasets\Train_df_SARIMAX_Model.csv')
+df = pd.read_csv('Model Training Datasets/Train_df_SARIMAX_Model.csv')
 df.sort_values(["NEIGHBOURHOOD", "YEAR"], inplace=True)
 df.reset_index(drop=True, inplace=True)
 

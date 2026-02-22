@@ -9,6 +9,10 @@ import streamlit as st
 import os
 import streamlit.components.v1 as components
 import joblib
+from pathlib import Path
+
+# Define base directory
+BASE_DIR = Path(__file__).resolve().parent
 
 st.set_page_config(page_title="Data Visualization App", layout="wide")
 st.sidebar.title("Navigation")
@@ -17,8 +21,8 @@ dataset_selection = st.sidebar.selectbox("Select Dataset", options=["FBI Crime D
 # Data
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
 if dataset_selection == "FBI Crime Data":
-
-    data_path1 = "VS Code Visualization Datasets/FBI_Crime_df.csv"
+    DATA_DIC = BASE_DIR / "VS Code Visualization Datasets"
+    data_path1 = DATA_DIC / "FBI_Crime_df.csv"
     df = pd.read_csv(data_path1)
     df['YEAR'] = df['YEAR'].astype(int)
     df['MONTH'] = df['MONTH'].astype(int)
@@ -361,25 +365,32 @@ elif dataset_selection == "LightGBM Crime Forecast":
 #load the historical data on which the LightGBM model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv("Model Training Datasets/Train_df_XGBoost_LightGBM_Models.csv")
+        DATA_DIC = BASE_DIR / "Model Training Datasets"
+        data_path = pd.read_csv(DATA_DIC / "Train_df_XGBoost_LightGBM_Models.csv")
+
+        if not data_path.exists():
+            st.error("Historical data file 'Train_df_XGBoost_LightGBM_Models.csv' not found. Please ensure the dataset file is in the correct path.")
+            st.stop()
+
+        df = pd.read_csv(data_path)
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
         return df
     
 #load the trained LightGBM model for crime forecasting
-    model_path = "trained_LightGBM_forecast_model.pkl"
-    
-    @st.cache_resource
-    def load_model():
-        return joblib.load(model_path)
-    
-    if os.path.exists(model_path):
-        model = load_model()
-    else:
-        st.error("Trained LightGBM model file not found. Please ensure the model file is in the correct path.")
+    st.write("Looking for model at:", BASE_DIR / "trained_LightGBM_forecast_model.pkl")
+    st.write("Does file exist?", (BASE_DIR / "trained_LightGBM_forecast_model.pkl").exists())
+    @st.cache_resource(show_spinner=False)
+    def load_model(model_name):
+      model_path = BASE_DIR / model_name
+
+      if not model_path.exists():
+        st.error(f"Trained LightGBM model file '{model_name}' not found. Please ensure the model file is in the correct path.")
         st.stop()
-    
+
+      return joblib.load(model_path)
+    model = load_model("trained_LightGBM_forecast_model.pkl")
     st.success("Trained LightGBM model loaded successfully.")
 
     crime_type_df = load_data().copy()
@@ -508,8 +519,6 @@ elif dataset_selection == "LightGBM Crime Forecast":
     st.subheader("Final Forecasted Crime Counts for Each Month of 2012 and 2013 Based on Trained LightGBM Model")
     print("\nFinal 24-Month Forecast:")
     print(final_forecast1.head())
-#    forecasted_data = model.predict(crime_type_df.drop(columns=['Crime_Count', 'ds']))
-    #crime_type_df['Forecasted_Crime_Count'] = forecasted_data
 
 # Visual representation of the forecasted crime counts for the last 2 years (2012 and 2013) based on the trained LightGBM model
 # We create multiple bar charts(based on the unique_id) to visualize the forecasted monthly crime counts for each crime type over the last 2 years (2012 and 2013) based on the trained LightGBM model
@@ -545,8 +554,11 @@ elif dataset_selection == "LightGBM Crime Forecast":
     st.subheader("Comparison of Yearly Crime Trends of Each Crime Type Based on Past and Future Data")   
 
 # Load the dataset containing the past and future crime counts predicted by the LightGBM model        
-    data_path2 = "VS Code Visualization Datasets/Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
-    df1 = pd.read_csv(data_path2)
+    def load_past_future_data():
+      DATA_DIC = BASE_DIR / "VS Code Visualization Datasets"
+      data_path2 = DATA_DIC / "Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
+      return pd.read_csv(data_path2)
+    df1 = load_past_future_data()
     df1['YEAR'] = df1['YEAR'].astype(int)
     df1['MONTH'] = df1['MONTH'].astype(int)
     st.write("Data Preview:")
@@ -576,24 +588,33 @@ elif dataset_selection == "XGBoost Crime Forecast":
 #load the historical data on which the XGBoost model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv("Model Training Datasets/Train_df_XGBoost_LightGBM_Models.csv")
+        DATA_DIC = BASE_DIR / "Model Training Datasets"
+        data_path = DATA_DIC / "Train_df_XGBoost_LightGBM_Models.csv"
+
+        if not data_path.exists():
+            st.error("Historical data file not found. Please ensure the data file is in the correct path.")
+            st.stop()
+
+        df = pd.read_csv(data_path)
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
         return df
 #load the trained XGBoost model for crime forecasting
-    model_path = "trained_XGBoost_forecast_model.pkl"
-    @st.cache_resource
-    def load_model():
+    st.write("Looking for model at:", BASE_DIR / "trained_XGBoost_forecast_model.pkl")
+    st.write("Does file exist?", (BASE_DIR / "trained_XGBoost_forecast_model.pkl").exists())
+    @st.cache_resource(show_spinner=False)
+    def load_model(model_filename):
+        model_path = BASE_DIR / model_filename
+
+        if not model_path.exists():
+            st.error("Trained XGBoost model file not found. Please ensure the model file is in the correct path.")
+            st.stop()
+
         return joblib.load(model_path)
-    
-    if os.path.exists(model_path):
-        model = load_model()
-    else:
-        st.error("Trained XGBoost model file not found. Please ensure the model file is in the correct path.")
-        st.stop()
+    model = load_model("trained_XGBoost_forecast_model.pkl")
     st.success("Trained XGBoost model loaded successfully.")
-        
+
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
     crime_type_df['MONTH'] = crime_type_df['MONTH'].astype(int)
@@ -743,8 +764,11 @@ elif dataset_selection == "XGBoost Crime Forecast":
 
     st.subheader("Comparison of Yearly Crime Trends of Each Crime Type Based on Past and Future Data")
 # Load the dataset containing the past and future crime counts predicted by the XGBoost model            
-    data_path3 = "VS Code Visualization Datasets/Past_and_Future_df_type_wise_crime_count_XGBoost.csv"
-    df2 = pd.read_csv(data_path3)
+    def load_past_future_data():
+      DATA_DIC = BASE_DIR / "VS Code Visualization Datasets"
+      data_path3 = DATA_DIC / "Past_and_Future_df_type_wise_crime_count_XGBoost.csv"
+      return pd.read_csv(data_path3)
+    df2 = load_past_future_data()
     df2['YEAR'] = df2['YEAR'].astype(int)
     df2['MONTH'] = df2['MONTH'].astype(int)
     st.write("Crime Count Forecast using XGBoost Regressor Model:")
@@ -773,22 +797,33 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 # Load the dataset in which the SARIMAX model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv("Model Training Datasets/Train_df_SARIMAX_Model.csv")
+        DATA_DIC = BASE_DIR / "Model Training Datasets"
+        data_path = DATA_DIC / "Train_df_SARIMAX_Model.csv"
+
+        if not data_path.exists():
+          st.error(f"Dataset not found: {data_path}")
+          st.stop()
+
+        df = pd.read_csv(data_path)
         df['YEAR'] = df['YEAR'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-01-01')
+
         return df
     
 # Load the SARIMAX model for crime forecasting
-    model_path = "final_SARIMA_forecast.pkl"
-    @st.cache_resource
-    def load_model():
+    st.write("Looking for model at:", BASE_DIR / "final_SARIMA_forecast.pkl")
+    st.write("Does file exist?", (BASE_DIR / "final_SARIMA_forecast.pkl").exists())
+    @st.cache_resource(show_spinner=False)
+    def load_model(model_filename):
+        model_path = BASE_DIR / model_filename
+
+        if not model_path.exists():
+            st.error("Trained SARIMAX model file not found. Please ensure the model file is in the correct path.")
+            st.stop()
+
         return joblib.load(model_path)
     
-    if os.path.exists(model_path):
-        model = load_model()
-    else:
-        st.error("Trained SARIMAX model file not found. Please ensure the model file is in the correct path.")
-        st.stop()
+    model = load_model("final_SARIMA_forecast.pkl")
     st.write("Trained SARIMAX model loaded successfully.")
 
     crime_neighbourhood_df = load_data().copy()

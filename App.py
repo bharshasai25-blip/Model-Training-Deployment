@@ -18,7 +18,7 @@ dataset_selection = st.sidebar.selectbox("Select Dataset", options=["FBI Crime D
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
 if dataset_selection == "FBI Crime Data":
 
-    data_path1 = r"VS Code Visualization Datasets/FBI_Crime_df.csv"
+    data_path1 = "VS Code Visualization Datasets/FBI_Crime_df.csv"
     df = pd.read_csv(data_path1)
     df['YEAR'] = df['YEAR'].astype(int)
     df['MONTH'] = df['MONTH'].astype(int)
@@ -359,16 +359,24 @@ elif dataset_selection == "LightGBM Crime Forecast":
 #load the historical data on which the LightGBM model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv(r"Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv")
+        df = pd.read_csv("Model Training Datasets/Train_df_XGBoost_LightGBM_Models.csv")
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
         return df
     
 #load the trained LightGBM model for crime forecasting
+    model_path = "trained_LightGBM_forecast_model.pkl"
+    
     @st.cache_resource
     def load_model():
-        return joblib.load('trained_LightGBM_forecast_model.pkl')
+        return joblib.load(model_path)
+    
+    if os.path.exists(model_path):
+        model = load_model()
+    else:
+        st.error("Trained LightGBM model file not found. Please ensure the model file is in the correct path.")
+        st.stop()
     
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
@@ -376,7 +384,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
     crime_type_df.rename(columns={'TYPE': 'unique_id', 'Monthly_Crime_Count_Type_wise': 'y'}, inplace=True)
     crime_type_df.sort_values(["unique_id", "YEAR", "MONTH"], inplace=True)
     crime_type_df.reset_index(drop=True, inplace=True)
-    model = load_model()
+
 # App title and description    
     st.title("LightGBM Regressor Deployment for Crime Forecasting")
     st.write("This section demonstrates the deployment of a trained LightGBM Regressor model for crime forecasting. The model has been trained on historical crime data and is now being used to predict future crime trends.")
@@ -533,7 +541,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
     st.subheader("Comparison of Yearly Crime Trends of Each Crime Type Based on Past and Future Data")   
 
 # Load the dataset containing the past and future crime counts predicted by the LightGBM model        
-    data_path2 = r"VS Code Visualization Datasets\Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
+    data_path2 = "VS Code Visualization Datasets/Past_and_Future_df_type_wise_crime_count_LightBGM.csv"
     df1 = pd.read_csv(data_path2)
     df1['YEAR'] = df1['YEAR'].astype(int)
     df1['MONTH'] = df1['MONTH'].astype(int)
@@ -562,23 +570,29 @@ elif dataset_selection == "XGBoost Crime Forecast":
 #load the historical data on which the XGBoost model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv(r"Model Training Datasets\Train_df_XGBoost_LightGBM_Models.csv")
+        df = pd.read_csv("Model Training Datasets/Train_df_XGBoost_LightGBM_Models.csv")
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
         return df
 #load the trained XGBoost model for crime forecasting
+    model_path = "trained_XGBoost_forecast_model.pkl"
     @st.cache_resource
     def load_model():
-        return joblib.load('trained_XGBoost_forecast_model.pkl')
+        return joblib.load(model_path)
+    
+    if os.path.exists(model_path):
+        model = load_model()
+    else:
+        st.error("Trained XGBoost model file not found. Please ensure the model file is in the correct path.")
+        st.stop()
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
     crime_type_df['MONTH'] = crime_type_df['MONTH'].astype(int)
     crime_type_df.rename(columns={'TYPE': 'unique_id', 'Monthly_Crime_Count_Type_wise': 'y'}, inplace=True)
     crime_type_df.sort_values(["unique_id", "YEAR", "MONTH"], inplace=True)
     crime_type_df.reset_index(drop=True, inplace=True)
-    model = load_model()
-
+    
 # App title and description
     st.title("XGBoost Regressor Deployment for Crime Forecasting")
     st.write("This section demonstrates the deployment of a trained XGBoost Regressor model for crime forecasting. The model has been trained on historical crime data and is now being used to predict future crime trends.")
@@ -721,7 +735,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
 
     st.subheader("Comparison of Yearly Crime Trends of Each Crime Type Based on Past and Future Data")
 # Load the dataset containing the past and future crime counts predicted by the XGBoost model            
-    data_path3 = r"VS Code Visualization Datasets\Past_and_Future_df_type_wise_crime_count_XGBoost.csv"
+    data_path3 = "VS Code Visualization Datasets/Past_and_Future_df_type_wise_crime_count_XGBoost.csv"
     df2 = pd.read_csv(data_path3)
     df2['YEAR'] = df2['YEAR'].astype(int)
     df2['MONTH'] = df2['MONTH'].astype(int)
@@ -749,21 +763,27 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 # Load the dataset in which the SARIMAX model was trained
     @st.cache_data
     def load_data():
-        df = pd.read_csv(r"Model Training Datasets/Train_df_SARIMAX_Model.csv")
+        df = pd.read_csv("Model Training Datasets/Train_df_SARIMAX_Model.csv")
         df['YEAR'] = df['YEAR'].astype(int)
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-01-01')
         return df
     
 # Load the SARIMAX model for crime forecasting
+    model_path = "final_SARIMA_forecast.pkl"
     @st.cache_resource
     def load_model():
-        return joblib.load('final_SARIMA_forecast.pkl')
+        return joblib.load(model_path)
+    
+    if os.path.exists(model_path):
+        model = load_model()
+    else:
+        st.error("Trained SARIMAX model file not found. Please ensure the model file is in the correct path.")
+        st.stop()
     crime_neighbourhood_df = load_data().copy()
     crime_neighbourhood_df['YEAR'] = crime_neighbourhood_df['YEAR'].astype(int)
     crime_neighbourhood_df.rename(columns={'NEIGHBOURHOOD': 'unique_id', 'Total_Yearly_Crime_Count_per_Neighbourhood': 'y'}, inplace=True)
     crime_neighbourhood_df.sort_values(["unique_id", "YEAR"], inplace=True)
     crime_neighbourhood_df.reset_index(drop=True, inplace=True)
-    model = load_model()
 
 # App title and description
     st.title("SARIMAX Model Deployment for Crime Forecasting")
@@ -921,7 +941,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
 # Load the dataset containing the past and future crime counts predicted by the SARIMAX model
     st.subheader("Comparison of Yearly Crime Trends of Each Neighbourhood Based on Past and Future Data")        
-    data_path4 = r"VS Code Visualization Datasets\Past_and_Future_df_yearly_neighbourhood_crime_count_sarimax.csv"
+    data_path4 = "VS Code Visualization Datasets/Past_and_Future_df_yearly_neighbourhood_crime_count_sarimax.csv"
     df3 = pd.read_csv(data_path4)
     df3['YEAR'] = df3['YEAR'].astype(int)
     st.write("Crime Count per Neighbourhood Forecast using SARIMAX Model:")

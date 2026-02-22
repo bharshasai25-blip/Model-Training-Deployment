@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import folium
+from folium.plugins import MarkerCluster
 import streamlit as st
 import os
 import streamlit.components.v1 as components
@@ -17,6 +18,32 @@ BASE_DIR = Path(__file__).resolve().parent
 st.set_page_config(page_title="Data Visualization App", layout="wide")
 st.sidebar.title("Navigation")
 dataset_selection = st.sidebar.selectbox("Select Dataset", options=["FBI Crime Data", "LightGBM Crime Forecast", "XGBoost Crime Forecast", "SARIMAX Crime Forecast"])
+
+# Building Map visualization with Folium and Streamlit
+@st.cache_resource
+def create_crime_map(crime_location_df):
+
+     crime_map = folium.Map(
+        location=[
+            crime_location_df['Latitude'].mean(),
+            crime_location_df['Longitude'].mean()
+        ],
+        zoom_start=12
+    )
+
+     marker_cluster = MarkerCluster().add_to(crime_map)
+
+     for row in crime_location_df.itertuples():  # Faster than iterrows()
+        folium.CircleMarker(
+            location=[row.Latitude, row.Longitude],
+            radius=max(row.Crime_Count * 0.001, 2),  # Prevent tiny circles
+            popup=f"{row.NEIGHBOURHOOD} - {row.HUNDRED_BLOCK}: {row.Crime_Count} crimes",
+            color='blue',
+            fill=True,
+            fill_color='blue'
+        ).add_to(marker_cluster)
+
+     return crime_map
 
 # Data
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
@@ -236,25 +263,35 @@ if dataset_selection == "FBI Crime Data":
                  labels={'Count': 'Number of Crimes', 'Month_name': 'Month'},
                  title='Monthly Crime Trend by Type')
        fig.update_layout(height=800, width=1200)
-       st.plotly_chart(fig)
+       st.plotly_chart(fig)     
 
     elif visual_selection == "Crime Location Map":
+
        st.write("Crime Location Map is displayed below:")
-       neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD', 'HUNDRED_BLOCK'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
-       latitude_longitude_df = df.groupby(['NEIGHBOURHOOD', 'HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index()
-       crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD', 'HUNDRED_BLOCK'], how='inner')
-       crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=12)
-       for _, row in crime_location_df.iterrows():
-        folium.CircleMarker(
-            location=[row['Latitude'], row['Longitude']],
-            radius=row['Crime_Count'] * 0.001,
-            popup=f"{row['NEIGHBOURHOOD']} - {row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
-            color='blue',
-            fill=True,
-            fill_color='blue'
-        ).add_to(crime_map)
-       st.subheader("Crime Location Map")
-       st_folium = st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
+
+       neighbourhood_crime_count = (
+        df.groupby(['NEIGHBOURHOOD', 'HUNDRED_BLOCK'])['TYPE']
+        .count()
+        .reset_index()
+        .rename(columns={'TYPE': 'Crime_Count'})
+    )
+
+       latitude_longitude_df = (
+        df.groupby(['NEIGHBOURHOOD', 'HUNDRED_BLOCK'])[['Latitude', 'Longitude']]
+        .mean()
+        .reset_index()
+    )
+
+       crime_location_df = pd.merge(
+        neighbourhood_crime_count,
+        latitude_longitude_df,
+        on=['NEIGHBOURHOOD', 'HUNDRED_BLOCK'],
+        how='inner'
+    )
+
+       crime_map = create_crime_map(crime_location_df)
+
+       st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
 
     elif visual_selection == "Neighbourhoods Vs Crime Count":
        st.write("Neighbourhoods Vs Crime Count Bar Plot is displayed below:")

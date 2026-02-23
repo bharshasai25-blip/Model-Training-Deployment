@@ -19,32 +19,6 @@ st.set_page_config(page_title="Data Visualization App", layout="wide")
 st.sidebar.title("Navigation")
 dataset_selection = st.sidebar.selectbox("Select Dataset", options=["FBI Crime Data", "LightGBM Crime Forecast", "XGBoost Crime Forecast", "SARIMAX Crime Forecast"])
 
-# Building Map visualization with Folium and Streamlit
-@st.cache_resource
-def create_crime_map(crime_location_df):
-
-     crime_map = folium.Map(
-        location=[
-            crime_location_df['Latitude'].mean(),
-            crime_location_df['Longitude'].mean()
-        ],
-        zoom_start=12
-    )
-
-     marker_cluster = MarkerCluster().add_to(crime_map)
-
-     for row in crime_location_df.itertuples():  # Faster than iterrows()
-        folium.CircleMarker(
-            location=[row.Latitude, row.Longitude],
-            radius=max(row.Crime_Count * 0.001, 2),  # Prevent tiny circles
-            popup=f"{row.NEIGHBOURHOOD} - {row.HUNDRED_BLOCK}: {row.Crime_Count} crimes",
-            color='blue',
-            fill=True,
-            fill_color='blue'
-        ).add_to(marker_cluster)
-
-     return crime_map
-
 # Data
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
 if dataset_selection == "FBI Crime Data":

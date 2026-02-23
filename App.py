@@ -270,21 +270,23 @@ if dataset_selection == "FBI Crime Data":
        neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
        latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
        crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
-       center_lat = crime_location_df['Latitude'].mean()
-       center_long = crime_location_df['Longitude'].mean()
+       map_df = crime_location_df.copy()
+       map_df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
+       center_lat = map_df['Latitude'].mean()
+       center_long = map_df['Longitude'].mean()
        crime_map = folium.Map(location=[center_lat, center_long], zoom_start=6)
-       for _, row in crime_location_df.iterrows():
+       for _, row in map_df.iterrows():
         folium.CircleMarker(
             location=[row['Latitude'], row['Longitude']],
-            radius=5 + (row['Crime_Count'] * 0.0001),  # Scale radius based on crime count
+            radius=5 + (row['Crime_Count'] * 0.05),  # Scale radius based on crime count
             popup=f"{row['NEIGHBOURHOOD']}: {row['Crime_Count']} crimes",
             color='red',
             fill=True,
             fill_color='red'
         ).add_to(crime_map)
 
-        sw = crime_location_df[['Latitude', 'Longitude']].min().values.tolist()
-        ne = crime_location_df[['Latitude', 'Longitude']].max().values.tolist()
+        sw = map_df[['Latitude', 'Longitude']].min().values.tolist()
+        ne = map_df[['Latitude', 'Longitude']].max().values.tolist()
         crime_map.fit_bounds([sw, ne])
         #Display the crime location map in Streamlit
        st.subheader("Crime Location Map")

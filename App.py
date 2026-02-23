@@ -97,6 +97,7 @@ if dataset_selection == "FBI Crime Data":
         ).add_to(crime_map)
        st.subheader("Crime Location Map")
        st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
+       st.info("Note: Please select the 'Crime Location Map' option from the sidebar 'Choose Visualization Type' if you want to see the crime counts and crime details for all blocks across different neighbourhoods.")
 
     # Neighbourhoods Vs Crime Count Bar Plot
        neighbourhood_crime_totals = df['NEIGHBOURHOOD'].value_counts().reset_index()

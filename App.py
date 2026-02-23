@@ -285,13 +285,16 @@ if dataset_selection == "FBI Crime Data":
             fill=True,
             fill_color='red'
         ).add_to(crime_map)
-
+                
         sw = map_df[['Latitude', 'Longitude']].min().values.tolist()
         ne = map_df[['Latitude', 'Longitude']].max().values.tolist()
         crime_map.fit_bounds([sw, ne])
         #Display the crime location map in Streamlit
        st.subheader("Crime Location Map")
        st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
+
+       st.dataframe(map_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
+       st.dataframe(crime_location_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
 
        selected_neighbourhood = st.sidebar.selectbox(
          "Select Neighbourhood",

@@ -108,8 +108,9 @@ if dataset_selection == "FBI Crime Data":
 
     # Crime Location Map
        neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
+       neighbourhood_crime_count_df = neighbourhood_crime_count[neighbourhood_crime_count['NEIGHBOURHOOD'] != 'Offset to Protect Privacy'].copy()
        latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
-       crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
+       crime_location_df = pd.merge(neighbourhood_crime_count_df, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
        crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=12)
        for _, row in crime_location_df.iterrows():
         folium.CircleMarker(
@@ -121,7 +122,7 @@ if dataset_selection == "FBI Crime Data":
             fill_color='red'
         ).add_to(crime_map)
        st.subheader("Crime Location Map")
-       st_folium = st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
+       st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
 
     # Neighbourhoods Vs Crime Count Bar Plot
        neighbourhood_crime_totals = df['NEIGHBOURHOOD'].value_counts().reset_index()
@@ -271,8 +272,6 @@ if dataset_selection == "FBI Crime Data":
        neighbourhood_crime_count_df = neighbourhood_crime_count[neighbourhood_crime_count['NEIGHBOURHOOD'] != 'Offset to Protect Privacy'].copy()
        latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
        crime_location_df = pd.merge(neighbourhood_crime_count_df, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
-       #map_df = crime_location_df.copy()
-       #map_df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
        center_lat = crime_location_df['Latitude'].mean()
        center_long = crime_location_df['Longitude'].mean()
        crime_map = folium.Map(location=[center_lat, center_long], zoom_start=6)
@@ -292,8 +291,7 @@ if dataset_selection == "FBI Crime Data":
         #Display the crime location map in Streamlit
        st.subheader("Crime Location Map")
        st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-
-       #st.dataframe(map_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
+        #Printing the crime details for all neighbourhoods in a dataframe
        st.dataframe(crime_location_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
 
        selected_neighbourhood = st.sidebar.selectbox(

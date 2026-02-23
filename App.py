@@ -271,12 +271,12 @@ if dataset_selection == "FBI Crime Data":
        neighbourhood_crime_count_df = neighbourhood_crime_count[neighbourhood_crime_count['NEIGHBOURHOOD'] != 'Offset to Protect Privacy'].copy()
        latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
        crime_location_df = pd.merge(neighbourhood_crime_count_df, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
-       map_df = crime_location_df.copy()
-       map_df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
-       center_lat = map_df['Latitude'].mean()
-       center_long = map_df['Longitude'].mean()
+       #map_df = crime_location_df.copy()
+       #map_df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
+       center_lat = crime_location_df['Latitude'].mean()
+       center_long = crime_location_df['Longitude'].mean()
        crime_map = folium.Map(location=[center_lat, center_long], zoom_start=6)
-       for _, row in map_df.iterrows():
+       for _, row in crime_location_df.iterrows():
         folium.CircleMarker(
             location=[row['Latitude'], row['Longitude']],
             radius=5 + (row['Crime_Count'] * 0.001),  # Scale radius based on crime count
@@ -286,14 +286,14 @@ if dataset_selection == "FBI Crime Data":
             fill_color='red'
         ).add_to(crime_map)
                 
-        sw = map_df[['Latitude', 'Longitude']].min().values.tolist()
-        ne = map_df[['Latitude', 'Longitude']].max().values.tolist()
+        sw = crime_location_df[['Latitude', 'Longitude']].min().values.tolist()
+        ne = crime_location_df[['Latitude', 'Longitude']].max().values.tolist()
         crime_map.fit_bounds([sw, ne])
         #Display the crime location map in Streamlit
        st.subheader("Crime Location Map")
        st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
 
-       st.dataframe(map_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
+       #st.dataframe(map_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
        st.dataframe(crime_location_df[['NEIGHBOURHOOD', 'Crime_Count', 'Latitude', 'Longitude']])
 
        selected_neighbourhood = st.sidebar.selectbox(

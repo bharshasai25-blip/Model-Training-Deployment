@@ -270,11 +270,11 @@ if dataset_selection == "FBI Crime Data":
        neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
        latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
        crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
-       crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=12)
+       crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=6)
        for _, row in crime_location_df.iterrows():
         folium.CircleMarker(
             location=[row['Latitude'], row['Longitude']],
-            radius=row['Crime_Count'] * 0.001,
+            radius=row['Crime_Count'] * 0.0001,
             popup=f"{row['NEIGHBOURHOOD']}: {row['Crime_Count']} crimes",
             color='red',
             fill=True,
@@ -298,7 +298,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -324,7 +324,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -350,7 +350,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -376,7 +376,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -402,7 +402,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -428,7 +428,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -454,7 +454,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -480,7 +480,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -506,7 +506,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -532,7 +532,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -558,7 +558,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -584,7 +584,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -610,7 +610,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -636,7 +636,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -662,7 +662,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -688,7 +688,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -714,7 +714,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -740,7 +740,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -766,7 +766,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -792,7 +792,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -818,7 +818,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -844,7 +844,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -870,7 +870,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -896,7 +896,7 @@ if dataset_selection == "FBI Crime Data":
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
-                     popup=f"{row['HUNDRED_BLOCK']}: {row['TYPE']} crime",
+                     popup=f"{row['HUNDRED_BLOCK']}: {row['Crime_Count']} crimes",
                      color='red',
                      fill=True,
                      fill_color='red'
@@ -1594,7 +1594,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 # Showing the full forecasted dataset having only the forecasted crime counts of each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained SARIMAX Model")
     st.write("The full forecasted dataset for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model is displayed below. This dataset includes the forecasted crime counts for each neighbourhood for every year in 2012 and 2013, allowing us to analyze the predicted crime trends over these two years based on the model's forecasting capabilities. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained SARIMAX model' expander to see the complete dataset in tabular format, which includes the neighbourhood, year, and the corresponding forecasted crime count as predicted by the SARIMAX model.")
-    
+
     def generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df):
 # Create future dynamic features (X_df) for the next 2 years
         last_year = crime_neighbourhood_df['YEAR'].max()

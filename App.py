@@ -116,9 +116,9 @@ if dataset_selection == "FBI Crime Data":
             location=[row['Latitude'], row['Longitude']],
             radius=row['Crime_Count'] * 0.001,
             popup=f"{row['NEIGHBOURHOOD']}: {row['Crime_Count']} crimes",
-            color='blue',
+            color='red',
             fill=True,
-            fill_color='blue'
+            fill_color='red'
         ).add_to(crime_map)
        st.subheader("Crime Location Map")
        st_folium = st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
@@ -276,9 +276,9 @@ if dataset_selection == "FBI Crime Data":
             location=[row['Latitude'], row['Longitude']],
             radius=row['Crime_Count'] * 0.001,
             popup=f"{row['NEIGHBOURHOOD']}: {row['Crime_Count']} crimes",
-            color='blue',
+            color='red',
             fill=True,
-            fill_color='blue'
+            fill_color='red'
         ).add_to(crime_map)
        st.subheader("Crime Location Map")
        st_folium = st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
@@ -1150,6 +1150,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
           
 # Showing the full forecasted dataset having only the forecasted crime counts of each month of the last 2 years (2012 and 2013) based on the trained LightGBM model
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained LightGBM Model")
+    st.write("The dataset displayed below contains the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained LightGBM model. This dataset includes the crime type, year, month, and the corresponding forecasted crime count as predicted by the model. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model' expander to see the complete dataset.")
 
     def generate_feature_columns_in_forecasted_dataset(crime_type_df):
 # Create future dynamic features (X_df) for the next 24 months
@@ -1176,7 +1177,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
     X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
 # Final Forecast
     final_forecast1 = model.predict(h=24, X_df=X_df)
-    st.subheader("Final Forecasted Crime Counts for Each Month of 2012 and 2013 Based on Trained LightGBM Model")
+    
     print("\nFinal 24-Month Forecast:")
     print(final_forecast1.head())
 
@@ -1243,8 +1244,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
     st.plotly_chart(fig)
 
 elif dataset_selection == "XGBoost Crime Forecast":
-    st.write("Current working directory:", os.getcwd())
-    st.write("Files in root directory:", os.listdir()) 
+    #st.write("Current working directory:", os.getcwd())
+    #st.write("Files in root directory:", os.listdir()) 
 #load the historical data on which the XGBoost model was trained
     @st.cache_data
     def load_data():
@@ -1261,8 +1262,8 @@ elif dataset_selection == "XGBoost Crime Forecast":
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
         return df
 #load the trained XGBoost model for crime forecasting
-    st.write("Looking for model at:", BASE_DIR / "trained_XGBoost_forecast_model.pkl")
-    st.write("Does file exist?", (BASE_DIR / "trained_XGBoost_forecast_model.pkl").exists())
+    #st.write("Looking for model at:", BASE_DIR / "trained_XGBoost_forecast_model.pkl")
+    #st.write("Does file exist?", (BASE_DIR / "trained_XGBoost_forecast_model.pkl").exists())
     @st.cache_resource(show_spinner=False)
     def load_model(model_filename):
         model_path = BASE_DIR / model_filename
@@ -1273,7 +1274,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
 
         return joblib.load(model_path)
     model = load_model("trained_XGBoost_forecast_model.pkl")
-    st.success("Trained XGBoost model loaded successfully.")
+    #st.success("Trained XGBoost model loaded successfully.")
 
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
@@ -1364,6 +1365,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
 
 # Showing the full forecasted dataset having only the forecasted crime counts of each month of the last 2 years (2012 and 2013) based on the trained XGBoost model
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained XGBoost Model")
+    st.write("The full forecasted dataset for each month of the last 2 years (2012 and 2013) based on the trained XGBoost model is displayed below. This dataset includes the forecasted crime counts for each crime type for every month in 2012 and 2013, allowing us to analyze the predicted crime trends over these two years based on the model's forecasting capabilities. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained XGBoost model' expander to see the complete dataset in tabular format, which includes the crime type, year, month, and the corresponding forecasted crime count as predicted by the XGBoost model.")
 
     def generate_feature_columns_in_forecasted_dataset(crime_type_df):
 # Create future dynamic features (X_df) for the next 24 months
@@ -1390,7 +1392,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
     X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
 # Final Forecast
     final_forecast1 = model.predict(h=24, X_df=X_df)
-    st.subheader("Final Forecasted Crime Counts for Each Month of 2012 and 2013 Based on Trained XGBoost Model")
+    
     print("\nFinal 24-Month Forecast:")
     print(final_forecast1.head())
 
@@ -1452,8 +1454,8 @@ elif dataset_selection == "XGBoost Crime Forecast":
                   title='Yearly Crime Trend of Each Crime Type Based on Past and Future Data')
     st.plotly_chart(fig)
 elif dataset_selection == "SARIMAX Crime Forecast":
-    st.write("Current working directory:", os.getcwd())
-    st.write("Files in root directory:", os.listdir()) 
+    #st.write("Current working directory:", os.getcwd())
+    #st.write("Files in root directory:", os.listdir()) 
 # Load the dataset in which the SARIMAX model was trained
     @st.cache_data
     def load_data():
@@ -1471,8 +1473,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
         return df
     
 # Load the SARIMAX model for crime forecasting
-    st.write("Looking for model at:", BASE_DIR / "final_SARIMA_forecast.pkl")
-    st.write("Does file exist?", (BASE_DIR / "final_SARIMA_forecast.pkl").exists())
+    #st.write("Looking for model at:", BASE_DIR / "final_SARIMA_forecast.pkl")
+    #st.write("Does file exist?", (BASE_DIR / "final_SARIMA_forecast.pkl").exists())
     @st.cache_resource(show_spinner=False)
     def load_model(model_filename):
         model_path = BASE_DIR / model_filename
@@ -1484,7 +1486,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
         return joblib.load(model_path)
     
     model = load_model("final_SARIMA_forecast.pkl")
-    st.write("Trained SARIMAX model loaded successfully.")
+    #st.write("Trained SARIMAX model loaded successfully.")
 
     crime_neighbourhood_df = load_data().copy()
     crime_neighbourhood_df['YEAR'] = crime_neighbourhood_df['YEAR'].astype(int)
@@ -1591,7 +1593,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
 # Showing the full forecasted dataset having only the forecasted crime counts of each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained SARIMAX Model")
-
+    st.write("The full forecasted dataset for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model is displayed below. This dataset includes the forecasted crime counts for each neighbourhood for every year in 2012 and 2013, allowing us to analyze the predicted crime trends over these two years based on the model's forecasting capabilities. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained SARIMAX model' expander to see the complete dataset in tabular format, which includes the neighbourhood, year, and the corresponding forecasted crime count as predicted by the SARIMAX model.")
+    
     def generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df):
 # Create future dynamic features (X_df) for the next 2 years
         last_year = crime_neighbourhood_df['YEAR'].max()
@@ -1613,7 +1616,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     if 'prediction' in final_forecast1.columns:
         final_forecast1 = final_forecast1.rename(columns={'prediction': 'SARIMAX'})
 
-    st.subheader("Final Forecasted Crime Counts for Each Year of 2012 and 2013 Based on Trained SARIMAX Model")
+    
     print("\nFinal 2-Year Forecast:")
     print(final_forecast1.head())
 

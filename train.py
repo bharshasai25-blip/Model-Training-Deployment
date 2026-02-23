@@ -487,7 +487,7 @@ def final_forecast(data, forecast_years=2,
             enforce_invertibility=False
         )
 
-        fitted = model.fit(disp=False)
+        fitted = model.fit(disp=False, maxiter=50, method="lbfgs")
 
         forecast = fitted.forecast(steps=forecast_years)
 

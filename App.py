@@ -1597,7 +1597,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     X_df = generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df)
 # Final Forecast
     # Use the saved forecasting function to generate the final forecast
-    final_forecast1 = model(crime_neighbourhood_df, forecast_years=2)
+    final_forecast1 = model(X_df, forecast_years=2)
     # Normalize column name to match existing downstream code
     if 'prediction' in final_forecast1.columns:
         final_forecast1 = final_forecast1.rename(columns={'prediction': 'SARIMAX'})

@@ -289,11 +289,12 @@ if dataset_selection == "FBI Crime Data":
        
        if selected_neighbourhood == "Arbutus Ridge":
           st.write("You have selected Arbutus Ridge. Displaying crime details for this neighbourhood.")
-          arbutus_ridge_crimes = df[df["NEIGHBOURHOOD"] == "Arbutus Ridge"]
-          arbutus_ridge_lat_long = arbutus_ridge_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(arbutus_ridge_crimes, arbutus_ridge_lat_long, on='HUNDRED_BLOCK', how='inner')
+          arbutus_ridge_crimes = df[df["NEIGHBOURHOOD"] == "Arbutus Ridge"].copy()
+          arbutus_ridge_crimes_df = arbutus_ridge_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          arbutus_ridge_lat_long_df = arbutus_ridge_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(arbutus_ridge_crimes_df, arbutus_ridge_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -304,15 +305,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Arbutus Ridge")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(arbutus_ridge_crimes)
+        #Printing the crime details for Arbutus Ridge in a dataframe  
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Arbutus Ridge"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Central Business District":
           st.write("You have selected Central Business District. Displaying crime details for this neighbourhood.")
           cbd_crimes = df[df["NEIGHBOURHOOD"] == "Central Business District"]
-          cbd_lat_long = cbd_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(cbd_crimes, cbd_lat_long, on='HUNDRED_BLOCK', how='inner')
+          cbd_crimes_df = cbd_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          cbd_lat_long_df = cbd_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(cbd_crimes_df, cbd_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -323,15 +331,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Central Business District")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(cbd_crimes)
+        #Printing the crime details for Central Business District in a dataframe
+          crime_location_df_final = crime_location_df.copy()  
+          crime_location_df_final['NEIGHBOURHOOD'] = "Central Business District"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Dunbar-Southlands":
           st.write("You have selected Dunbar-Southlands. Displaying crime details for this neighbourhood.")
           dunbar_southlands_crimes = df[df["NEIGHBOURHOOD"] == "Dunbar-Southlands"]
-          dunbar_southlands_lat_long = dunbar_southlands_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(dunbar_southlands_crimes, dunbar_southlands_lat_long, on='HUNDRED_BLOCK', how='inner')
+          dunbar_southlands_crimes_df = dunbar_southlands_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          dunbar_southlands_lat_long_df = dunbar_southlands_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(dunbar_southlands_crimes_df, dunbar_southlands_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -342,15 +357,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Dunbar-Southlands")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(dunbar_southlands_crimes)
+        #Printing the crime details for Dunbar-Southlands in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Dunbar-Southlands"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Fairview":
           st.write("You have selected Fairview. Displaying crime details for this neighbourhood.")
           fairview_crimes = df[df["NEIGHBOURHOOD"] == "Fairview"]
-          fairview_lat_long = fairview_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(fairview_crimes, fairview_lat_long, on='HUNDRED_BLOCK', how='inner')
+          fairview_crimes_df = fairview_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          fairview_lat_long_df = fairview_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(fairview_crimes_df, fairview_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -361,15 +383,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Fairview")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(fairview_crimes)
+        #Printing the crime details for Fairview in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Fairview"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Grandview-Woodland":
           st.write("You have selected Grandview-Woodland. Displaying crime details for this neighbourhood.")
           grandview_woodland_crimes = df[df["NEIGHBOURHOOD"] == "Grandview-Woodland"]
-          grandview_woodland_lat_long = grandview_woodland_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(grandview_woodland_crimes, grandview_woodland_lat_long, on='HUNDRED_BLOCK', how='inner')
+          grandview_woodland_crimes_df = grandview_woodland_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          grandview_woodland_lat_long_df = grandview_woodland_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(grandview_woodland_crimes_df, grandview_woodland_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -380,15 +409,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Grandview-Woodland")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(grandview_woodland_crimes)
+        #Printing the crime details for Grandview-Woodland in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Grandview-Woodland"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Hastings-Sunrise":
           st.write("You have selected Hastings-Sunrise. Displaying crime details for this neighbourhood.")
           hastings_sunrise_crimes = df[df["NEIGHBOURHOOD"] == "Hastings-Sunrise"]
-          hastings_sunrise_lat_long = hastings_sunrise_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(hastings_sunrise_crimes, hastings_sunrise_lat_long, on='HUNDRED_BLOCK', how='inner')
+          hastings_sunrise_crimes_df = hastings_sunrise_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          hastings_sunrise_lat_long_df = hastings_sunrise_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(hastings_sunrise_crimes_df, hastings_sunrise_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -399,15 +435,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Hastings-Sunrise")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(hastings_sunrise_crimes)
+        #Printing the crime details for Hastings-Sunrise in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Hastings-Sunrise"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Kensington-Cedar Cottage":
           st.write("You have selected Kensington-Cedar Cottage. Displaying crime details for this neighbourhood.")
           kensington_cedar_cottage_crimes = df[df["NEIGHBOURHOOD"] == "Kensington-Cedar Cottage"]
-          kensington_cedar_cottage_lat_long = kensington_cedar_cottage_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(kensington_cedar_cottage_crimes, kensington_cedar_cottage_lat_long, on='HUNDRED_BLOCK', how='inner')
+          kensington_cedar_cottage_crimes_df = kensington_cedar_cottage_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          kensington_cedar_cottage_lat_long_df = kensington_cedar_cottage_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(kensington_cedar_cottage_crimes_df, kensington_cedar_cottage_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -418,15 +461,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Kensington-Cedar Cottage")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(kensington_cedar_cottage_crimes)
+        #Printing the crime details for Kensington-Cedar Cottage in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Kensington-Cedar Cottage"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Kerrisdale":
           st.write("You have selected Kerrisdale. Displaying crime details for this neighbourhood.")
           kerrisdale_crimes = df[df["NEIGHBOURHOOD"] == "Kerrisdale"]
-          kerrisdale_lat_long = kerrisdale_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(kerrisdale_crimes, kerrisdale_lat_long, on='HUNDRED_BLOCK', how='inner')
+          kerrisdale_crimes_df = kerrisdale_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          kerrisdale_lat_long_df = kerrisdale_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(kerrisdale_crimes_df, kerrisdale_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -437,15 +487,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Kerrisdale")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(kerrisdale_crimes)
+        #Printing the crime details for Kerrisdale in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Kerrisdale"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Killarney":
           st.write("You have selected Killarney. Displaying crime details for this neighbourhood.")
           killarney_crimes = df[df["NEIGHBOURHOOD"] == "Killarney"]
-          killarney_lat_long = killarney_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(killarney_crimes, killarney_lat_long, on='HUNDRED_BLOCK', how='inner')
+          killarney_crimes_df = killarney_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          killarney_lat_long_df = killarney_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(killarney_crimes_df, killarney_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -456,15 +513,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Killarney")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(killarney_crimes)
+        #Printing the crime details for Killarney in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Killarney"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Kitsilano":
           st.write("You have selected Kitsilano. Displaying crime details for this neighbourhood.")
           kitsilano_crimes = df[df["NEIGHBOURHOOD"] == "Kitsilano"]
-          kitsilano_lat_long = kitsilano_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(kitsilano_crimes, kitsilano_lat_long, on='HUNDRED_BLOCK', how='inner')
+          kitsilano_crimes_df = kitsilano_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          kitsilano_lat_long_df = kitsilano_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(kitsilano_crimes_df, kitsilano_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -475,15 +539,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Kitsilano")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(kitsilano_crimes)
+        #Printing the crime details for Kitsilano in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Kitsilano"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Marpole":
           st.write("You have selected Marpole. Displaying crime details for this neighbourhood.")
           marpole_crimes = df[df["NEIGHBOURHOOD"] == "Marpole"]
-          marpole_lat_long = marpole_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(marpole_crimes, marpole_lat_long, on='HUNDRED_BLOCK', how='inner')
+          marpole_crimes_df = marpole_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          marpole_lat_long_df = marpole_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(marpole_crimes_df, marpole_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -494,15 +565,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Marpole")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(marpole_crimes)
+        #Printing the crime details for Marpole in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Marpole"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Mount Pleasant":
           st.write("You have selected Mount Pleasant. Displaying crime details for this neighbourhood.")
           mount_pleasant_crimes = df[df["NEIGHBOURHOOD"] == "Mount Pleasant"]
-          mount_pleasant_lat_long = mount_pleasant_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(mount_pleasant_crimes, mount_pleasant_lat_long, on='HUNDRED_BLOCK', how='inner')
+          mount_pleasant_crimes_df = mount_pleasant_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          mount_pleasant_lat_long_df = mount_pleasant_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(mount_pleasant_crimes_df, mount_pleasant_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -513,15 +591,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Mount Pleasant")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(mount_pleasant_crimes)
+        #Printing the crime details for Mount Pleasant in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Mount Pleasant"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Musqueam":
           st.write("You have selected Musqueam. Displaying crime details for this neighbourhood.")
           musqueam_crimes = df[df["NEIGHBOURHOOD"] == "Musqueam"]
-          musqueam_lat_long = musqueam_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(musqueam_crimes, musqueam_lat_long, on='HUNDRED_BLOCK', how='inner')
+          musqueam_crimes_df = musqueam_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          musqueam_lat_long_df = musqueam_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(musqueam_crimes_df, musqueam_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -532,15 +617,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Musqueam")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(musqueam_crimes)
+        #Printing the crime details for Musqueam in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Musqueam"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Oakridge":
           st.write("You have selected Oakridge. Displaying crime details for this neighbourhood.")
           oakridge_crimes = df[df["NEIGHBOURHOOD"] == "Oakridge"]
-          oakridge_lat_long = oakridge_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(oakridge_crimes, oakridge_lat_long, on='HUNDRED_BLOCK', how='inner')
+          oakridge_crimes_df = oakridge_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          oakridge_lat_long_df = oakridge_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(oakridge_crimes_df, oakridge_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -551,15 +643,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Oakridge")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(oakridge_crimes)
+        #Printing the crime details for Oakridge in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Oakridge"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Renfrew-Collingwood":
           st.write("You have selected Renfrew-Collingwood. Displaying crime details for this neighbourhood.")
           renfrew_collingwood_crimes = df[df["NEIGHBOURHOOD"] == "Renfrew-Collingwood"]
-          renfrew_collingwood_lat_long = renfrew_collingwood_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(renfrew_collingwood_crimes, renfrew_collingwood_lat_long, on='HUNDRED_BLOCK', how='inner')
+          renfrew_collingwood_crimes_df = renfrew_collingwood_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          renfrew_collingwood_lat_long_df = renfrew_collingwood_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(renfrew_collingwood_crimes_df, renfrew_collingwood_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -570,15 +669,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Renfrew-Collingwood")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(renfrew_collingwood_crimes)
+        #Printing the crime details for Renfrew-Collingwood in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Renfrew-Collingwood"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Riley Park":
           st.write("You have selected Riley Park. Displaying crime details for this neighbourhood.")
           riley_park_crimes = df[df["NEIGHBOURHOOD"] == "Riley Park"]
-          riley_park_lat_long = riley_park_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(riley_park_crimes, riley_park_lat_long, on='HUNDRED_BLOCK', how='inner')
+          riley_park_crimes_df = riley_park_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          riley_park_lat_long_df = riley_park_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(riley_park_crimes_df, riley_park_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -589,15 +695,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Riley Park")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(riley_park_crimes)
+        #Printing the crime details for Riley Park in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Riley Park"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Shaughnessy":
           st.write("You have selected Shaughnessy. Displaying crime details for this neighbourhood.")
           shaughnessy_crimes = df[df["NEIGHBOURHOOD"] == "Shaughnessy"]
-          shaughnessy_lat_long = shaughnessy_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(shaughnessy_crimes, shaughnessy_lat_long, on='HUNDRED_BLOCK', how='inner')
+          shaughnessy_crimes_df = shaughnessy_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          shaughnessy_lat_long_df = shaughnessy_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(shaughnessy_crimes_df, shaughnessy_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -608,15 +721,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Shaughnessy")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(shaughnessy_crimes)
+        #Printing the crime details for Shaughnessy in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Shaughnessy"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "South Cambie":
           st.write("You have selected South Cambie. Displaying crime details for this neighbourhood.")
           south_cambie_crimes = df[df["NEIGHBOURHOOD"] == "South Cambie"]
-          south_cambie_lat_long = south_cambie_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(south_cambie_crimes, south_cambie_lat_long, on='HUNDRED_BLOCK', how='inner')
+          south_cambie_crimes_df = south_cambie_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          south_cambie_lat_long_df = south_cambie_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(south_cambie_crimes_df, south_cambie_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -627,15 +747,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for South Cambie")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(south_cambie_crimes)
+        #Printing the crime details for South Cambie in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "South Cambie"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Stanley Park":
           st.write("You have selected Stanley Park. Displaying crime details for this neighbourhood.")
           stanley_park_crimes = df[df["NEIGHBOURHOOD"] == "Stanley Park"]
-          stanley_park_lat_long = stanley_park_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(stanley_park_crimes, stanley_park_lat_long, on='HUNDRED_BLOCK', how='inner')
+          stanley_park_crimes_df = stanley_park_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          stanley_park_lat_long_df = stanley_park_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(stanley_park_crimes_df, stanley_park_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -646,15 +773,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Stanley Park")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(stanley_park_crimes)
+        #Printing the crime details for Stanley Park in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Stanley Park"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Strathcona":
           st.write("You have selected Strathcona. Displaying crime details for this neighbourhood.")
           strathcona_crimes = df[df["NEIGHBOURHOOD"] == "Strathcona"]
-          strathcona_lat_long = strathcona_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(strathcona_crimes, strathcona_lat_long, on='HUNDRED_BLOCK', how='inner')
+          strathcona_crimes_df = strathcona_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          strathcona_lat_long_df = strathcona_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(strathcona_crimes_df, strathcona_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -665,15 +799,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Strathcona")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(strathcona_crimes)
+        #Printing the crime details for Strathcona in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Strathcona"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Sunset":
           st.write("You have selected Sunset. Displaying crime details for this neighbourhood.")
           sunset_crimes = df[df["NEIGHBOURHOOD"] == "Sunset"]
-          sunset_lat_long = sunset_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(sunset_crimes, sunset_lat_long, on='HUNDRED_BLOCK', how='inner')
+          sunset_crimes_df = sunset_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          sunset_lat_long_df = sunset_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(sunset_crimes_df, sunset_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -684,15 +825,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Sunset")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(sunset_crimes)
+        #Printing the crime details for Sunset in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Sunset"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "Victoria-Fraserview":
           st.write("You have selected Victoria-Fraserview. Displaying crime details for this neighbourhood.")
           victoria_fraserview_crimes = df[df["NEIGHBOURHOOD"] == "Victoria-Fraserview"]
-          victoria_fraserview_lat_long = victoria_fraserview_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(victoria_fraserview_crimes, victoria_fraserview_lat_long, on='HUNDRED_BLOCK', how='inner')
+          victoria_fraserview_crimes_df = victoria_fraserview_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          victoria_fraserview_lat_long_df = victoria_fraserview_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(victoria_fraserview_crimes_df, victoria_fraserview_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -703,15 +851,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for Victoria-Fraserview")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(victoria_fraserview_crimes)
+        #Printing the crime details for Victoria-Fraserview in a dataframe
+          crime_location_df_final = crime_location_df.copy()
+          crime_location_df_final['NEIGHBOURHOOD'] = "Victoria-Fraserview"
+          cols = crime_location_df_final.columns.tolist()
+          col_to_move = crime_location_df_final.pop('NEIGHBOURHOOD')
+          crime_location_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(crime_location_df_final)
 
        elif selected_neighbourhood == "West End":
           st.write("You have selected West End. Displaying crime details for this neighbourhood.")
           west_end_crimes = df[df["NEIGHBOURHOOD"] == "West End"]
-          west_end_lat_long = west_end_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(west_end_crimes, west_end_lat_long, on='HUNDRED_BLOCK', how='inner')
+          west_end_crimes_df = west_end_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          west_end_lat_long_df = west_end_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(west_end_crimes_df, west_end_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -722,15 +877,22 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for West End")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(west_end_crimes)
+        #Printing the crime details for West End in a dataframe
+          west_end_crimes_df_final = crime_location_df.copy()
+          west_end_crimes_df_final['NEIGHBOURHOOD'] = "West End"
+          cols = west_end_crimes_df_final.columns.tolist()
+          col_to_move = west_end_crimes_df_final.pop('NEIGHBOURHOOD')
+          west_end_crimes_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(west_end_crimes_df_final)
 
        elif selected_neighbourhood == "West Point Grey":
           st.write("You have selected West Point Grey. Displaying crime details for this neighbourhood.")
           west_point_grey_crimes = df[df["NEIGHBOURHOOD"] == "West Point Grey"]
-          west_point_grey_lat_long = west_point_grey_crimes.groupby('HUNDRED_BLOCK')[['Latitude', 'Longitude']].mean().reset_index()
-          crime_location_df = pd.merge(west_point_grey_crimes, west_point_grey_lat_long, on='HUNDRED_BLOCK', how='inner')
+          west_point_grey_crimes_df = west_point_grey_crimes.groupby(['HUNDRED_BLOCK', 'TYPE']).size().reset_index().rename(columns={0: 'Crime_Count'}).sort_values(by='HUNDRED_BLOCK')
+          west_point_grey_lat_long_df = west_point_grey_crimes.groupby(['HUNDRED_BLOCK'])[['Latitude', 'Longitude']].mean().reset_index().sort_values(by='HUNDRED_BLOCK')
+          crime_location_df = pd.merge(west_point_grey_crimes_df, west_point_grey_lat_long_df, on='HUNDRED_BLOCK', how='inner')
           crime_map = folium.Map(location=[crime_location_df['Latitude'].mean(), crime_location_df['Longitude'].mean()], zoom_start=13)
-          for _, row in crime_location_df.itertuples():
+          for _, row in crime_location_df.iterrows():
                  folium.CircleMarker(
                      location=[row['Latitude'], row['Longitude']],
                      radius=5,
@@ -741,7 +903,13 @@ if dataset_selection == "FBI Crime Data":
                  ).add_to(crime_map)
           st.subheader("Crime Location Map for West Point Grey")
           st.components.v1.html(crime_map._repr_html_(), width=1000, height=500)
-          st.dataframe(west_point_grey_crimes)            
+        #Printing the crime details for West Point Grey in a dataframe
+          west_point_grey_crimes_df_final = crime_location_df.copy()
+          west_point_grey_crimes_df_final['NEIGHBOURHOOD'] = "West Point Grey"
+          cols = west_point_grey_crimes_df_final.columns.tolist()
+          col_to_move = west_point_grey_crimes_df_final.pop('NEIGHBOURHOOD')
+          west_point_grey_crimes_df_final.insert(0, 'NEIGHBOURHOOD', col_to_move)
+          st.dataframe(west_point_grey_crimes_df_final)            
 
     elif visual_selection == "Neighbourhoods Vs Crime Count":
        st.write("Neighbourhoods Vs Crime Count Bar Plot is displayed below:")
@@ -852,8 +1020,8 @@ if dataset_selection == "FBI Crime Data":
 
 # Conditional logic to display the appropriate dataset and visualizations based on user selection
 elif dataset_selection == "LightGBM Crime Forecast":
-    st.write("Current working directory:", os.getcwd())
-    st.write("Files in root directory:", os.listdir())  
+    #st.write("Current working directory:", os.getcwd())
+    #st.write("Files in root directory:", os.listdir())  
 #load the historical data on which the LightGBM model was trained
     @st.cache_data
     def load_data():
@@ -871,8 +1039,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
         return df
     
 #load the trained LightGBM model for crime forecasting
-    st.write("Looking for model at:", BASE_DIR / "trained_LightGBM_forecast_model.pkl")
-    st.write("Does file exist?", (BASE_DIR / "trained_LightGBM_forecast_model.pkl").exists())
+    #st.write("Looking for model at:", BASE_DIR / "trained_LightGBM_forecast_model.pkl")
+    #st.write("Does file exist?", (BASE_DIR / "trained_LightGBM_forecast_model.pkl").exists())
     @st.cache_resource(show_spinner=False)
     def load_model(model_name):
       model_path = BASE_DIR / model_name
@@ -883,7 +1051,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
 
       return joblib.load(model_path)
     model = load_model("trained_LightGBM_forecast_model.pkl")
-    st.success("Trained LightGBM model loaded successfully.")
+    #st.success("Trained LightGBM model loaded successfully.")
 
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)

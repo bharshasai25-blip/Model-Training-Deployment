@@ -278,7 +278,7 @@ if dataset_selection == "FBI Crime Data":
        for _, row in map_df.iterrows():
         folium.CircleMarker(
             location=[row['Latitude'], row['Longitude']],
-            radius=5 + (row['Crime_Count'] * 0.05),  # Scale radius based on crime count
+            radius=5 + (row['Crime_Count'] * 0.001),  # Scale radius based on crime count
             popup=f"{row['NEIGHBOURHOOD']}: {row['Crime_Count']} crimes",
             color='red',
             fill=True,

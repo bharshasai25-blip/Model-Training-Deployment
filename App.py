@@ -268,9 +268,9 @@ if dataset_selection == "FBI Crime Data":
     elif visual_selection == "Crime Location Map":
 
        neighbourhood_crime_count = df.groupby(['NEIGHBOURHOOD'])['TYPE'].count().reset_index().rename(columns={'TYPE': 'Crime_Count'})
-       neighbourhood_crime_count = neighbourhood_crime_count[neighbourhood_crime_count['NEIGHBOURHOOD'] != 'OFFSET TO PROTECT PRIVACY']
+       neighbourhood_crime_count_df = neighbourhood_crime_count[neighbourhood_crime_count['NEIGHBOURHOOD'] != 'OFFSET TO PROTECT PRIVACY'].copy()
        latitude_longitude_df = df.groupby(['NEIGHBOURHOOD'])[['Latitude', 'Longitude']].mean().reset_index()
-       crime_location_df = pd.merge(neighbourhood_crime_count, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
+       crime_location_df = pd.merge(neighbourhood_crime_count_df, latitude_longitude_df, on=['NEIGHBOURHOOD'], how='inner')
        map_df = crime_location_df.copy()
        map_df.dropna(subset=['Latitude', 'Longitude'], inplace=True)
        center_lat = map_df['Latitude'].mean()

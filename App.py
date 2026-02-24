@@ -1630,8 +1630,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
     final_forecast_df = pd.concat(all_forecasts).reset_index(drop=True)
     # Normalize column name to match existing downstream code
-    if 'prediction' in final_forecast.columns:
-        final_forecast1 = final_forecast.rename(columns={'prediction': 'SARIMAX'})
+    if 'prediction' in final_forecast_df.columns:
+        final_forecast1 = final_forecast_df.rename(columns={'prediction': 'SARIMAX'})
 
     
     print("\nFinal 2-Year Forecast:")

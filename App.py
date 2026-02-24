@@ -1515,9 +1515,9 @@ elif dataset_selection == "SARIMAX Crime Forecast":
         st.subheader("Model Prediction")
         if historical_match.empty:
           if st.sidebar.button("Forecast", key="forecast_button"):
-            st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
+                st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
             
-            try:
+            #try:
                 # Calculate years ahead from the last date in training data
                 last_year = crime_neighbourhood_df['YEAR'].max()
                 years_ahead = selected_year - last_year
@@ -1588,8 +1588,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
                         st.error(f"Error during prediction: {str(e)}")
                         raise
     
-            except Exception as e:
-                st.error(f"Error during prediction: {str(e)}")
+            #except Exception as e:
+                #st.error(f"Error during prediction: {str(e)}")
         else:
              st.write("Historical data is available for the selected neighbourhood and year. The model prediction is not required.")
 

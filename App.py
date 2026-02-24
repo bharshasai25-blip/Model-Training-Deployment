@@ -1645,7 +1645,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
 # Showing the forecasted crime counts for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model in tabular format
     with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained SARIMAX model"):
-      st.dataframe(final_forecast2[['NEIGHBOURHOOD', 'YEAR', 'Crime_Count']])
+      st.dataframe(final_forecast2[['NEIGHBOURHOOD', 'Year', 'Crime_Count']])
 # Showing Forecasted Yearly Crime Count of Each Neighbourhood using Bar Plot
     yearly_crime_count_neighbourhood = final_forecast2.groupby(['NEIGHBOURHOOD', 'YEAR'])['Crime_Count'].sum().reset_index()
     yearly_crime_count_neighbourhood.sort_values(by=['NEIGHBOURHOOD', 'YEAR'], inplace=True)

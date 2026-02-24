@@ -315,9 +315,9 @@ joblib.dump(fcst, 'trained_XGBoost_forecast_model.pkl')
 
 
 #SARIMA Regressor model training script
-# ==========================================================
-# 1️⃣ IMPORT LIBRARIES
-# ==========================================================
+
+# IMPORT LIBRARIES
+
 import pandas as pd
 import numpy as np
 import warnings
@@ -326,9 +326,8 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error
 
 warnings.filterwarnings("ignore")
 
-# ==========================================================
-# 2️⃣ LOAD & PREPARE DATA
-# ==========================================================
+
+# LOAD & PREPARE DATA
 
 df = pd.read_csv('Model Training Datasets/Train_df_SARIMAX_Model.csv')
 df.sort_values(["NEIGHBOURHOOD", "YEAR"], inplace=True)
@@ -345,9 +344,9 @@ df["ds"] = pd.to_datetime(df["year"].astype(str) + "-01-01")
 
 df = df.sort_values(["unique_id", "ds"]).reset_index(drop=True)
 
-# ==========================================================
-# 3️⃣ SARIMA WALK-FORWARD CROSS VALIDATION
-# ==========================================================
+
+# SARIMA WALK-FORWARD CROSS VALIDATION
+
 
 def sarima_cross_validation(data, h=2, n_windows=3,
                             order=(1,1,1),
@@ -413,9 +412,9 @@ cv_results = sarima_cross_validation(
     seasonal_order=(0,0,0,0)
 )
 
-# ==========================================================
-# 4️⃣ GLOBAL METRICS
-# ==========================================================
+
+# GLOBAL METRICS
+
 
 global_mae = mean_absolute_error(cv_results["y"], cv_results["prediction"])
 global_mape = mean_absolute_percentage_error(cv_results["y"], cv_results["prediction"]) * 100
@@ -423,9 +422,9 @@ global_mape = mean_absolute_percentage_error(cv_results["y"], cv_results["predic
 print(f"\nGlobal MAE: {global_mae:.3f}")
 print(f"Global MAPE: {global_mape:.2f}%")
 
-# ==========================================================
-# 5️⃣ GLOBAL WMAPE
-# ==========================================================
+
+# GLOBAL WMAPE
+
 
 def global_wmape(df):
     return (np.sum(np.abs(df["y"] - df["prediction"])) /
@@ -433,9 +432,9 @@ def global_wmape(df):
 
 print(f"Global wMAPE: {global_wmape(cv_results):.2f}%")
 
-# ==========================================================
-# 6️⃣ PER-NEIGHBOURHOOD METRICS
-# ==========================================================
+
+# PER-NEIGHBOURHOOD METRICS
+
 
 def per_neighbourhood_metrics(df):
 
@@ -460,53 +459,62 @@ def per_neighbourhood_metrics(df):
 print("\nPer-Neighbourhood Metrics:")
 print(per_neighbourhood_metrics(cv_results))
 
-# ==========================================================
-# 7️⃣ FINAL MODEL (TRAIN ON FULL DATA)
-#    FORECAST 2012–2013
-# ==========================================================
 
-def final_forecast(data, forecast_years=2,
-                   order=(1,1,1),
-                   seasonal_order=(0,0,0,0)):
+#  FINAL MODEL (TRAIN ON FULL DATA)
+#  FORECAST 2012–2013
 
-    forecasts = []
 
-    neighbourhoods = data["unique_id"].unique()
+all_results = {}
 
-    for uid in neighbourhoods:
+neighbourhoods = df["unique_id"].unique()
 
-        sub = data[data["unique_id"] == uid].copy()
-        sub = sub.set_index("ds")
-        y = sub["y"]
+for uid in neighbourhoods:
 
-        model = SARIMAX(
+    #Filtering data for the current neighborhood.
+    subset = df[df["unique_id"] == uid].copy()
+    subset = subset.set_index("ds") # Set 'ds' as index.
+    y = subset["y"]
+
+    # Initializing and fitting the SARIMAX model on the full historical data for the neighborhood.
+    model = SARIMAX(
             y,
-            order=order,
-            seasonal_order=seasonal_order,
+            order=(1,1,1),
+            seasonal_order=(0,0,0,0),
             enforce_stationarity=False,
             enforce_invertibility=False
         )
 
-        fitted = model.fit(disp=False, maxiter=50, method="lbfgs")
+    #storing the results of all neighbourhoods
+    all_results[uid] = model.fit(disp=False)
 
-        forecast = fitted.forecast(steps=forecast_years)
 
-        temp = pd.DataFrame({
-            "unique_id": uid,
-            "ds": forecast.index,
-            "prediction": forecast.values
+# Generating the forecast for the specified number of future years.
+all_forecasts = []
+for uid, fitted_model in all_results.items():
+   forecast_output = fitted_model.get_forecast(steps=2)
+
+   # Storing the forecast results.
+   temp_df = pd.DataFrame({
+       "unique_id": uid,
+       "ds": [2012, 2013],
+       "prediction": forecast_output.predicted_mean.values
         })
 
-        forecasts.append(temp)
+   all_forecasts.append(temp_df)
 
-    return pd.concat(forecasts).reset_index(drop=True)
+# Concatenating all neighborhood forecasts.
+final_forecast = pd.concat(all_forecasts).reset_index(drop=True)
 
 
-final_predictions = final_forecast(df, forecast_years=2)
+# Generating final predictions for 2012-2013 using the full dataset.
+#final_predictions = final_forecast(df, forecast_years=2)
 
 print("\nForecast for 2012–2013:")
-print(final_predictions)
+print(final_forecast)
+
+#save the 2 years forecasts
+#pd.to_csv(final_forecast, 'SARIMAX_Model_Final_Predictions.csv')
 
 #save the sarima model for future use
 import joblib
-joblib.dump(final_forecast, 'final_SARIMA_forecast.pkl')
+joblib.dump(all_results, 'trained_SARIMAX_forecast_model.pkl')

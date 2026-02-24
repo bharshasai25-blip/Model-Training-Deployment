@@ -1091,7 +1091,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
             # Calculate months ahead from the last date in training data
             last_date = crime_type_df['ds'].max()
             selected_date = pd.Timestamp(f"{selected_year}-{selected_month}-01")
-            months_ahead = (selected_date.year - last_date.year) * 12 + (selected_date.month - last_date.month) + 1
+            months_ahead = (selected_date.year - last_date.year) * 12 + (selected_date.month - last_date.month)
             
             # Build feature dataframe for ALL crime types (required by MLForecast)
             selected_dates = pd.date_range(start=last_date + pd.offsets.MonthBegin(1), periods=months_ahead, freq='MS')
@@ -1308,7 +1308,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
             # Calculate months ahead from the last date in training data
             last_date = crime_type_df['ds'].max()
             selected_date = pd.Timestamp(f"{selected_year}-{selected_month}-01")
-            months_ahead = (selected_date.year - last_date.year) * 12 + (selected_date.month - last_date.month) + 1
+            months_ahead = (selected_date.year - last_date.year) * 12 + (selected_date.month - last_date.month)
             
             # Build feature dataframe for ALL crime types (required by MLForecast)
             selected_dates = pd.date_range(start=last_date + pd.offsets.MonthBegin(1), periods=months_ahead, freq='MS')

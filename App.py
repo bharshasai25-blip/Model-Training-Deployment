@@ -1597,20 +1597,20 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained SARIMAX Model")
     st.write("The full forecasted dataset for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model is displayed below. This dataset includes the forecasted crime counts for each neighbourhood for every year in 2012 and 2013, allowing us to analyze the predicted crime trends over these two years based on the model's forecasting capabilities. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained SARIMAX model' expander to see the complete dataset in tabular format, which includes the neighbourhood, year, and the corresponding forecasted crime count as predicted by the SARIMAX model.")
 
-    def generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df):
+    #def generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df):
 # Create future dynamic features (X_df) for the next 2 years
-        last_year = crime_neighbourhood_df['YEAR'].max()
-        future_dates = pd.date_range(start=pd.Timestamp(f"{last_year + 1}-01-01"), periods=2, freq='YS')
-        uids = crime_neighbourhood_df['unique_id'].unique()
+        #last_year = crime_neighbourhood_df['YEAR'].max()
+        #future_dates = pd.date_range(start=pd.Timestamp(f"{last_year + 1}-01-01"), periods=2, freq='YS')
+        #uids = crime_neighbourhood_df['unique_id'].unique()
 
-        X_df = pd.DataFrame({
-       'unique_id': [i for i in uids for _ in range(2)],
-       'ds': list(future_dates) * len(uids)})
+        #X_df = pd.DataFrame({
+       #'unique_id': [i for i in uids for _ in range(2)],
+       #'ds': list(future_dates) * len(uids)})
         
-        X_df['YEAR'] = X_df['ds'].dt.year
+       # X_df['YEAR'] = X_df['ds'].dt.year
 
-        return X_df
-    X_df = generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df)
+       # return X_df
+   # X_df = generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df)
 # Final Forecast
     # Use the saved forecasting function to generate the final forecast
     #final_forecast1 = model(X_df, forecast_years=2)
@@ -1619,11 +1619,11 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     for uid, fitted_model in model.items():
 
         forecast = fitted_model.get_forecast(steps=2)
-
+        #Storing the forecast results
         temp_df = pd.DataFrame({
-            "NEIGHBOURHOOD": uid,
-            "YEAR": [2012, 2013],
-            "Crime_Count": forecast.predicted_mean.values
+            "unique_id": uid,
+            "ds": [2012, 2013],
+            "prediction": forecast.predicted_mean.values
         })
 
         all_forecasts.append(temp_df)
@@ -1641,7 +1641,6 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 # We create multiple line plots to visualize the forecasted yearly crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
 # We also create a heatmap to visualize the forecasted yearly crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
     final_forecast2 = final_forecast_df.copy()
-    #final_forecast2['YEAR'] = pd.to_datetime(final_forecast2['ds']).dt.year
     final_forecast2.rename(columns={'unique_id':'NEIGHBOURHOOD', 'ds':'Year', 'SARIMAX': 'Crime_Count'}, inplace=True)
 
 # Showing the forecasted crime counts for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model in tabular format

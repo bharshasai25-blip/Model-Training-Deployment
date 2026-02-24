@@ -1083,10 +1083,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
       st.subheader("Model Prediction")  
 # If no historical data is found, we proceed to use the trained LightGBM model to predict the crime count for the selected crime type, year, and month
       if historical_match.empty:
-        st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
-
-# Create a button to trigger the prediction        
-        st.sidebar.button("Forecast", key="forecast_button")
+       if st.sidebar.button("Forecast", key="forecast_button"): #Created a forecast button
+        st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")      
         
         try:
             # Calculate months ahead from the last date in training data
@@ -1302,8 +1300,8 @@ elif dataset_selection == "XGBoost Crime Forecast":
     with col2:
       st.subheader("Model Prediction")
       if historical_match.empty:
+       if st.sidebar.button("Forecast", key="forecast_button"):
         st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
-        st.sidebar.button("Forecast", key="forecast_button")
         try:
             # Calculate months ahead from the last date in training data
             last_date = crime_type_df['ds'].max()
@@ -1460,8 +1458,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
         return df
     
 # Load the SARIMAX model for crime forecasting
-    st.write("Looking for model at:", BASE_DIR / "trained_SARIMAX_forecast_model.pkl")
-    st.write("Does file exist?", (BASE_DIR / "trained_SARIMAX_forecast_model.pkl").exists())
+    #st.write("Looking for model at:", BASE_DIR / "trained_SARIMAX_forecast_model.pkl")
+    #st.write("Does file exist?", (BASE_DIR / "trained_SARIMAX_forecast_model.pkl").exists())
     @st.cache_resource(show_spinner=False)
     def load_model(model_filename):
         model_path = BASE_DIR / model_filename
@@ -1473,7 +1471,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
         return joblib.load(model_path)
     
     model = load_model("trained_SARIMAX_forecast_model.pkl")
-    st.write("Trained SARIMAX model loaded successfully.")
+    #st.write("Trained SARIMAX model loaded successfully.")
 
     crime_neighbourhood_df = load_data().copy()
     crime_neighbourhood_df['YEAR'] = crime_neighbourhood_df['YEAR'].astype(int)
@@ -1550,7 +1548,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
                          st.caption("The predicted crime count is based on the trained SARIMAX model using the input features provided.")
                       else:
                          st.error("Could not generate prediction for selected date.")
-                         
+
                   except Exception as e:
                         st.error(f"Error during prediction: {str(e)}")
                         raise

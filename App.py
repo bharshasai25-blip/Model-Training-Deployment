@@ -1439,6 +1439,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
                   labels={'YEAR': 'Year', 'Month_name': 'Month', 'TYPE': 'Crime Type', 'Crime_Count': 'Number of Crimes'},
                   title='Yearly Crime Trend of Each Crime Type Based on Past and Future Data')
     st.plotly_chart(fig)
+
 elif dataset_selection == "SARIMAX Crime Forecast":
     #st.write("Current working directory:", os.getcwd())
     #st.write("Files in root directory:", os.listdir()) 
@@ -1459,8 +1460,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
         return df
     
 # Load the SARIMAX model for crime forecasting
-    #st.write("Looking for model at:", BASE_DIR / "final_SARIMA_forecast.pkl")
-    #st.write("Does file exist?", (BASE_DIR / "final_SARIMA_forecast.pkl").exists())
+    st.write("Looking for model at:", BASE_DIR / "trained_SARIMAX_forecast_model.pkl")
+    st.write("Does file exist?", (BASE_DIR / "trained_SARIMAX_forecast_model.pkl").exists())
     @st.cache_resource(show_spinner=False)
     def load_model(model_filename):
         model_path = BASE_DIR / model_filename
@@ -1471,8 +1472,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
         return joblib.load(model_path)
     
-    model = load_model("final_SARIMA_forecast.pkl")
-    #st.write("Trained SARIMAX model loaded successfully.")
+    model = load_model("trained_SARIMAX_forecast_model.pkl")
+    st.write("Trained SARIMAX model loaded successfully.")
 
     crime_neighbourhood_df = load_data().copy()
     crime_neighbourhood_df['YEAR'] = crime_neighbourhood_df['YEAR'].astype(int)
@@ -1557,17 +1558,32 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
                     # Generate forecast using the saved forecasting function and handle errors
                     try:
-                        forecast_result = model(filtered_df, forecast_years=years_ahead)
+                        #forecast_result = model(filtered_df, forecast_years=years_ahead)
+                        all_forecasts = []
+
+                        for uid, fitted_model in model.items():
+
+                            forecast = fitted_model.get_forecast(steps=2)
+
+                            temp_df = pd.DataFrame({
+                                      "NEIGHBOURHOOD": uid,
+                                      "YEAR": [2012, 2013],
+                                      "Crime_Count": forecast.predicted_mean.values
+                                    })
+
+                            all_forecasts.append(temp_df)
+
+                        final_forecast_df = pd.concat(all_forecasts).reset_index(drop=True)
                     except Exception as e:
                         st.error(f"Error during prediction: {str(e)}")
                         raise
 
                     # Get the prediction for the selected neighbourhood and date
-                    mask = (forecast_result['unique_id'] == selected_neighbourhood) & (forecast_result['ds'] == selected_date)
+                    mask = (final_forecast_df['unique_id'] == selected_neighbourhood) & (final_forecast_df['ds'] == selected_date)
                     if not mask.any():
                         st.error("Could not generate prediction for selected date.")
                     else:
-                        predicted_crime_count = float(forecast_result.loc[mask, 'prediction'].iloc[-1])
+                        predicted_crime_count = float(final_forecast_df.loc[mask, 'prediction'].iloc[-1])
                         st.metric("Model Forecasted Crime Count", f"{predicted_crime_count:.2f}")
                         st.caption("The predicted crime count is based on the trained SARIMAX model using the input features provided.")
             except Exception as e:
@@ -1597,10 +1613,25 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     X_df = generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df)
 # Final Forecast
     # Use the saved forecasting function to generate the final forecast
-    final_forecast1 = model(X_df, forecast_years=2)
+    #final_forecast1 = model(X_df, forecast_years=2)
+    all_forecasts = []
+
+    for uid, fitted_model in model.items():
+
+        forecast = fitted_model.get_forecast(steps=2)
+
+        temp_df = pd.DataFrame({
+            "NEIGHBOURHOOD": uid,
+            "YEAR": [2012, 2013],
+            "Crime_Count": forecast.predicted_mean.values
+        })
+
+        all_forecasts.append(temp_df)
+
+    final_forecast_df = pd.concat(all_forecasts).reset_index(drop=True)
     # Normalize column name to match existing downstream code
-    if 'prediction' in final_forecast1.columns:
-        final_forecast1 = final_forecast1.rename(columns={'prediction': 'SARIMAX'})
+    if 'prediction' in final_forecast.columns:
+        final_forecast1 = final_forecast.rename(columns={'prediction': 'SARIMAX'})
 
     
     print("\nFinal 2-Year Forecast:")

@@ -1641,8 +1641,8 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 # We create multiple line plots to visualize the forecasted yearly crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
 # We also create a heatmap to visualize the forecasted yearly crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
     final_forecast2 = final_forecast_df.copy()
-    final_forecast2['YEAR'] = pd.to_datetime(final_forecast2['ds']).dt.year
-    final_forecast2.rename(columns={'unique_id':'NEIGHBOURHOOD', 'SARIMAX': 'Crime_Count'}, inplace=True)
+    #final_forecast2['YEAR'] = pd.to_datetime(final_forecast2['ds']).dt.year
+    final_forecast2.rename(columns={'unique_id':'NEIGHBOURHOOD', 'ds':'Year', 'SARIMAX': 'Crime_Count'}, inplace=True)
 
 # Showing the forecasted crime counts for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model in tabular format
     with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained SARIMAX model"):

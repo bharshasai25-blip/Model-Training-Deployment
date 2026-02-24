@@ -1514,34 +1514,35 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     with col2:
         st.subheader("Model Prediction")
         if historical_match.empty:
+          if st.sidebar.button("Forecast", key="forecast_button"):
             st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
-            st.sidebar.button("Forecast", key="forecast_button")
+            
             try:
                 # Calculate years ahead from the last date in training data
                 last_year = crime_neighbourhood_df['YEAR'].max()
-                selected_date = pd.Timestamp(f"{selected_year}-01-01")
-                years_ahead = selected_date.year - last_year
+                years_ahead = selected_year - last_year
 
                 # Validate forecast horizon
                 if years_ahead <= 0:
                     st.error(f"Selected year {selected_year} is not after the last training year {last_year}. Choose a later year for forecasting.")
                 else:
+                
                     # Build feature dataframe for ALL neighbourhoods (required by some forecasting logic)
-                    selected_dates = pd.date_range(start=pd.Timestamp(f"{last_year + 1}-01-01"), periods=years_ahead, freq='YS')
-                    all_neighbourhoods = crime_neighbourhood_df['unique_id'].unique()
+                    #selected_dates = pd.date_range(start=pd.Timestamp(f"{last_year + 1}-01-01"), periods=years_ahead, freq='YS')
+                    #all_neighbourhoods = crime_neighbourhood_df['unique_id'].unique()
 
                     # Create a dataframe with all combinations of neighbourhoods and dates (not directly used by saved function but kept for compatibility)
-                    future_X_df = pd.DataFrame({
-                        'unique_id': [neighbourhood for neighbourhood in all_neighbourhoods for _ in range(years_ahead)],
-                        'ds': list(selected_dates) * len(all_neighbourhoods)
-                    })
+                    #future_X_df = pd.DataFrame({
+                     #   'unique_id': [neighbourhood for neighbourhood in all_neighbourhoods for _ in range(years_ahead)],
+                      #  'ds': list(selected_dates) * len(all_neighbourhoods)
+                    #})
 
                     # Ensure years_ahead is an integer >= 1
-                    try:
-                        years_ahead = int(years_ahead)
-                    except Exception:
-                        st.error("Internal error: invalid forecast horizon.")
-                        raise
+                    #try:
+                       # years_ahead = int(years_ahead)
+                    #except Exception:
+                        #st.error("Internal error: invalid forecast horizon.")
+                        #raise
 
                     # Filter out neighbourhoods with no observations to avoid SARIMAX fitting errors
                     #valid_uids = []
@@ -1557,7 +1558,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
                     #filtered_df = crime_neighbourhood_df[crime_neighbourhood_df['unique_id'].isin(valid_uids)].copy()
 
                     # Generate forecast using the saved forecasting function and handle errors
-                    try:
+                  try:
                         #forecast_result = model(filtered_df, forecast_years=years_ahead)
                         all_forecasts = []
 
@@ -1566,30 +1567,31 @@ elif dataset_selection == "SARIMAX Crime Forecast":
                             forecast = fitted_model.get_forecast(steps=2)
 
                             temp_df = pd.DataFrame({
-                                      "NEIGHBOURHOOD": uid,
-                                      "YEAR": [2012, 2013],
-                                      "Crime_Count": forecast.predicted_mean.values
+                                      "unique_id": uid,
+                                      "ds": [2012, 2013],
+                                      "prediction": forecast.predicted_mean.values
                                     })
 
                             all_forecasts.append(temp_df)
 
                         final_forecast_df = pd.concat(all_forecasts).reset_index(drop=True)
-                    except Exception as e:
+
+                        # Get the prediction for the selected neighbourhood and date
+                        mask = (final_forecast_df['unique_id'] == selected_neighbourhood) & (final_forecast_df['ds'] == selected_year)
+                        if not mask.any():
+                         st.error("Could not generate prediction for selected date.")
+                        else:
+                         predicted_crime_count = float(final_forecast_df.loc[mask, 'prediction'].iloc[-1])
+                         st.metric("Model Forecasted Crime Count", f"{predicted_crime_count:.2f}")
+                         st.caption("The predicted crime count is based on the trained SARIMAX model using the input features provided.")
+                  except Exception as e:
                         st.error(f"Error during prediction: {str(e)}")
                         raise
-
-                    # Get the prediction for the selected neighbourhood and date
-                    mask = (final_forecast_df['unique_id'] == selected_neighbourhood) & (final_forecast_df['ds'] == selected_date)
-                    if not mask.any():
-                        st.error("Could not generate prediction for selected date.")
-                    else:
-                        predicted_crime_count = float(final_forecast_df.loc[mask, 'prediction'].iloc[-1])
-                        st.metric("Model Forecasted Crime Count", f"{predicted_crime_count:.2f}")
-                        st.caption("The predicted crime count is based on the trained SARIMAX model using the input features provided.")
+    
             except Exception as e:
                 st.error(f"Error during prediction: {str(e)}")
         else:
-             st.write("Historical data is available for the selected neighbourhood and year. The model prediction is not necessary as we have the actual crime count from the historical data.")
+             st.write("Historical data is available for the selected neighbourhood and year. The model prediction is not required.")
 
     st.divider()
 
@@ -1597,23 +1599,9 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained SARIMAX Model")
     st.write("The full forecasted dataset for each year of the last 2 years (2012 and 2013) based on the trained SARIMAX model is displayed below. This dataset includes the forecasted crime counts for each neighbourhood for every year in 2012 and 2013, allowing us to analyze the predicted crime trends over these two years based on the model's forecasting capabilities. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained SARIMAX model' expander to see the complete dataset in tabular format, which includes the neighbourhood, year, and the corresponding forecasted crime count as predicted by the SARIMAX model.")
 
-    #def generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df):
-# Create future dynamic features (X_df) for the next 2 years
-        #last_year = crime_neighbourhood_df['YEAR'].max()
-        #future_dates = pd.date_range(start=pd.Timestamp(f"{last_year + 1}-01-01"), periods=2, freq='YS')
-        #uids = crime_neighbourhood_df['unique_id'].unique()
 
-        #X_df = pd.DataFrame({
-       #'unique_id': [i for i in uids for _ in range(2)],
-       #'ds': list(future_dates) * len(uids)})
-        
-       # X_df['YEAR'] = X_df['ds'].dt.year
+# Final Forecast Using SARIMAX Model
 
-       # return X_df
-   # X_df = generate_feature_columns_in_forecasted_dataset(crime_neighbourhood_df)
-# Final Forecast
-    # Use the saved forecasting function to generate the final forecast
-    #final_forecast1 = model(X_df, forecast_years=2)
     all_forecasts = []
 
     for uid, fitted_model in model.items():

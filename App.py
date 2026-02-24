@@ -1544,17 +1544,17 @@ elif dataset_selection == "SARIMAX Crime Forecast":
                         raise
 
                     # Filter out neighbourhoods with no observations to avoid SARIMAX fitting errors
-                    valid_uids = []
-                    for uid in crime_neighbourhood_df['unique_id'].unique():
-                        cnt = crime_neighbourhood_df[crime_neighbourhood_df['unique_id'] == uid]['y'].dropna().shape[0]
-                        if cnt > 0:
-                            valid_uids.append(uid)
+                    #valid_uids = []
+                    #for uid in crime_neighbourhood_df['unique_id'].unique():
+                    #    cnt = crime_neighbourhood_df[crime_neighbourhood_df['unique_id'] == uid]['y'].dropna().shape[0]
+                    #    if cnt > 0:
+                    #        valid_uids.append(uid)
 
-                    if len(valid_uids) == 0:
-                        st.error("No neighbourhood time series have observations to forecast.")
-                        raise RuntimeError("No valid series for forecasting")
+                    #if len(valid_uids) == 0:
+                    #    st.error("No neighbourhood time series have observations to forecast.")
+                    #    raise RuntimeError("No valid series for forecasting")
 
-                    filtered_df = crime_neighbourhood_df[crime_neighbourhood_df['unique_id'].isin(valid_uids)].copy()
+                    #filtered_df = crime_neighbourhood_df[crime_neighbourhood_df['unique_id'].isin(valid_uids)].copy()
 
                     # Generate forecast using the saved forecasting function and handle errors
                     try:

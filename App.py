@@ -1631,16 +1631,16 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     final_forecast_df = pd.concat(all_forecasts).reset_index(drop=True)
     # Normalize column name to match existing downstream code
     if 'prediction' in final_forecast_df.columns:
-        final_forecast1 = final_forecast_df.rename(columns={'prediction': 'SARIMAX'})
+        final_forecast_df = final_forecast_df.rename(columns={'prediction': 'SARIMAX'})
 
     
     print("\nFinal 2-Year Forecast:")
-    print(final_forecast1.head())
+    print(final_forecast_df.head())
 
 # Visual representation of the forecasted crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
 # We create multiple line plots to visualize the forecasted yearly crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
 # We also create a heatmap to visualize the forecasted yearly crime counts for each neighbourhood for the last 2 years (2012 and 2013) based on the trained SARIMAX model
-    final_forecast2 = final_forecast1.copy()
+    final_forecast2 = final_forecast_df.copy()
     final_forecast2['YEAR'] = pd.to_datetime(final_forecast2['ds']).dt.year
     final_forecast2.rename(columns={'unique_id':'NEIGHBOURHOOD', 'SARIMAX': 'Crime_Count'}, inplace=True)
 

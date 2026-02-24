@@ -1083,6 +1083,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
       st.subheader("Model Prediction")  
 # If no historical data is found, we proceed to use the trained LightGBM model to predict the crime count for the selected crime type, year, and month
       if historical_match.empty:
+       st.write("Click the 'Forecast' button to see the forecast.")
        if st.sidebar.button("Forecast", key="forecast_button"): #Created a forecast button
         st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")      
         
@@ -1300,6 +1301,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
     with col2:
       st.subheader("Model Prediction")
       if historical_match.empty:
+       st.write("Click the 'Forecast' button to see the forecast.")
        if st.sidebar.button("Forecast", key="forecast_button"):
         st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
         try:
@@ -1512,6 +1514,7 @@ elif dataset_selection == "SARIMAX Crime Forecast":
     with col2:
         st.subheader("Model Prediction")
         if historical_match.empty:
+          st.write("Click the 'Forecast' button to see the forecast.")
           if st.sidebar.button("Forecast", key="forecast_button"):
              st.info(f"No historical data was found. So the model has forecasted the future crime count based on the user input.")
             

@@ -1544,12 +1544,13 @@ elif dataset_selection == "SARIMAX Crime Forecast":
 
                         # Get the prediction for the selected neighbourhood and date
                       mask = (final_forecast_df['unique_id'] == selected_neighbourhood) & (final_forecast_df['ds'] == selected_year)
-                      if not mask.any():
-                         st.error("Could not generate prediction for selected date.")
-                      else:
+                      if mask.any():
                          predicted_crime_count = float(final_forecast_df.loc[mask, 'prediction'].iloc[-1])
                          st.metric("Model Forecasted Crime Count", f"{predicted_crime_count:.2f}")
                          st.caption("The predicted crime count is based on the trained SARIMAX model using the input features provided.")
+                      else:
+                         st.error("Could not generate prediction for selected date.")
+                         
                   except Exception as e:
                         st.error(f"Error during prediction: {str(e)}")
                         raise

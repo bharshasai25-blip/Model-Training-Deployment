@@ -1270,6 +1270,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
 # Showing the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained LightGBM model in tabular format
     #with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model"):
       #st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
+    
+    st.divider()
 
 # We create a bar plot to visualize the forecasted monthly crime counts for each crime type over the last 2 years (2012 and 2013) based on the trained LightGBM model    
     fig = px.bar(final_forecast2, x='YEAR', y='Crime_Count', color='MONTH', facet_col='Crime_Type',
@@ -1337,8 +1339,26 @@ elif dataset_selection == "XGBoost Crime Forecast":
         df = pd.read_csv(data_path)
         df['YEAR'] = df['YEAR'].astype(int)
         df['MONTH'] = df['MONTH'].astype(int)
-        df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
+        df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')   
         return df
+
+#load the forecast dataset of XGBoost Model    
+    @st.cache_data
+    def load_XGB_forecast_data():
+        DATA_DIC = BASE_DIR / "Full Forecast Datasets of models"
+        data_path = DATA_DIC / "Full_forecast_XGBoost.csv"
+
+        if not data_path.exists():
+            st.error("Forecast data file 'Full_forecast_XGBoost.csv' not found. Please ensure the dataset file is in the correct path.")
+            st.stop()
+
+        df = pd.read_csv(data_path)
+        df['ds'] = pd.to_datetime(df['ds'])
+        df['YEAR'] = df['ds'].dt.year
+        df['MONTH'] = df['ds'].dt.month
+        return df
+        
+
 #load the trained XGBoost model for crime forecasting
     #st.write("Looking for model at:", BASE_DIR / "trained_XGBoost_forecast_model.pkl")
     #st.write("Does file exist?", (BASE_DIR / "trained_XGBoost_forecast_model.pkl").exists())
@@ -1352,7 +1372,7 @@ elif dataset_selection == "XGBoost Crime Forecast":
 
         return joblib.load(model_path)
     model = load_model("trained_XGBoost_forecast_model.pkl")
-    #st.success("Trained XGBoost model loaded successfully.")
+    st.success("Trained XGBoost model loaded successfully.")
 
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)
@@ -1360,6 +1380,10 @@ elif dataset_selection == "XGBoost Crime Forecast":
     crime_type_df.rename(columns={'TYPE': 'unique_id', 'Monthly_Crime_Count_Type_wise': 'y'}, inplace=True)
     crime_type_df.sort_values(["unique_id", "YEAR", "MONTH"], inplace=True)
     crime_type_df.reset_index(drop=True, inplace=True)
+
+    XGB_forecasted_df = load_XGB_forecast_data().copy()
+    XGB_forecasted_df = XGB_forecasted_df.rename(columns={'unique_id':'Crime_Type', 'XGBRegressor':'Crime_Count'})
+    XGB_forecasted_df.drop(columns=['ds'], inplace=True)
     
 # App title and description
     st.title("XGBoost Regressor Deployment for Crime Forecasting")
@@ -1445,46 +1469,53 @@ elif dataset_selection == "XGBoost Crime Forecast":
 # Showing the full forecasted dataset having only the forecasted crime counts of each month of the last 2 years (2012 and 2013) based on the trained XGBoost model
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained XGBoost Model")
     st.write("The full forecasted dataset for each month of the last 2 years (2012 and 2013) based on the trained XGBoost model is displayed below. This dataset includes the forecasted crime counts for each crime type for every month in 2012 and 2013, allowing us to analyze the predicted crime trends over these two years based on the model's forecasting capabilities. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained XGBoost model' expander to see the complete dataset in tabular format, which includes the crime type, year, month, and the corresponding forecasted crime count as predicted by the XGBoost model.")
-
-    def generate_feature_columns_in_forecasted_dataset(crime_type_df):
-# Create future dynamic features (X_df) for the next 24 months
-        last_date = crime_type_df['ds'].max()
-        future_dates = pd.date_range(start=last_date + pd.offsets.MonthBegin(1), periods=24, freq='MS')
-        uids = crime_type_df['unique_id'].unique()
-
-        X_df = pd.DataFrame({
-       'unique_id': [i for i in uids for _ in range(24)],
-       'ds': list(future_dates) * len(uids)})
-        
-        X_df['MONTH'] = X_df['ds'].dt.month
-        X_df['is_summer'] = X_df['MONTH'].isin([5, 6, 7, 8]).astype(int)
-        X_df['is_holiday_season'] = X_df['MONTH'].isin([9, 10, 11, 12]).astype(int)
-        X_df['is_spring'] = X_df['MONTH'].isin([1, 2, 3, 4]).astype(int)
-        X_df['quarter'] = ((X_df['MONTH'] - 1) // 3) + 1
-        X_df['month_sin'] = np.sin(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
-        X_df['month_cos'] = np.cos(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
-        X_df['month_sq'] = X_df['MONTH'] ** 2
-        X_df['summer_peak'] = X_df['is_summer'] * X_df['MONTH']
-        X_df['holiday_peak'] = X_df['is_holiday_season'] * X_df['MONTH']
-
-        return X_df
-    X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
-# Final Forecast
-    final_forecast1 = model.predict(h=24, X_df=X_df)
     
-    print("\nFinal 24-Month Forecast:")
-    print(final_forecast1.head())
+# Showing the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained XGBoost model in tabular format
+    final_forecast2 = XGB_forecasted_df.copy()
+    with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained XGBoost model"):
+      st.dataframe(final_forecast2[['Crime_Type', 'Crime_Count', 'YEAR', 'MONTH']])
+    
+    #def generate_feature_columns_in_forecasted_dataset(crime_type_df):
+# Create future dynamic features (X_df) for the next 24 months
+        #last_date = crime_type_df['ds'].max()
+        #future_dates = pd.date_range(start=last_date + pd.offsets.MonthBegin(1), periods=24, freq='MS')
+        #uids = crime_type_df['unique_id'].unique()
+
+        #X_df = pd.DataFrame({
+       #'unique_id': [i for i in uids for _ in range(24)],
+       #'ds': list(future_dates) * len(uids)})
+        
+        #X_df['MONTH'] = X_df['ds'].dt.month
+        #X_df['is_summer'] = X_df['MONTH'].isin([5, 6, 7, 8]).astype(int)
+        #X_df['is_holiday_season'] = X_df['MONTH'].isin([9, 10, 11, 12]).astype(int)
+        #X_df['is_spring'] = X_df['MONTH'].isin([1, 2, 3, 4]).astype(int)
+        #X_df['quarter'] = ((X_df['MONTH'] - 1) // 3) + 1
+        #X_df['month_sin'] = np.sin(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
+        #X_df['month_cos'] = np.cos(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
+        #X_df['month_sq'] = X_df['MONTH'] ** 2
+        #X_df['summer_peak'] = X_df['is_summer'] * X_df['MONTH']
+        #X_df['holiday_peak'] = X_df['is_holiday_season'] * X_df['MONTH']
+
+        #return X_df
+    #X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
+# Final Forecast
+    #final_forecast1 = model.predict(h=24, X_df=X_df)
+    
+    #print("\nFinal 24-Month Forecast:")
+    #print(final_forecast1.head())
 
 # Visual representation of the forecasted crime counts for the last 2 years (2012 and 2013) based on the trained XGBoost model
 # We create multiple bar charts(based on the unique_id) to visualize the forecasted monthly crime counts for each crime type over the last 2 years (2012 and 2013) based on the trained XGBoost model
-    final_forecast2 = final_forecast1.copy()
-    final_forecast2['YEAR'] = pd.to_datetime(final_forecast1['ds']).dt.year
-    final_forecast2['MONTH'] = pd.to_datetime(final_forecast1['ds']).dt.month
-    final_forecast2.rename(columns={'unique_id':'Crime_Type', 'XGBRegressor': 'Crime_Count'}, inplace=True)
+    #final_forecast2 = final_forecast1.copy()
+    #final_forecast2['YEAR'] = pd.to_datetime(final_forecast1['ds']).dt.year
+    #final_forecast2['MONTH'] = pd.to_datetime(final_forecast1['ds']).dt.month
+    #final_forecast2.rename(columns={'unique_id':'Crime_Type', 'XGBRegressor': 'Crime_Count'}, inplace=True)
 
 # Showing the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained XGBoost model in tabular format
-    with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained XGBoost model"):
-      st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
+    #with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained XGBoost model"):
+      #st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
+
+    st.divider()  
 # We create a bar plot to visualize the forecasted monthly crime counts for each crime type over the last 2 years (2012 and 2013) based on the trained XGBoost model
     fig = px.bar(final_forecast2, x='YEAR', y='Crime_Count', color='MONTH', facet_col='Crime_Type',
                   hover_data= {'Crime_Type': True, 'YEAR': True, 'MONTH': True, 'Crime_Count': True},

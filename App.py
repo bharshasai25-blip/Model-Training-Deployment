@@ -1027,6 +1027,10 @@ elif dataset_selection == "LightGBM Crime Forecast":
 #load the trained LightGBM model for crime forecasting
     #st.write("Looking for model at:", BASE_DIR / "trained_LightGBM_forecast_model.pkl")
     #st.write("Does file exist?", (BASE_DIR / "trained_LightGBM_forecast_model.pkl").exists())
+    import mlforecast
+    import sys
+    st.write("MLForecast version:", mlforecast.__version__)
+    st.write("Python version:", sys.version)
     @st.cache_resource(show_spinner=False)
     def load_model(model_name):
       model_path = BASE_DIR / model_name

@@ -1036,7 +1036,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
         st.stop()
 
       return joblib.load(model_path)
-    model = load_model("trained_LightGBM_forecast_model.pkl")
+    model = load_model("trained_LightGBM_forecast_model1.pkl")
     #st.success("Trained LightGBM model loaded successfully.")
 
     crime_type_df = load_data().copy()

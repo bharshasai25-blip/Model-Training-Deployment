@@ -1,217 +1,217 @@
 unique_id,ds,LGBMRegressor
-Break and Enter Commercial,2012-01-01,218.63087
-Break and Enter Commercial,2012-02-01,181.88269
-Break and Enter Commercial,2012-03-01,187.75354
-Break and Enter Commercial,2012-04-01,165.94421
-Break and Enter Commercial,2012-05-01,182.87015
-Break and Enter Commercial,2012-06-01,194.87619
-Break and Enter Commercial,2012-07-01,192.15407
-Break and Enter Commercial,2012-08-01,237.51732
-Break and Enter Commercial,2012-09-01,210.18114
-Break and Enter Commercial,2012-10-01,216.83762
-Break and Enter Commercial,2012-11-01,227.17155
-Break and Enter Commercial,2012-12-01,224.45625
-Break and Enter Commercial,2013-01-01,214.67598
-Break and Enter Commercial,2013-02-01,205.96164
-Break and Enter Commercial,2013-03-01,224.06844
-Break and Enter Commercial,2013-04-01,214.63013
-Break and Enter Commercial,2013-05-01,226.15538
-Break and Enter Commercial,2013-06-01,231.04211
-Break and Enter Commercial,2013-07-01,229.33167
-Break and Enter Commercial,2013-08-01,221.723
-Break and Enter Commercial,2013-09-01,224.24779
-Break and Enter Commercial,2013-10-01,223.7116
-Break and Enter Commercial,2013-11-01,229.45706
-Break and Enter Commercial,2013-12-01,213.48254
-Break and Enter Residential/Other,2012-01-01,337.88623
-Break and Enter Residential/Other,2012-02-01,267.72607
-Break and Enter Residential/Other,2012-03-01,259.80447
-Break and Enter Residential/Other,2012-04-01,249.02396
-Break and Enter Residential/Other,2012-05-01,246.77788
-Break and Enter Residential/Other,2012-06-01,235.40555
-Break and Enter Residential/Other,2012-07-01,266.12854
-Break and Enter Residential/Other,2012-08-01,291.72278
-Break and Enter Residential/Other,2012-09-01,244.31305
-Break and Enter Residential/Other,2012-10-01,237.07814
-Break and Enter Residential/Other,2012-11-01,238.67021
-Break and Enter Residential/Other,2012-12-01,227.93689
-Break and Enter Residential/Other,2013-01-01,221.08896
-Break and Enter Residential/Other,2013-02-01,152.889
-Break and Enter Residential/Other,2013-03-01,158.9158
-Break and Enter Residential/Other,2013-04-01,96.33484
-Break and Enter Residential/Other,2013-05-01,111.73136
-Break and Enter Residential/Other,2013-06-01,96.24868
-Break and Enter Residential/Other,2013-07-01,122.0827
-Break and Enter Residential/Other,2013-08-01,139.7329
-Break and Enter Residential/Other,2013-09-01,151.11424
-Break and Enter Residential/Other,2013-10-01,231.43335
-Break and Enter Residential/Other,2013-11-01,261.92932
-Break and Enter Residential/Other,2013-12-01,308.9884
-Mischief,2012-01-01,352.98154
-Mischief,2012-02-01,353.06775
-Mischief,2012-03-01,369.23618
-Mischief,2012-04-01,361.68225
-Mischief,2012-05-01,381.63345
-Mischief,2012-06-01,375.05515
-Mischief,2012-07-01,371.289
-Mischief,2012-08-01,373.27008
-Mischief,2012-09-01,350.64743
-Mischief,2012-10-01,386.28265
-Mischief,2012-11-01,363.95496
-Mischief,2012-12-01,380.6538
-Mischief,2013-01-01,383.49994
-Mischief,2013-02-01,338.51083
-Mischief,2013-03-01,375.68564
-Mischief,2013-04-01,390.99988
-Mischief,2013-05-01,401.12042
-Mischief,2013-06-01,419.00397
-Mischief,2013-07-01,432.02634
-Mischief,2013-08-01,446.8161
-Mischief,2013-09-01,431.81857
-Mischief,2013-10-01,431.26172
-Mischief,2013-11-01,448.4845
-Mischief,2013-12-01,427.55344
-Offence Against a Person,2012-01-01,300.20346
-Offence Against a Person,2012-02-01,248.29741
-Offence Against a Person,2012-03-01,246.27568
-Offence Against a Person,2012-04-01,270.96008
-Offence Against a Person,2012-05-01,264.91785
-Offence Against a Person,2012-06-01,284.6314
-Offence Against a Person,2012-07-01,264.03943
-Offence Against a Person,2012-08-01,298.49612
-Offence Against a Person,2012-09-01,299.37665
-Offence Against a Person,2012-10-01,275.24274
-Offence Against a Person,2012-11-01,265.6764
-Offence Against a Person,2012-12-01,263.48877
-Offence Against a Person,2013-01-01,293.03946
-Offence Against a Person,2013-02-01,229.30344
-Offence Against a Person,2013-03-01,295.7686
-Offence Against a Person,2013-04-01,262.03467
-Offence Against a Person,2013-05-01,289.37115
-Offence Against a Person,2013-06-01,298.83887
-Offence Against a Person,2013-07-01,301.48517
-Offence Against a Person,2013-08-01,305.7893
-Offence Against a Person,2013-09-01,288.60654
-Offence Against a Person,2013-10-01,297.41412
-Offence Against a Person,2013-11-01,289.17618
-Offence Against a Person,2013-12-01,278.18
-Other Theft,2012-01-01,354.2839
-Other Theft,2012-02-01,364.3627
-Other Theft,2012-03-01,372.41724
-Other Theft,2012-04-01,373.0911
-Other Theft,2012-05-01,371.9284
-Other Theft,2012-06-01,356.71628
-Other Theft,2012-07-01,370.30917
-Other Theft,2012-08-01,374.6294
-Other Theft,2012-09-01,393.01202
-Other Theft,2012-10-01,386.91678
-Other Theft,2012-11-01,391.86942
-Other Theft,2012-12-01,369.00372
-Other Theft,2013-01-01,366.3018
-Other Theft,2013-02-01,390.30054
-Other Theft,2013-03-01,400.3252
-Other Theft,2013-04-01,408.74527
-Other Theft,2013-05-01,410.44836
-Other Theft,2013-06-01,376.93256
-Other Theft,2013-07-01,403.4518
-Other Theft,2013-08-01,406.27884
-Other Theft,2013-09-01,411.22885
-Other Theft,2013-10-01,388.48245
-Other Theft,2013-11-01,379.5438
-Other Theft,2013-12-01,393.1584
-Theft from Vehicle,2012-01-01,1024.561
-Theft from Vehicle,2012-02-01,929.13947
-Theft from Vehicle,2012-03-01,993.58795
-Theft from Vehicle,2012-04-01,921.115
-Theft from Vehicle,2012-05-01,936.71564
-Theft from Vehicle,2012-06-01,886.4046
-Theft from Vehicle,2012-07-01,965.09467
-Theft from Vehicle,2012-08-01,894.35425
-Theft from Vehicle,2012-09-01,923.09467
-Theft from Vehicle,2012-10-01,891.3823
-Theft from Vehicle,2012-11-01,906.87085
-Theft from Vehicle,2012-12-01,936.65765
-Theft from Vehicle,2013-01-01,918.9808
-Theft from Vehicle,2013-02-01,980.7246
-Theft from Vehicle,2013-03-01,1005.1808
-Theft from Vehicle,2013-04-01,945.6384
-Theft from Vehicle,2013-05-01,960.2531
-Theft from Vehicle,2013-06-01,982.6022
-Theft from Vehicle,2013-07-01,996.4997
-Theft from Vehicle,2013-08-01,1014.01245
-Theft from Vehicle,2013-09-01,1020.4645
-Theft from Vehicle,2013-10-01,1051.3898
-Theft from Vehicle,2013-11-01,1088.7607
-Theft from Vehicle,2013-12-01,1035.3945
-Theft of Bicycle,2012-01-01,132.92206
-Theft of Bicycle,2012-02-01,93.43965
-Theft of Bicycle,2012-03-01,140.11398
-Theft of Bicycle,2012-04-01,206.64949
-Theft of Bicycle,2012-05-01,226.20996
-Theft of Bicycle,2012-06-01,268.03256
-Theft of Bicycle,2012-07-01,324.9523
-Theft of Bicycle,2012-08-01,358.32993
-Theft of Bicycle,2012-09-01,260.94327
-Theft of Bicycle,2012-10-01,203.62094
-Theft of Bicycle,2012-11-01,145.87381
-Theft of Bicycle,2012-12-01,127.499695
-Theft of Bicycle,2013-01-01,64.22247
-Theft of Bicycle,2013-02-01,79.421165
-Theft of Bicycle,2013-03-01,103.00479
-Theft of Bicycle,2013-04-01,189.67319
-Theft of Bicycle,2013-05-01,266.79007
-Theft of Bicycle,2013-06-01,336.36853
-Theft of Bicycle,2013-07-01,432.06378
-Theft of Bicycle,2013-08-01,432.97583
-Theft of Bicycle,2013-09-01,329.1389
-Theft of Bicycle,2013-10-01,291.62766
-Theft of Bicycle,2013-11-01,192.66574
-Theft of Bicycle,2013-12-01,86.85975
-Theft of Vehicle,2012-01-01,130.95009
-Theft of Vehicle,2012-02-01,111.8058
-Theft of Vehicle,2012-03-01,124.76268
-Theft of Vehicle,2012-04-01,116.11836
-Theft of Vehicle,2012-05-01,118.12918
-Theft of Vehicle,2012-06-01,121.776596
-Theft of Vehicle,2012-07-01,123.984535
-Theft of Vehicle,2012-08-01,123.85188
-Theft of Vehicle,2012-09-01,117.86671
-Theft of Vehicle,2012-10-01,129.59312
-Theft of Vehicle,2012-11-01,120.15218
-Theft of Vehicle,2012-12-01,118.1136
-Theft of Vehicle,2013-01-01,109.07364
-Theft of Vehicle,2013-02-01,77.35109
-Theft of Vehicle,2013-03-01,109.101845
-Theft of Vehicle,2013-04-01,101.08617
-Theft of Vehicle,2013-05-01,124.77377
-Theft of Vehicle,2013-06-01,108.08796
-Theft of Vehicle,2013-07-01,104.39098
-Theft of Vehicle,2013-08-01,123.05774
-Theft of Vehicle,2013-09-01,130.22275
-Theft of Vehicle,2013-10-01,112.94525
-Theft of Vehicle,2013-11-01,97.27782
-Theft of Vehicle,2013-12-01,84.24949
-Vehicle Collision or Pedestrian Struck (with Injury),2012-01-01,144.04654
-Vehicle Collision or Pedestrian Struck (with Injury),2012-02-01,131.5212
-Vehicle Collision or Pedestrian Struck (with Injury),2012-03-01,149.9687
-Vehicle Collision or Pedestrian Struck (with Injury),2012-04-01,146.20482
-Vehicle Collision or Pedestrian Struck (with Injury),2012-05-01,155.16821
-Vehicle Collision or Pedestrian Struck (with Injury),2012-06-01,144.0482
-Vehicle Collision or Pedestrian Struck (with Injury),2012-07-01,152.29153
-Vehicle Collision or Pedestrian Struck (with Injury),2012-08-01,159.43053
-Vehicle Collision or Pedestrian Struck (with Injury),2012-09-01,156.62646
-Vehicle Collision or Pedestrian Struck (with Injury),2012-10-01,142.37581
-Vehicle Collision or Pedestrian Struck (with Injury),2012-11-01,134.84514
-Vehicle Collision or Pedestrian Struck (with Injury),2012-12-01,146.84311
-Vehicle Collision or Pedestrian Struck (with Injury),2013-01-01,154.19417
-Vehicle Collision or Pedestrian Struck (with Injury),2013-02-01,133.56775
-Vehicle Collision or Pedestrian Struck (with Injury),2013-03-01,139.759
-Vehicle Collision or Pedestrian Struck (with Injury),2013-04-01,141.1003
-Vehicle Collision or Pedestrian Struck (with Injury),2013-05-01,135.0728
-Vehicle Collision or Pedestrian Struck (with Injury),2013-06-01,137.6171
-Vehicle Collision or Pedestrian Struck (with Injury),2013-07-01,146.78526
-Vehicle Collision or Pedestrian Struck (with Injury),2013-08-01,166.93814
-Vehicle Collision or Pedestrian Struck (with Injury),2013-09-01,172.19818
-Vehicle Collision or Pedestrian Struck (with Injury),2013-10-01,155.09203
-Vehicle Collision or Pedestrian Struck (with Injury),2013-11-01,136.02652
-Vehicle Collision or Pedestrian Struck (with Injury),2013-12-01,142.89255
+Break and Enter Commercial,1/1/2012,218.63087
+Break and Enter Commercial,2/1/2012,181.88269
+Break and Enter Commercial,3/1/2012,187.75354
+Break and Enter Commercial,4/1/2012,165.94421
+Break and Enter Commercial,5/1/2012,182.87015
+Break and Enter Commercial,6/1/2012,194.87619
+Break and Enter Commercial,7/1/2012,192.15407
+Break and Enter Commercial,8/1/2012,237.51732
+Break and Enter Commercial,9/1/2012,210.18114
+Break and Enter Commercial,10/1/2012,216.83762
+Break and Enter Commercial,11/1/2012,227.17155
+Break and Enter Commercial,12/1/2012,224.45625
+Break and Enter Commercial,1/1/2013,214.67598
+Break and Enter Commercial,2/1/2013,205.96164
+Break and Enter Commercial,3/1/2013,224.06844
+Break and Enter Commercial,4/1/2013,214.63013
+Break and Enter Commercial,5/1/2013,226.15538
+Break and Enter Commercial,6/1/2013,231.04211
+Break and Enter Commercial,7/1/2013,229.33167
+Break and Enter Commercial,8/1/2013,221.723
+Break and Enter Commercial,9/1/2013,224.24779
+Break and Enter Commercial,10/1/2013,223.7116
+Break and Enter Commercial,11/1/2013,229.45706
+Break and Enter Commercial,12/1/2013,213.48254
+Break and Enter Residential/Other,1/1/2012,337.88623
+Break and Enter Residential/Other,2/1/2012,267.72607
+Break and Enter Residential/Other,3/1/2012,259.80447
+Break and Enter Residential/Other,4/1/2012,249.02396
+Break and Enter Residential/Other,5/1/2012,246.77788
+Break and Enter Residential/Other,6/1/2012,235.40555
+Break and Enter Residential/Other,7/1/2012,266.12854
+Break and Enter Residential/Other,8/1/2012,291.72278
+Break and Enter Residential/Other,9/1/2012,244.31305
+Break and Enter Residential/Other,10/1/2012,237.07814
+Break and Enter Residential/Other,11/1/2012,238.67021
+Break and Enter Residential/Other,12/1/2012,227.93689
+Break and Enter Residential/Other,1/1/2013,221.08896
+Break and Enter Residential/Other,2/1/2013,152.889
+Break and Enter Residential/Other,3/1/2013,158.9158
+Break and Enter Residential/Other,4/1/2013,96.33484
+Break and Enter Residential/Other,5/1/2013,111.73136
+Break and Enter Residential/Other,6/1/2013,96.24868
+Break and Enter Residential/Other,7/1/2013,122.0827
+Break and Enter Residential/Other,8/1/2013,139.7329
+Break and Enter Residential/Other,9/1/2013,151.11424
+Break and Enter Residential/Other,10/1/2013,231.43335
+Break and Enter Residential/Other,11/1/2013,261.92932
+Break and Enter Residential/Other,12/1/2013,308.9884
+Mischief,1/1/2012,352.98154
+Mischief,2/1/2012,353.06775
+Mischief,3/1/2012,369.23618
+Mischief,4/1/2012,361.68225
+Mischief,5/1/2012,381.63345
+Mischief,6/1/2012,375.05515
+Mischief,7/1/2012,371.289
+Mischief,8/1/2012,373.27008
+Mischief,9/1/2012,350.64743
+Mischief,10/1/2012,386.28265
+Mischief,11/1/2012,363.95496
+Mischief,12/1/2012,380.6538
+Mischief,1/1/2013,383.49994
+Mischief,2/1/2013,338.51083
+Mischief,3/1/2013,375.68564
+Mischief,4/1/2013,390.99988
+Mischief,5/1/2013,401.12042
+Mischief,6/1/2013,419.00397
+Mischief,7/1/2013,432.02634
+Mischief,8/1/2013,446.8161
+Mischief,9/1/2013,431.81857
+Mischief,10/1/2013,431.26172
+Mischief,11/1/2013,448.4845
+Mischief,12/1/2013,427.55344
+Offence Against a Person,1/1/2012,300.20346
+Offence Against a Person,2/1/2012,248.29741
+Offence Against a Person,3/1/2012,246.27568
+Offence Against a Person,4/1/2012,270.96008
+Offence Against a Person,5/1/2012,264.91785
+Offence Against a Person,6/1/2012,284.6314
+Offence Against a Person,7/1/2012,264.03943
+Offence Against a Person,8/1/2012,298.49612
+Offence Against a Person,9/1/2012,299.37665
+Offence Against a Person,10/1/2012,275.24274
+Offence Against a Person,11/1/2012,265.6764
+Offence Against a Person,12/1/2012,263.48877
+Offence Against a Person,1/1/2013,293.03946
+Offence Against a Person,2/1/2013,229.30344
+Offence Against a Person,3/1/2013,295.7686
+Offence Against a Person,4/1/2013,262.03467
+Offence Against a Person,5/1/2013,289.37115
+Offence Against a Person,6/1/2013,298.83887
+Offence Against a Person,7/1/2013,301.48517
+Offence Against a Person,8/1/2013,305.7893
+Offence Against a Person,9/1/2013,288.60654
+Offence Against a Person,10/1/2013,297.41412
+Offence Against a Person,11/1/2013,289.17618
+Offence Against a Person,12/1/2013,278.18
+Other Theft,1/1/2012,354.2839
+Other Theft,2/1/2012,364.3627
+Other Theft,3/1/2012,372.41724
+Other Theft,4/1/2012,373.0911
+Other Theft,5/1/2012,371.9284
+Other Theft,6/1/2012,356.71628
+Other Theft,7/1/2012,370.30917
+Other Theft,8/1/2012,374.6294
+Other Theft,9/1/2012,393.01202
+Other Theft,10/1/2012,386.91678
+Other Theft,11/1/2012,391.86942
+Other Theft,12/1/2012,369.00372
+Other Theft,1/1/2013,366.3018
+Other Theft,2/1/2013,390.30054
+Other Theft,3/1/2013,400.3252
+Other Theft,4/1/2013,408.74527
+Other Theft,5/1/2013,410.44836
+Other Theft,6/1/2013,376.93256
+Other Theft,7/1/2013,403.4518
+Other Theft,8/1/2013,406.27884
+Other Theft,9/1/2013,411.22885
+Other Theft,10/1/2013,388.48245
+Other Theft,11/1/2013,379.5438
+Other Theft,12/1/2013,393.1584
+Theft from Vehicle,1/1/2012,1024.561
+Theft from Vehicle,2/1/2012,929.13947
+Theft from Vehicle,3/1/2012,993.58795
+Theft from Vehicle,4/1/2012,921.115
+Theft from Vehicle,5/1/2012,936.71564
+Theft from Vehicle,6/1/2012,886.4046
+Theft from Vehicle,7/1/2012,965.09467
+Theft from Vehicle,8/1/2012,894.35425
+Theft from Vehicle,9/1/2012,923.09467
+Theft from Vehicle,10/1/2012,891.3823
+Theft from Vehicle,11/1/2012,906.87085
+Theft from Vehicle,12/1/2012,936.65765
+Theft from Vehicle,1/1/2013,918.9808
+Theft from Vehicle,2/1/2013,980.7246
+Theft from Vehicle,3/1/2013,1005.1808
+Theft from Vehicle,4/1/2013,945.6384
+Theft from Vehicle,5/1/2013,960.2531
+Theft from Vehicle,6/1/2013,982.6022
+Theft from Vehicle,7/1/2013,996.4997
+Theft from Vehicle,8/1/2013,1014.01245
+Theft from Vehicle,9/1/2013,1020.4645
+Theft from Vehicle,10/1/2013,1051.3898
+Theft from Vehicle,11/1/2013,1088.7607
+Theft from Vehicle,12/1/2013,1035.3945
+Theft of Bicycle,1/1/2012,132.92206
+Theft of Bicycle,2/1/2012,93.43965
+Theft of Bicycle,3/1/2012,140.11398
+Theft of Bicycle,4/1/2012,206.64949
+Theft of Bicycle,5/1/2012,226.20996
+Theft of Bicycle,6/1/2012,268.03256
+Theft of Bicycle,7/1/2012,324.9523
+Theft of Bicycle,8/1/2012,358.32993
+Theft of Bicycle,9/1/2012,260.94327
+Theft of Bicycle,10/1/2012,203.62094
+Theft of Bicycle,11/1/2012,145.87381
+Theft of Bicycle,12/1/2012,127.499695
+Theft of Bicycle,1/1/2013,64.22247
+Theft of Bicycle,2/1/2013,79.421165
+Theft of Bicycle,3/1/2013,103.00479
+Theft of Bicycle,4/1/2013,189.67319
+Theft of Bicycle,5/1/2013,266.79007
+Theft of Bicycle,6/1/2013,336.36853
+Theft of Bicycle,7/1/2013,432.06378
+Theft of Bicycle,8/1/2013,432.97583
+Theft of Bicycle,9/1/2013,329.1389
+Theft of Bicycle,10/1/2013,291.62766
+Theft of Bicycle,11/1/2013,192.66574
+Theft of Bicycle,12/1/2013,86.85975
+Theft of Vehicle,1/1/2012,130.95009
+Theft of Vehicle,2/1/2012,111.8058
+Theft of Vehicle,3/1/2012,124.76268
+Theft of Vehicle,4/1/2012,116.11836
+Theft of Vehicle,5/1/2012,118.12918
+Theft of Vehicle,6/1/2012,121.776596
+Theft of Vehicle,7/1/2012,123.984535
+Theft of Vehicle,8/1/2012,123.85188
+Theft of Vehicle,9/1/2012,117.86671
+Theft of Vehicle,10/1/2012,129.59312
+Theft of Vehicle,11/1/2012,120.15218
+Theft of Vehicle,12/1/2012,118.1136
+Theft of Vehicle,1/1/2013,109.07364
+Theft of Vehicle,2/1/2013,77.35109
+Theft of Vehicle,3/1/2013,109.101845
+Theft of Vehicle,4/1/2013,101.08617
+Theft of Vehicle,5/1/2013,124.77377
+Theft of Vehicle,6/1/2013,108.08796
+Theft of Vehicle,7/1/2013,104.39098
+Theft of Vehicle,8/1/2013,123.05774
+Theft of Vehicle,9/1/2013,130.22275
+Theft of Vehicle,10/1/2013,112.94525
+Theft of Vehicle,11/1/2013,97.27782
+Theft of Vehicle,12/1/2013,84.24949
+Vehicle Collision or Pedestrian Struck (with Injury),1/1/2012,144.04654
+Vehicle Collision or Pedestrian Struck (with Injury),2/1/2012,131.5212
+Vehicle Collision or Pedestrian Struck (with Injury),3/1/2012,149.9687
+Vehicle Collision or Pedestrian Struck (with Injury),4/1/2012,146.20482
+Vehicle Collision or Pedestrian Struck (with Injury),5/1/2012,155.16821
+Vehicle Collision or Pedestrian Struck (with Injury),6/1/2012,144.0482
+Vehicle Collision or Pedestrian Struck (with Injury),7/1/2012,152.29153
+Vehicle Collision or Pedestrian Struck (with Injury),8/1/2012,159.43053
+Vehicle Collision or Pedestrian Struck (with Injury),9/1/2012,156.62646
+Vehicle Collision or Pedestrian Struck (with Injury),10/1/2012,142.37581
+Vehicle Collision or Pedestrian Struck (with Injury),11/1/2012,134.84514
+Vehicle Collision or Pedestrian Struck (with Injury),12/1/2012,146.84311
+Vehicle Collision or Pedestrian Struck (with Injury),1/1/2013,154.19417
+Vehicle Collision or Pedestrian Struck (with Injury),2/1/2013,133.56775
+Vehicle Collision or Pedestrian Struck (with Injury),3/1/2013,139.759
+Vehicle Collision or Pedestrian Struck (with Injury),4/1/2013,141.1003
+Vehicle Collision or Pedestrian Struck (with Injury),5/1/2013,135.0728
+Vehicle Collision or Pedestrian Struck (with Injury),6/1/2013,137.6171
+Vehicle Collision or Pedestrian Struck (with Injury),7/1/2013,146.78526
+Vehicle Collision or Pedestrian Struck (with Injury),8/1/2013,166.93814
+Vehicle Collision or Pedestrian Struck (with Injury),9/1/2013,172.19818
+Vehicle Collision or Pedestrian Struck (with Injury),10/1/2013,155.09203
+Vehicle Collision or Pedestrian Struck (with Injury),11/1/2013,136.02652
+Vehicle Collision or Pedestrian Struck (with Injury),12/1/2013,142.89255

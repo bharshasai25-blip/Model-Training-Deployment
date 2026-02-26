@@ -1160,6 +1160,47 @@ elif dataset_selection == "LightGBM Crime Forecast":
 
         return X_df
     X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
+
+
+# --- START DEBUG BLOCK ---
+    st.divider()
+    st.subheader("🛑 MLForecast Diagnostic Protocol")
+
+# 1. Inspect Dimensions
+    st.write(f"*Target Horizon (h):* 24")
+    st.write(f"*Future Features (X_df) Shape:* {X_df.shape}")
+
+# 2. Check for Missing Columns
+# Get columns used during training
+    train_features = model.ts.features_order_
+    missing_cols = [c for c in train_features if c not in X_df.columns]
+
+    if missing_cols:
+       st.error(f"🚨 *CRITICAL ERROR:* X_df is missing columns used in training: {missing_cols}")
+       st.stop() # Halts execution so you can read the error
+    else:
+       st.success("✅ All training columns are present in X_df.")
+
+# 3. Validate Row Counts
+# Calculate expected rows: (Number of Series) * (Horizon)
+    n_series = len(model.ts.uids)
+    expected_rows = 24 * n_series
+
+    if X_df.shape[0] != expected_rows:
+       st.warning(f"⚠️ *Row Mismatch:* Expected {expected_rows} rows ({n_series} series × 24 steps), but got {X_df.shape[0]}.")
+       st.info("Check your 'generate_feature_columns...' function. You must generate 24 future rows for EVERY unique_id.")
+
+# 4. Visual Inspection
+    st.write("*Preview of X_df (First 5 rows):*")
+    st.dataframe(X_df.head())
+
+    st.write("*Preview of X_df (Data Types):*")
+    st.write(X_df.dtypes)
+    st.divider()
+# --- END DEBUG BLOCK ---
+
+
+
 # Final Forecast
     # Insert this BEFORE model.predict()
     print(f"Forecast Horizon (h): 24")

@@ -1070,8 +1070,9 @@ elif dataset_selection == "LightGBM Crime Forecast":
     crime_type_df.reset_index(drop=True, inplace=True)
 
     LGBM_forecasted_df = load_LGBM_forecast_data().copy()
-    LGBM_forecasted_df = LGBM_forecasted_df.rename(columns={'unique_id':'Crime_Type', 'y':'Crime_Count'})
+    LGBM_forecasted_df = LGBM_forecasted_df.rename(columns={'unique_id':'Crime_Type', 'LGBMRegressor':'Crime_Count'})
     LGBM_forecasted_df.drop(columns=['ds'], inplace=True)
+
 
 
 # App title and description    
@@ -1168,7 +1169,7 @@ elif dataset_selection == "LightGBM Crime Forecast":
 # Showing the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained LightGBM model in tabular format
     final_forecast2 = LGBM_forecasted_df.copy()
     with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model"):
-      st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
+      st.dataframe(final_forecast2)
 
 
     #def generate_feature_columns_in_forecasted_dataset(crime_type_df):

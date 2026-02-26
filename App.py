@@ -1024,6 +1024,22 @@ elif dataset_selection == "LightGBM Crime Forecast":
         df['ds'] = pd.to_datetime(df['YEAR'].astype(str) + '-' + df['MONTH'].astype(str) + '-01')
         return df
     
+#load the forecast data of the LightGBM Model
+    @st.cache_data
+    def load_LGBM_forecast_data():
+        DATA_DIC = BASE_DIR / "Full Forecast Datasets of models"
+        data_path = DATA_DIC / "Full_forecast_LightGBM.csv"
+
+        if not data_path.exists():
+            st.error("Forecast data file 'Full_forecast_LightGBM.csv' not found. Please ensure the dataset file is in the correct path.")
+            st.stop()
+
+        df = pd.read_csv(data_path)
+        df['ds'] = pd.to_datetime(df['ds'])
+        df['YEAR'] = df['ds'].dt.year
+        df['MONTH'] = df['ds'].dt.month
+        return df
+    
 #load the trained LightGBM model for crime forecasting
     #st.write("Looking for model at:", BASE_DIR / "trained_LightGBM_forecast_model.pkl")
     #st.write("Does file exist?", (BASE_DIR / "trained_LightGBM_forecast_model.pkl").exists())
@@ -1052,6 +1068,11 @@ elif dataset_selection == "LightGBM Crime Forecast":
     crime_type_df.rename(columns={'TYPE': 'unique_id', 'Monthly_Crime_Count_Type_wise': 'y'}, inplace=True)
     crime_type_df.sort_values(["unique_id", "YEAR", "MONTH"], inplace=True)
     crime_type_df.reset_index(drop=True, inplace=True)
+
+    LGBM_forecasted_df = load_LGBM_forecast_data().copy()
+    LGBM_forecasted_df = LGBM_forecasted_df.rename(columns={'unique_id':'Crime_Type', 'y':'Crime_Count'})
+    LGBM_forecasted_df.drop(columns=['ds'], inplace=True)
+
 
 # App title and description    
     st.title("LightGBM Regressor Deployment for Crime Forecasting")
@@ -1143,105 +1164,111 @@ elif dataset_selection == "LightGBM Crime Forecast":
 # Showing the full forecasted dataset having only the forecasted crime counts of each month of the last 2 years (2012 and 2013) based on the trained LightGBM model
     st.subheader("Full Forecasted Dataset for 2012 and 2013 Based on Trained LightGBM Model")
     st.write("The dataset displayed below contains the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained LightGBM model. This dataset includes the crime type, year, month, and the corresponding forecasted crime count as predicted by the model. Press the 'Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model' expander to see the complete dataset.")
+    
+# Showing the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained LightGBM model in tabular format
+    final_forecast2 = LGBM_forecasted_df.copy()
+    with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model"):
+      st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
 
-    def generate_feature_columns_in_forecasted_dataset(crime_type_df):
+
+    #def generate_feature_columns_in_forecasted_dataset(crime_type_df):
 # Create future dynamic features (X_df) for the next 24 months
-        last_date = crime_type_df['ds'].max()
-        future_dates = pd.date_range(start=last_date + pd.offsets.MonthBegin(1), periods=24, freq='MS')
-        uids = crime_type_df['unique_id'].unique()
+        #last_date = crime_type_df['ds'].max()
+        #future_dates = pd.date_range(start=last_date + pd.offsets.MonthBegin(1), periods=24, freq='MS')
+        #uids = crime_type_df['unique_id'].unique()
 
-        X_df = pd.DataFrame({
-       'unique_id': [i for i in uids for _ in range(24)],
-       'ds': list(future_dates) * len(uids)})
+        #X_df = pd.DataFrame({
+       #'unique_id': [i for i in uids for _ in range(24)],
+       #'ds': list(future_dates) * len(uids)})
         
-        X_df['MONTH'] = X_df['ds'].dt.month
-        X_df['is_summer'] = X_df['MONTH'].isin([5, 6, 7, 8]).astype(int)
-        X_df['is_holiday_season'] = X_df['MONTH'].isin([9, 10, 11, 12]).astype(int)
-        X_df['is_spring'] = X_df['MONTH'].isin([1, 2, 3, 4]).astype(int)
-        X_df['quarter'] = ((X_df['MONTH'] - 1) // 3) + 1
-        X_df['month_sin'] = np.sin(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
-        X_df['month_cos'] = np.cos(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
-        X_df['month_sq'] = X_df['MONTH'] ** 2
-        X_df['summer_peak'] = X_df['is_summer'] * X_df['MONTH']
-        X_df['holiday_peak'] = X_df['is_holiday_season'] * X_df['MONTH']
+        #X_df['MONTH'] = X_df['ds'].dt.month
+        #X_df['is_summer'] = X_df['MONTH'].isin([5, 6, 7, 8]).astype(int)
+        #X_df['is_holiday_season'] = X_df['MONTH'].isin([9, 10, 11, 12]).astype(int)
+        #X_df['is_spring'] = X_df['MONTH'].isin([1, 2, 3, 4]).astype(int)
+        #X_df['quarter'] = ((X_df['MONTH'] - 1) // 3) + 1
+        #X_df['month_sin'] = np.sin(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
+        #X_df['month_cos'] = np.cos(2 * np.pi * (X_df['MONTH'] - 1)/ 12)
+        #X_df['month_sq'] = X_df['MONTH'] ** 2
+        #X_df['summer_peak'] = X_df['is_summer'] * X_df['MONTH']
+        #X_df['holiday_peak'] = X_df['is_holiday_season'] * X_df['MONTH']
 
-        return X_df
-    X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
+        #return X_df
+    #X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
 
 
 # --- START DEBUG BLOCK ---
-    st.divider()
-    st.subheader("🛑 MLForecast Diagnostic Protocol")
+    #st.divider()
+    #st.subheader("🛑 MLForecast Diagnostic Protocol")
 
 # 1. Inspect Dimensions
-    st.write(f"*Target Horizon (h):* 24")
-    st.write(f"*Future Features (X_df) Shape:* {X_df.shape}")
+    #st.write(f"*Target Horizon (h):* 24")
+    #st.write(f"*Future Features (X_df) Shape:* {X_df.shape}")
 
 # 2. Check for Missing Columns
 # Get columns used during training
-    train_features = model.ts.features_order_
-    missing_cols = [c for c in train_features if c not in X_df.columns]
+    #train_features = model.ts.features_order_
+    #missing_cols = [c for c in train_features if c not in X_df.columns]
 
-    if missing_cols:
-       st.error(f"🚨 *CRITICAL ERROR:* X_df is missing columns used in training: {missing_cols}")
-       st.stop() # Halts execution so you can read the error
-    else:
-       st.success("✅ All training columns are present in X_df.")
+    #if missing_cols:
+       #st.error(f"🚨 *CRITICAL ERROR:* X_df is missing columns used in training: {missing_cols}")
+       #st.stop() # Halts execution so you can read the error
+    #else:
+       #st.success("✅ All training columns are present in X_df.")
 
 # 3. Validate Row Counts
 # Calculate expected rows: (Number of Series) * (Horizon)
-    n_series = len(model.ts.uids)
-    expected_rows = 24 * n_series
+    #n_series = len(model.ts.uids)
+    #expected_rows = 24 * n_series
 
-    if X_df.shape[0] != expected_rows:
-       st.warning(f"⚠️ *Row Mismatch:* Expected {expected_rows} rows ({n_series} series × 24 steps), but got {X_df.shape[0]}.")
-       st.info("Check your 'generate_feature_columns...' function. You must generate 24 future rows for EVERY unique_id.")
+    #if X_df.shape[0] != expected_rows:
+       #st.warning(f"⚠️ *Row Mismatch:* Expected {expected_rows} rows ({n_series} series × 24 steps), but got {X_df.shape[0]}.")
+       #st.info("Check your 'generate_feature_columns...' function. You must generate 24 future rows for EVERY unique_id.")
 
 # 4. Visual Inspection
-    st.write("*Preview of X_df (First 5 rows):*")
-    st.dataframe(X_df.head())
+    #st.write("*Preview of X_df (First 5 rows):*")
+    #st.dataframe(X_df.head())
 
-    st.write("*Preview of X_df (Data Types):*")
-    st.write(X_df.dtypes)
-    st.divider()
+    #st.write("*Preview of X_df (Data Types):*")
+    #st.write(X_df.dtypes)
+    #st.divider()
 # --- END DEBUG BLOCK ---
 
 
 
 # Final Forecast
     # Insert this BEFORE model.predict()
-    print(f"Forecast Horizon (h): 24")
-    print(f"X_df Shape: {X_df.shape}")
-    print(f"X_df Columns: {X_df.columns.tolist()}")
-    print(f"Expected Series Count: {len(model.ts.uids)}")
-    print(f"Required X_df Rows: {24 * len(model.ts.uids)}")
+    #print(f"Forecast Horizon (h): 24")
+    #print(f"X_df Shape: {X_df.shape}")
+    #print(f"X_df Columns: {X_df.columns.tolist()}")
+    #print(f"Expected Series Count: {len(model.ts.uids)}")
+    #print(f"Required X_df Rows: {24 * len(model.ts.uids)}")
 
 # Check for Missing Columns
     #train_features = model.ts.features_order_
-    required_features = [
-    col for col in crime_type_df.columns
-    if col not in ['unique_id', 'ds', 'y', 'YEAR']]
+    #required_features = [
+    #col for col in crime_type_df.columns
+    #if col not in ['unique_id', 'ds', 'y', 'YEAR']]
 
-    missing_cols = [c for c in required_features if c not in X_df.columns]
-    if missing_cols:
-       print(f"CRITICAL ERROR: X_df is missing columns used in training: {missing_cols}")
+    #missing_cols = [c for c in required_features if c not in X_df.columns]
+    #if missing_cols:
+       #print(f"CRITICAL ERROR: X_df is missing columns used in training: {missing_cols}")
 
-    final_forecast1 = model.predict(h=24, X_df=X_df)
+    #final_forecast1 = model.predict(h=24, X_df=X_df)
     
-    print("\nFinal 24-Month Forecast:")
-    print(final_forecast1.head())
+    #print("\nFinal 24-Month Forecast:")
+    #print(final_forecast1.head())
 
 # Visual representation of the forecasted crime counts for the last 2 years (2012 and 2013) based on the trained LightGBM model
 # We create multiple bar charts(based on the unique_id) to visualize the forecasted monthly crime counts for each crime type over the last 2 years (2012 and 2013) based on the trained LightGBM model
     
-    final_forecast2 = final_forecast1.copy()
-    final_forecast2['YEAR'] = pd.to_datetime(final_forecast1['ds']).dt.year
-    final_forecast2['MONTH'] = pd.to_datetime(final_forecast1['ds']).dt.month
-    final_forecast2.rename(columns={'unique_id':'Crime_Type', 'LGBMRegressor': 'Crime_Count'}, inplace=True)
+    #final_forecast2 = final_forecast1.copy()
+    #final_forecast2['YEAR'] = pd.to_datetime(final_forecast1['ds']).dt.year
+    #final_forecast2['MONTH'] = pd.to_datetime(final_forecast1['ds']).dt.month
+    #final_forecast2.rename(columns={'unique_id':'Crime_Type', 'LGBMRegressor': 'Crime_Count'}, inplace=True)
 
 # Showing the forecasted crime counts for each month of the last 2 years (2012 and 2013) based on the trained LightGBM model in tabular format
-    with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model"):
-      st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
+    #with st.expander("Click to view the full forecasted dataset for 2012 and 2013 based on the trained LightGBM model"):
+      #st.dataframe(final_forecast2[['Crime_Type', 'YEAR', 'MONTH', 'Crime_Count']])
 
 # We create a bar plot to visualize the forecasted monthly crime counts for each crime type over the last 2 years (2012 and 2013) based on the trained LightGBM model    
     fig = px.bar(final_forecast2, x='YEAR', y='Crime_Count', color='MONTH', facet_col='Crime_Type',

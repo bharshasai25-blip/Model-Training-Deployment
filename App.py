@@ -1210,8 +1210,12 @@ elif dataset_selection == "LightGBM Crime Forecast":
     print(f"Required X_df Rows: {24 * len(model.ts.uids)}")
 
 # Check for Missing Columns
-    train_features = model.ts.features_order_
-    missing_cols = [c for c in train_features if c not in X_df.columns]
+    #train_features = model.ts.features_order_
+    required_features = [
+    col for col in crime_type_df.columns
+    if col not in ['unique_id', 'ds', 'y', 'YEAR']]
+
+    missing_cols = [c for c in required_features if c not in X_df.columns]
     if missing_cols:
        print(f"CRITICAL ERROR: X_df is missing columns used in training: {missing_cols}")
 

@@ -1029,9 +1029,11 @@ elif dataset_selection == "LightGBM Crime Forecast":
     #st.write("Does file exist?", (BASE_DIR / "trained_LightGBM_forecast_model.pkl").exists())
     import mlforecast
     import sys
+    
     st.write("MLForecast version:", mlforecast.__version__)
     st.write("Python version:", sys.version)
-    @st.cache_resource(show_spinner=False)
+
+    #@st.cache_resource(show_spinner=False)
     def load_model(model_name):
       model_path = BASE_DIR / model_name
 
@@ -1041,7 +1043,8 @@ elif dataset_selection == "LightGBM Crime Forecast":
 
       return joblib.load(model_path)
     model = load_model("trained_LightGBM_forecast_model1.pkl")
-    #st.success("Trained LightGBM model loaded successfully.")
+    st.success("Trained LightGBM model loaded successfully.")
+    st.write("Model object:", model)
 
     crime_type_df = load_data().copy()
     crime_type_df['YEAR'] = crime_type_df['YEAR'].astype(int)

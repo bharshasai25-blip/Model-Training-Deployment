@@ -1161,6 +1161,19 @@ elif dataset_selection == "LightGBM Crime Forecast":
         return X_df
     X_df = generate_feature_columns_in_forecasted_dataset(crime_type_df)
 # Final Forecast
+    # Insert this BEFORE model.predict()
+    print(f"Forecast Horizon (h): 24")
+    print(f"X_df Shape: {X_df.shape}")
+    print(f"X_df Columns: {X_df.columns.tolist()}")
+    print(f"Expected Series Count: {len(model.ts.uids)}")
+    print(f"Required X_df Rows: {24 * len(model.ts.uids)}")
+
+# Check for Missing Columns
+    train_features = model.ts.features_order_
+    missing_cols = [c for c in train_features if c not in X_df.columns]
+    if missing_cols:
+       print(f"CRITICAL ERROR: X_df is missing columns used in training: {missing_cols}")
+
     final_forecast1 = model.predict(h=24, X_df=X_df)
     
     print("\nFinal 24-Month Forecast:")
